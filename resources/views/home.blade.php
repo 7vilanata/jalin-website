@@ -5,25 +5,25 @@
         <div class=" z-0 md:h-[105vh] h-screen w-full overflow-x-hidden bg-cover relative"
             style="background-image: url('{{ asset('assets/img/atf-bg.webp') }}');">
             <div
-                class="flex flex-col md:flex-row h-full w-full md:w-[90%] justify-self-center justify-end md:justify-between items-center">
+                class="flex flex-col md:flex-row h-full w-full md:w-[90%] mx-auto justify-end md:justify-between items-center">
                 <div class="max-w-[80%] md:max-w-full">
-                    <h1 class=" text-white font-bold md:text-6xl text-4xl leading-tight  uppercase">Saatnya tunjukin <br
-                            class="block md:none" />
+                    <h1 class=" text-white font-bold  text-4xl md:text-[35px] lg:text-6xl leading-tight  uppercase">Saatnya
+                        tunjukin <br class="block md:none" />
                         <img class="inline-block w-[20%] mt-[-10px]" src="{{ asset('assets/img/logo-raw.webp') }}"
                             alt="logo-raw">
                         power lo!
                     </h1>
                     <h1
-                        class=" mt-2 bg-[#FEFC8B] inline-block p-1 md:p-3 md:text-4xl text-[20px] rounded-[10px] md:rounded-2xl text-[#0353FF] font-bold">
+                        class=" mt-2 bg-[#FEFC8B] inline-block p-1 md:p-3  text-[20px] md:text-2xl lg:text-4xl rounded-[10px] md:rounded-2xl text-[#0353FF] font-bold">
                         #GenerasiGaButuhValidasi</h1>
                 </div>
 
-                <img class="h-auto w-full md:w-[55%] mr-0 md:mr-[-70px]  self-end z-0"
+                <img class="h-auto w-full md:w-[60%] lg:w-[55%] mr-0 md:mr-[-70px]  self-end z-0"
                     src="{{ asset('assets/img/image-boy-atf.webp') }}" alt="image-boy-atf">
             </div>
         </div>
         <div
-            class=" bg-gradient-to-t from-[#FF5632] to-[#FFFFFF] rounded-t-[50px] md:rounded-t-[100px] py-20 mt-[-80px] px-10 md:px-50 z-10 relative">
+            class=" bg-gradient-to-t from-[#FF5632] via-[#FFFFFF] to-[#FFFFFF] rounded-t-[50px] md:rounded-t-[100px] py-20 mt-[-80px] px-10 md:px-50 z-10 relative">
             <h1 style="font-weight: 400"
                 class=" ultraprint-font bg-[#FF5632] inline-block p-3 text-2xl rounded-2xl text-[#FFFFFF] font-medium">
                 ABOUT RAW</h1>
@@ -37,9 +37,14 @@
                 <b>Wise</b> itu perjuangan, belajar milih yang benar, meski kadang gak gampang. <br>
                 <br>
                 <br>
-                Gerakan ini kita bentuk bareng, bukan buat ngerampas kebebasan, tapi buat ngangkat suara yang kadang susah diceritain. Kita dengerin lo, bro
+                Gerakan ini kita bentuk bareng, bukan buat ngerampas kebebasan, tapi buat ngangkat suara yang kadang susah
+                diceritain. Kita dengerin lo, bro
             </p>
-            <iframe class="aspect-video rounded-2xl mt-5 md:mt-25" src="https://www.youtube.com/embed/OZGjJXvqN_U"></iframe>
+            <div class="relative w-full pt-[56.25%] rounded-2xl overflow-hidden mt-5 md:mt-25">
+                <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/OZGjJXvqN_U"
+                    frameborder="0" allowfullscreen>
+                </iframe>
+            </div>
         </div>
         <div class="overflow-hidden bg-yellow-300 whitespace-nowrap">
             <div class="marquee-wrapper">
