@@ -1,7 +1,5 @@
 @extends('layouts.app')
 
-@section('title', 'Welcome to My Home Page')
-
 @section('content')
     <div class="relative">
         <div class=" z-0 md:h-[105vh] h-screen w-full  overflow-x-hidden bg-cover relative"
