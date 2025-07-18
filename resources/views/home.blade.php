@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="relative">
-        <div class=" z-0 md:h-[105vh] h-screen w-full  overflow-x-hidden bg-cover relative"
+        <div class=" z-0 md:h-[105vh] h-screen w-full overflow-x-hidden bg-cover relative"
             style="background-image: url('{{ asset('assets/img/atf-bg.webp') }}');">
             <div
                 class="flex flex-col md:flex-row h-full w-full md:w-[90%] justify-self-center justify-end md:justify-between items-center">

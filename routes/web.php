@@ -23,3 +23,13 @@ Route::get('/contact-us', function () {
     return view('comingsoon');
 });
 
+Route::get('/activities/warkop-raw', function () {
+    return view('comingsoon');
+});
+Route::get('/activities/raw-league', function () {
+    return view('comingsoon');
+});
+Route::get('/activities/raw-fest', function () {
+    return view('comingsoon');
+});
+
