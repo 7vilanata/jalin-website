@@ -2,7 +2,7 @@
      <div class="container mx-auto flex justify-between items-center">
          <!-- Logo -->
          <a href="{{ url('/') }}">
-             <img class="w-[80px] md:w-[100px]" src="{{ asset('assets/img/logo-raw.webp') }}" alt="logo-raw">
+             <img class="w-[60px] md:w-[100px]" src="{{ asset('assets/img/logo-raw.webp') }}" alt="logo-raw">
          </a>
 
 

@@ -14,7 +14,6 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 
-
 </head>
 
 <body class="bg-gray-100">
@@ -40,6 +39,7 @@
             @include('components.footer')
         @endif
     </div>
+    
 
     <script>
         // Wait for the page to fully load
@@ -54,24 +54,27 @@
             setTimeout(() => {
                 splash.classList.add('opacity-0');
                 splash.classList.add('pointer-events-none'); // Avoid blocking interaction
-            }, 1500);
+            }, 1000);
 
             // Optional: Remove splash from DOM after transition
             setTimeout(() => {
                 splash.remove();
-            }, 2500);
+            }, 2000);
         };
 
 
         // Optionally: Hide splash when switching tabs (visibilitychange event)
-        document.addEventListener('visibilitychange', () => {
-            if (document.hidden) {
-                document.getElementById('splash-screen').style.display = 'block';
-            } else {
-                document.getElementById('splash-screen').style.display = 'none';
-            }
-        });
+        // document.addEventListener('visibilitychange', () => {
+        //     if (document.hidden) {
+        //         document.getElementById('splash-screen').style.display = 'block';
+        //     } else {
+        //         document.getElementById('splash-screen').style.display = 'none';
+        //     }
+        // });
     </script>
+
+    <script async src="https://www.instagram.com/embed.js"></script>
+
     <!-- Livewire Scripts -->
     @livewireScripts
 </body>

@@ -181,47 +181,19 @@
             </p>
         </div>
     </blockquote>
-    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@generasiraw/video/7526914044410776838"
-        data-video-id="7526914044410776838" style="max-width: 605px;min-width: 325px;">
-        <section> <a target="_blank" title="@generasiraw"
-                href="https://www.tiktok.com/@generasiraw?refer=embed">@generasiraw</a> Style lo = cara lo dikenang.
-            Gaya lo nunjukin siapa lo. Gaya lo yang mana, bro? <a title="generasigabutuhvalidasi" target="_blank"
-                href="https://www.tiktok.com/tag/generasigabutuhvalidasi?refer=embed">#GenerasiGaButuhValidasi</a> <a
-                title="generasiraw" target="_blank"
-                href="https://www.tiktok.com/tag/generasiraw?refer=embed">#GenerasiRAW</a> <a target="_blank"
-                title="♬ original sound  - generasiRAW"
-                href="https://www.tiktok.com/music/original-sound-generasiRAW-7526914044201061126?refer=embed">♬
-                original sound - generasiRAW</a> </section>
-    </blockquote>
-    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@generasiraw/video/7526877567090052358"
-        data-video-id="7526877567090052358" style="max-width: 605px;min-width: 325px;">
-        <section> <a target="_blank" title="@generasiraw"
-                href="https://www.tiktok.com/@generasiraw?refer=embed">@generasiraw</a> Which mindset are you? Drop 🔥
-            kalo lo ready for mindset upgrade! <a title="generasigabutuhvalidasi" target="_blank"
-                href="https://www.tiktok.com/tag/generasigabutuhvalidasi?refer=embed">#GenerasiGaButuhValidasi</a> <a
-                title="generasiraw" target="_blank"
-                href="https://www.tiktok.com/tag/generasiraw?refer=embed">#GenerasiRAW</a> <a target="_blank"
-                title="♬ original sound  - generasiRAW"
-                href="https://www.tiktok.com/music/original-sound-generasiRAW-7526877558429059896?refer=embed">♬
-                original sound - generasiRAW</a> </section>
-    </blockquote>
+    <a  href="https://www.tiktok.com/@generasiraw/video/7526914044410776838?is_from_webapp=1&sender_device=pc&web_id=7501536853812856338" target="_blank">
+        <img class="h-[571px]" src="{{ asset('assets/img/placeholder/tiktok_1.webp') }}" alt="Watch on TikTok">
+    </a>
+    <a href="https://www.tiktok.com/@generasiraw/video/7526877567090052358?is_from_webapp=1&sender_device=pc&web_id=7501536853812856338" target="_blank">
+        <img class="h-[571px]" src="{{ asset('assets/img/placeholder/tiktok_2.webp') }}" alt="Watch on TikTok">
+    </a>
 
-    <script async src="https://www.instagram.com/embed.js"></script>
-    <script async src="https://www.tiktok.com/embed.js"></script>
 </div>
 
 <style>
     .instagram-media {
         max-width: 22% !important;
+        height: 571px !important;
         width: 100% !important;
-        height: 700px !important;
-    }
-
-    .tiktok-embed {
-        max-width: 22% !important;
-        width: 100% !important;
-        margin-top: -2px !important;
-        height: 700px !important;
-
     }
 </style>
