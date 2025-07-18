@@ -206,7 +206,7 @@
                 original sound - generasiRAW</a> </section>
     </blockquote>
 
-    <script async src="//www.instagram.com/embed.js"></script>
+    <script async src="https://www.instagram.com/embed.js"></script>
     <script async src="https://www.tiktok.com/embed.js"></script>
 </div>
 
