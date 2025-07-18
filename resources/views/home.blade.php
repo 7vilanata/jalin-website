@@ -60,7 +60,7 @@
         <div class="bg-blue-600 text-white py-50 px-8 relative">
             <div class="flex flex-col justify-center">
 
-                <div class="flex justify-center items-center space-x-8  max-w-6xl mx-auto relative z-0">
+                <div class="flex justify-center items-center space-x-8 lg:mx-20 relative z-0">
     
                     <div class="flex-shrink-0  justify-end w-16 h-96 z-10 hidden md:flex">
                         <div
@@ -75,7 +75,7 @@
                     <div class="absolute inset-0 flex md:hidden mr-0 !top-[-45px] md:!top-[-60px] justify-end z-20 pointer-events-none">
                         <h1 class="uppercase font-semibold text-xs md:text-sm">Upcoming Event</h1>
                     </div>
-                    <div class="relative swiper swiper-container-1 h-96 w-full max-w-3xl flex-shrink">
+                    <div class="relative swiper swiper-container-1 h-96 w-full  flex-shrink">
     
                         <!-- Swiper Slides -->
                         <div class="swiper-wrapper">
@@ -98,7 +98,7 @@
                         <h1 class="uppercase font-semibold text-lg ml-[40px]">Upcoming Event</h1>
                     </div>
                 </div>
-                <div class="flex justify-center items-center space-x-8  mt-40 max-w-6xl mx-auto relative z-0">
+                <div class="flex justify-center items-center space-x-8  mt-40 lg:mx-20 relative z-0">
     
                     <div class="flex-shrink-0 justify-end w-16 h-96 z-10 hidden md:flex">
                         <div
@@ -113,7 +113,7 @@
                     <div class="absolute inset-0 flex md:hidden mr-0 !top-[-45px] md:!top-[-60px] justify-end z-20 pointer-events-none">
                         <h1 class="uppercase font-semibold text-xs md:text-sm">Upcoming Event</h1>
                     </div>
-                    <div class="relative swiper  swiper-container-2 h-96 w-full max-w-3xl flex-shrink">
+                    <div class="relative swiper  swiper-container-2 h-96 w-full flex-shrink">
     
                         <!-- Swiper Slides -->
                         <div class="swiper-wrapper">
@@ -140,7 +140,7 @@
                     </div>
                 </div>
     
-                <div class="flex justify-center items-center space-x-8  mt-40 max-w-6xl mx-auto relative z-0">
+                <div class="flex justify-center items-center space-x-8  mt-40 lg:mx-20 relative z-0">
     
                     <div class="flex-shrink-0 justify-end w-16 h-96 z-10 hidden md:flex">
                         <div
@@ -155,7 +155,7 @@
                     <div class="absolute inset-0 flex md:hidden mr-0 !top-[-45px] md:!top-[-60px] justify-end z-20 pointer-events-none">
                         <h1 class="uppercase font-semibold text-xs md:text-sm">Upcoming Event</h1>
                     </div>
-                    <div class="relative swiper  swiper-container-3 h-96 w-full max-w-3xl flex-shrink">
+                    <div class="relative swiper  swiper-container-3 h-96 w-full  flex-shrink">
     
                         <!-- Swiper Slides -->
                         <div class="swiper-wrapper">
