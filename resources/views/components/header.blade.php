@@ -9,14 +9,21 @@
          <!-- Hamburger Button (Mobile) -->
          <button id="nav-toggle" class="md:hidden text-white focus:outline-none relative z-50">
              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                     stroke="currentColor" stroke-width="2">
-                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
-                 </svg>
+                 stroke="currentColor" stroke-width="2">
+                 <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+             </svg>
          </button>
 
          <!-- Desktop Nav -->
          <nav class="hidden md:flex uppercase space-x-4">
-             <a href="/activities" class="px-2  ultraprint-font">Activities</a>
+             <a href="/activities" class="flex items-center gap-1 px-2 ultraprint-font">
+                 Activities
+                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3"
+                     stroke="currentColor" class="w-5 h-5">
+                     <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                 </svg>
+             </a>
+
              <a href="/about" class="px-2  ultraprint-font">About</a>
              <a href="/blog" class="px-2  ultraprint-font">Blog</a>
              <a href="/contact-us" class="px-2  ultraprint-font">Contact Us</a>
@@ -31,7 +38,8 @@
                          d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15M12 9l-3 3m0 0 3 3m-3-3h12.75" />
                  </svg>
              </i>
-             <a href="https://forms.gle/EdU7KEgaUUZam59F9" target="_blank" class="font-medium ultraprint-font">REGISTER</a>
+             <a href="https://forms.gle/EdU7KEgaUUZam59F9" target="_blank"
+                 class="font-medium ultraprint-font">REGISTER</a>
          </div>
      </div>
 
@@ -42,7 +50,10 @@
 
          <nav class="flex flex-col space-y-6 text-xl uppercase text-right mr-5 mt-15 ">
              <a href="/" class="block  ultraprint-font">Home</a>
-             <a href="/activities" class="block  ultraprint-font">Activities</a>
+             <a href="/activities" class="flex justify-end items-center gap-1  ultraprint-font">Activities <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3"
+                     stroke="currentColor" class="w-5 h-5">
+                     <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                 </svg></a>
              <a href="/about" class="block  ultraprint-font">About</a>
              <a href="/blog" class="block  ultraprint-font">Blog</a>
              <a href="/contact-us" class="block  ultraprint-font">Contact Us</a>

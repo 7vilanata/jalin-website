@@ -1,13 +1,13 @@
 <footer class=" text-white text-center ">
-    <div class="flex flex-col justify-center z-0 h-[300px] md:h-[500px] lg:h-[700px] 2xl:h-[1200px] rounded-t-[50px] w-full  overflow-x-hidden bg-cover bg-no-repeat bg-bottom  relative"
-        style="background-image: url('{{ asset('assets/img/footer-bg.webp') }}');">
+    <div class=" footer-bg flex flex-col justify-center z-0 h-[330px] md:h-[500px] lg:h-[700px] 2xl:h-[1200px] rounded-t-[50px] w-full  overflow-x-hidden bg-cover bg-no-repeat bg-bottom  relative">
         <div class="flex flex-col gap-5 md:gap-20 py-5 md:py-20 justify-self-center justify-between items-center">
             <img class="h-auto w-[30%] md:w-[15%] block z-0" src="{{ asset('assets/img/logo-footer.webp') }}"
                 alt="footer-logo">
 
             <div class=" flex flex-col items-center justify-center">
                 <img class="h-auto w-[50%] block z-0" src="{{ asset('assets/img/footer-text.webp') }}" alt="footer-text">
-                <h1 class=" uppercase ultraprint-font bg-[#FEFC8B] inline-block p-1 md:p-3 md:text-4xl text-[16px] rounded-[10px] md:rounded-2xl text-[#0353FF] font-medium">
+                <h1
+                    class=" uppercase ultraprint-font bg-[#FEFC8B] inline-block p-1 md:p-3 md:text-4xl text-[16px] rounded-[10px] md:rounded-2xl text-[#0353FF] font-medium">
                     Inspirasi Menyala, Ga Perlu Ngebul</h1>
             </div>
         </div>
@@ -35,7 +35,7 @@
                 class="flex items-center space-x-2 text-white text-[16px] md:text-2xl font-bold">
                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24"
                     viewBox="0 0 50 50">
-                    <path  fill="#ffffff"
+                    <path fill="#ffffff"
                         d="M 44.898438 14.5 C 44.5 12.300781 42.601563 10.699219 40.398438 10.199219 C 37.101563 9.5 31 9 24.398438 9 C 17.800781 9 11.601563 9.5 8.300781 10.199219 C 6.101563 10.699219 4.199219 12.199219 3.800781 14.5 C 3.398438 17 3 20.5 3 25 C 3 29.5 3.398438 33 3.898438 35.5 C 4.300781 37.699219 6.199219 39.300781 8.398438 39.800781 C 11.898438 40.5 17.898438 41 24.5 41 C 31.101563 41 37.101563 40.5 40.601563 39.800781 C 42.800781 39.300781 44.699219 37.800781 45.101563 35.5 C 45.5 33 46 29.398438 46.101563 25 C 45.898438 20.5 45.398438 17 44.898438 14.5 Z M 19 32 L 19 18 L 31.199219 25 Z">
                     </path>
                 </svg>
@@ -43,4 +43,18 @@
             </a>
         </div>
     </div>
+    <style>
+        .footer-bg {
+            background-image: url('/assets/img/footer-bg.webp');
+        }
+
+        @media (max-width: 768px) {
+            .footer-bg {
+                background-image: url('/assets/img/footer-bg-mobile.webp');
+                background-size: cover;
+
+            }
+        }
+    </style>
+
 </footer>
