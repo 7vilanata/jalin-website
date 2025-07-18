@@ -26,7 +26,7 @@
                 src="{{ asset('assets/img/logo-raw.webp') }}" alt="logo-raw">
         </div>
     </div>
-    <div id="app-content" class="hidden">
+    <div id="app-content">
         @include('components.header')
 
 
@@ -44,24 +44,24 @@
     <script>
         // Wait for the page to fully load
         window.onload = () => {
-            // Fade in the logo image
             const logo = document.getElementById('logo');
-            const splashScreen = document.getElementById('splash-screen');
-            const appContent = document.getElementById('app-content');
+            const splash = document.getElementById('splash-screen');
 
-            // Apply fade-in effect by changing opacity from 0 to 1
             logo.classList.remove('opacity-0');
             logo.classList.add('opacity-100');
-            appContent.classList.remove('hidden');
 
-            // After the logo fades in, hide the splash screen after a delay
+            // Fade out splash after delay
             setTimeout(() => {
-                logo.classList.remove('opacity-100');
-                logo.classList.add('opacity-0');
+                splash.classList.add('opacity-0');
+                splash.classList.add('pointer-events-none'); // Avoid blocking interaction
+            }, 1500);
 
-                splashScreen.style.display = 'none';
-            }, 2000);
+            // Optional: Remove splash from DOM after transition
+            setTimeout(() => {
+                splash.remove();
+            }, 2500);
         };
+
 
         // Optionally: Hide splash when switching tabs (visibilitychange event)
         document.addEventListener('visibilitychange', () => {
