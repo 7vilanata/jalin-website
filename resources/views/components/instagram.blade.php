@@ -90,6 +90,8 @@
             </p>
         </div>
     </blockquote>
+    <script async src="https://www.instagram.com/embed.js"></script>
+
     <blockquote class="instagram-media"
         data-instgrm-permalink="https://www.instagram.com/p/DL_zU97RMGE/?utm_source=ig_embed&amp;utm_campaign=loading"
         data-instgrm-version="14"
@@ -181,13 +183,14 @@
             </p>
         </div>
     </blockquote>
+    <script async src="https://www.instagram.com/embed.js"></script>
+
     <a  href="https://www.tiktok.com/@generasiraw/video/7526914044410776838?is_from_webapp=1&sender_device=pc&web_id=7501536853812856338" target="_blank">
         <img class="h-[571px]" src="{{ asset('assets/img/placeholder/tiktok_1.webp') }}" alt="Watch on TikTok">
     </a>
     <a href="https://www.tiktok.com/@generasiraw/video/7526877567090052358?is_from_webapp=1&sender_device=pc&web_id=7501536853812856338" target="_blank">
         <img class="h-[571px]" src="{{ asset('assets/img/placeholder/tiktok_2.webp') }}" alt="Watch on TikTok">
     </a>
-    <script async src="https://www.instagram.com/embed.js"></script>
 
 </div>
 
