@@ -55,12 +55,12 @@
             setTimeout(() => {
                 splash.classList.add('opacity-0');
                 splash.classList.add('pointer-events-none'); // Avoid blocking interaction
-            }, 1000);
+            }, 800);
 
             // Optional: Remove splash from DOM after transition
             setTimeout(() => {
                 splash.remove();
-            }, 2000);
+            }, 1000);
         };
 
 
