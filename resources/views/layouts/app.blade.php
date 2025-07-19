@@ -74,7 +74,6 @@
         // });
     </script>
 
-    <script async src="https://www.instagram.com/embed.js"></script>
 
     <!-- Livewire Scripts -->
     @livewireScripts

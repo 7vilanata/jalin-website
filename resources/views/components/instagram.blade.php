@@ -187,6 +187,7 @@
     <a href="https://www.tiktok.com/@generasiraw/video/7526877567090052358?is_from_webapp=1&sender_device=pc&web_id=7501536853812856338" target="_blank">
         <img class="h-[571px]" src="{{ asset('assets/img/placeholder/tiktok_2.webp') }}" alt="Watch on TikTok">
     </a>
+    <script async src="https://www.instagram.com/embed.js"></script>
 
 </div>
 
