@@ -1,19 +1,19 @@
 <div class="flex gap-5 justify-center flex-wrap p-4">
-    <a href="https://www.instagram.com/p/DJ6Olq9tInp/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+    <a href="https://www.instagram.com/p/DMPriCVxKbk/"
         target="_blank">
         <img class="h-[450px] " src="{{ asset('assets/img/placeholder/ig_1.webp') }}" alt="Watch on TikTok">
     </a>
 
-    <a href="https://www.instagram.com/p/DJtWm7UsZCe/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+    <a href="https://www.instagram.com/p/DMcegm_RU5W/"
         target="_blank">
         <img class="h-[450px] " src="{{ asset('assets/img/placeholder/ig_2.webp') }}" alt="Watch on TikTok">
     </a>
 
-    <a href="https://www.tiktok.com/@generasiraw/video/7526914044410776838?is_from_webapp=1&sender_device=pc&web_id=7501536853812856338"
+    <a href="https://www.tiktok.com/@generasiraw/video/7528679067194019077"
         target="_blank">
         <img class="h-[450px]" src="{{ asset('assets/img/placeholder/tiktok_1.webp') }}" alt="Watch on TikTok">
     </a>
-    <a href="https://www.tiktok.com/@generasiraw/video/7526877567090052358?is_from_webapp=1&sender_device=pc&web_id=7501536853812856338"
+    <a href="https://www.tiktok.com/@generasiraw/video/7528775432494222598"
         target="_blank">
         <img class="h-[450px]" src="{{ asset('assets/img/placeholder/tiktok_2.webp') }}" alt="Watch on TikTok">
     </a>
