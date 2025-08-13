@@ -14,13 +14,12 @@
     <!-- Tailwind CSS -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-
 </head>
 
 <body class="bg-gray-100">
 
     <div id="splash-screen"
-        class="fixed inset-0 flex items-center justify-center bg-gradient-to-br via-[#FF7E5F] to-[#FEB47B] from-[#6A82FB] bg-opacity-50 z-50">
+        class="fixed inset-0 flex items-center justify-center bg-gradient-to-br via-[#FF7E5F] to-[#FEB47B] from-[#6A82FB] bg-opacity-50 z-50 ">
         <div class="text-white text-3xl font-semibold">
             <img id="logo" class="w-[200px] h-auto opacity-0 transition-opacity duration-1000 ease-in-out "
                 src="{{ asset('assets/img/logo-raw.webp') }}" alt="logo-raw">
@@ -40,7 +39,7 @@
             @include('components.footer')
         @endif
     </div>
-    
+
 
     <script>
         // Wait for the page to fully load

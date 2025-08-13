@@ -10,26 +10,35 @@ use App\Http\Livewire\FeatureList;
 Route::get('/', function () {
     return view('home');
 });
-Route::get('/activities', function () {
+
+Route::get('/warkop-raw', function () {
+    return view('warkop');
+});
+Route::get('/raw-league', function () {
     return view('comingsoon');
 });
-Route::get('/about', function () {
+Route::get('/raw-fest', function () {
     return view('comingsoon');
 });
-Route::get('/blog', function () {
+
+Route::get('/parents', function () {
+    return view('parents');
+});
+Route::get('/explore', function () {
     return view('comingsoon');
 });
+Route::get('/explore/magazine', function () {
+    return view('comingsoon');
+});
+Route::get('/explore/quiz', function () {
+    return view('comingsoon');
+});
+Route::get('/explore/article', function () {
+    return view('article');
+});
+
 Route::get('/contact-us', function () {
     return view('comingsoon');
 });
 
-Route::get('/activities/warkop-raw', function () {
-    return view('comingsoon');
-});
-Route::get('/activities/raw-league', function () {
-    return view('comingsoon');
-});
-Route::get('/activities/raw-fest', function () {
-    return view('comingsoon');
-});
 

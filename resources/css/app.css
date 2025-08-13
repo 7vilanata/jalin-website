@@ -1,7 +1,7 @@
-@import url('https://fonts.cdnfonts.com/css/chillax');
+@import url("https://fonts.cdnfonts.com/css/chillax");
 
-@import 'tailwindcss';
-@import '../../vendor/livewire/flux/dist/flux.css';
+@import "tailwindcss";
+@import "../../vendor/livewire/flux/dist/flux.css";
 
 @source '../views';
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
@@ -11,7 +11,9 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
 
     --color-zinc-50: #fafafa;
     --color-zinc-100: #f5f5f5;
@@ -39,23 +41,23 @@
 }
 
 @font-face {
-  font-family: 'Ultraprint';
-  src: url('../../public/assets/font/ultraprint.woff2') format('woff2');
+    font-family: "Ultraprint";
+    src: url("../../public/assets/font/ultraprint.woff2") format("woff2");
 }
 
 .ultraprint-font {
-   font-family: 'Ultraprint', sans-serif;
+    font-family: "Ultraprint", sans-serif;
 }
 
-@layer base {
 
+@layer base {
     *,
     ::after,
     ::before,
     ::backdrop,
     ::file-selector-button {
         border-color: var(--color-gray-200, currentColor);
-        font-family: 'Chillax', sans-serif;
+        font-family: "Chillax", sans-serif;
         font-weight: 500;
     }
 }
@@ -65,7 +67,7 @@
 }
 
 [data-flux-label] {
-    @apply  !mb-0 !leading-tight;
+    @apply !mb-0 !leading-tight;
 }
 
 input:focus[data-flux-control],
@@ -73,6 +75,8 @@ textarea:focus[data-flux-control],
 select:focus[data-flux-control] {
     @apply outline-hidden ring-2 ring-accent ring-offset-2 ring-offset-accent-foreground;
 }
+
+
 
 /* \[:where(&)\]:size-4 {
     @apply size-4;

@@ -16,9 +16,16 @@
 
          <!-- Desktop Nav -->
          <nav class="hidden md:flex uppercase space-x-4">
+             <a href="/warkop-raw" class="px-2  ultraprint-font">Warkop RAWvolution</a>
+             <a href="/raw-league" class="px-2  ultraprint-font">Youth RAW League</a>
+             <a href="/raw-fest" class="px-2  ultraprint-font">Youth RAW Fest</a>
+
+
+
+             <a href="/parents" class="px-2  ultraprint-font">Parents</a>
              <div class="relative group">
-                 <a href="/activities" class="flex items-center gap-1 px-2 ultraprint-font">
-                     Activities
+                 <a href="/explore" class="flex items-center gap-1 px-2 ultraprint-font">
+                     Explore
                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3"
                          stroke="currentColor" class="w-5 h-5 transition-transform duration-300 group-hover:rotate-180">
                          <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
@@ -28,17 +35,13 @@
                  <!-- Dropdown Menu -->
                  <div
                      class="absolute left-0 mt-2 w-48 bg-white text-[#0353FF] rounded shadow-lg z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                     <a href="/activities/warkop-raw"
-                         class="block border-b-2 px-4 py-2 ultraprint-font hover:bg-gray-100">Warkop RAWvolution</a>
-                     <a href="/activities/raw-league"
-                         class="block border-b-2 px-4 py-2 ultraprint-font  hover:bg-gray-100">Youth RAW League</a>
-                     <a href="/activities/raw-fest" class="block px-4 py-2 ultraprint-font  hover:bg-gray-100">Youth
-                         RAW Fest</a>
+                     <a href="/explore/magazine"
+                         class="block border-b-2 px-4 py-2 ultraprint-font hover:bg-gray-100">Magazine</a>
+                     <a href="/explore/quiz"
+                         class="block border-b-2 px-4 py-2 ultraprint-font  hover:bg-gray-100">Quiz</a>
+                     <a href="/explore/article" class="block px-4 py-2 ultraprint-font  hover:bg-gray-100">Article</a>
                  </div>
              </div>
-
-             <a href="/about" class="px-2  ultraprint-font">About</a>
-             <a href="/blog" class="px-2  ultraprint-font">Blog</a>
              <a href="/contact-us" class="px-2  ultraprint-font">Contact Us</a>
          </nav>
 
@@ -58,17 +61,31 @@
 
      <!-- Fullscreen Mobile Dropdown -->
      <div id="mobile-menu"
-         class="fixed inset-0 bg-[#FF5632]/90  text-white hidden flex-col justify-center items-center z-50 md:hidden">
-         <button id="nav-close" class="absolute top-4 right-4 text-white text-3xl font-bold">&times;</button>
+         class="fixed inset-0 bg-[#0353FF]/97  text-white hidden flex-col justify-center items-center z-50 md:hidden">
+         <div class="flex justify-between">
+             <a class="absolute top-4 left-4" href="{{ url('/') }}">
+                 <img class="w-[60px] md:w-[100px]" src="{{ asset('assets/img/logo-raw.webp') }}" alt="logo-raw">
+             </a>
+             <button id="nav-close" class="absolute top-4 right-4 text-white text-3xl font-bold">&times;</button>
 
-         <nav class="flex flex-col space-y-6 text-xl uppercase text-right mr-5 mt-15 ">
-             <a href="/" class="block  ultraprint-font">Home</a>
+         </div>
+
+         <nav class="flex flex-col space-y-6 text-xl uppercase text-center mr-5 mt-20 ">
+             {{-- <a href="/" class="block  ultraprint-font">Home</a> --}}
+             
+
+
+             <a href="/warkop-raw" class="block  ultraprint-font">Warkop RAWvolution</a>
+             <a href="/raw-league" class="block  ultraprint-font">Youth RAW League</a>
+             <a href="/raw-fest" class="block  ultraprint-font">Youth RAW Fest</a>
+
+             <a href="/parents" class="block  ultraprint-font">Parents</a>
              <div x-data="{ open: false }" class="relative text-right">
 
                  <!-- Row with link and icon separately -->
                  <div class="flex justify-end items-center gap-1">
                      <!-- Real link -->
-                     <a href="/activities" class="ultraprint-font">Activities</a>
+                     <a href="/explore" class="ultraprint-font">Explore</a>
 
                      <!-- Arrow button triggers submenu -->
                      <button @click="open = !open" type="button" class="focus:outline-none">
@@ -83,18 +100,13 @@
                  <!-- Dropdown Submenu -->
                  <div x-show="open" x-transition @click.away="open = false"
                      class="mt-2 space-y-2 text-sm text-right flex flex-col items-end">
-                     <a href="/activities/warkop-raw"
-                         class="block  px-4 py-2 ultraprint-font hover:bg-gray-100">Warkop RAWvolution</a>
-                     <a href="/activities/raw-league"
-                         class="block px-4 py-2 ultraprint-font  hover:bg-gray-100">Youth RAW League</a>
-                     <a href="/activities/raw-fest" class="block px-4 py-2 ultraprint-font  hover:bg-gray-100">Youth
-                         RAW Fest</a>
+                     <a href="/explore/magazine"
+                         class="block  px-4 py-2 ultraprint-font hover:bg-gray-100">Magazine</a>
+                     <a href="/explore/quiz"
+                         class="block px-4 py-2 ultraprint-font  hover:bg-gray-100">Quiz</a>
+                     <a href="/explore/article" class="block px-4 py-2 ultraprint-font  hover:bg-gray-100">Article</a>
                  </div>
              </div>
-
-
-             <a href="/about" class="block  ultraprint-font">About</a>
-             <a href="/blog" class="block  ultraprint-font">Blog</a>
              <a href="/contact-us" class="block  ultraprint-font">Contact Us</a>
              <a href="https://forms.gle/EdU7KEgaUUZam59F9" target="_blank" class="block ultraprint-font">REGISTER</a>
          </nav>
