@@ -4,7 +4,7 @@ use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ArticleController;
 use App\Http\Livewire\FeatureList;
 
 Route::get('/', function () {
@@ -36,9 +36,12 @@ Route::get('/explore/magazine', function () {
 Route::get('/explore/quiz', function () {
     return view('explore.quiz');
 });
-Route::get('/explore/article', function () {
-    return view('explore.article');
+Route::get('/explore/articles', function () {
+    return view('explore.articles');
 });
+
+Route::get('/explore/articles', [ArticleController::class, 'index'])->name('explore.articles.index');
+Route::get('/explore/articles/{slug}', [ArticleController::class, 'show'])->name('explore.articles.show');
 
 
 

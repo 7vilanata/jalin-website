@@ -1,5 +1,5 @@
 <footer class=" text-white text-center ">
-    <div class=" footer-bg flex flex-col justify-center z-0 h-[330px] md:h-[500px] lg:h-[700px] 2xl:h-[1200px] rounded-t-[50px] w-full  overflow-x-hidden bg-cover bg-no-repeat bg-bottom  relative">
+    <div class=" footer-bg flex flex-col justify-center z-0 h-[330px] md:h-[500px] lg:h-[600px] 2xl:h-[900px] rounded-t-[50px] w-full  overflow-x-hidden bg-cover bg-no-repeat bg-bottom  relative">
         <div class="flex flex-col gap-5 md:gap-20 py-5 md:py-20 justify-self-center justify-between items-center">
             <img class="h-auto w-[30%] md:w-[15%] block z-0" src="{{ asset('assets/img/logo-footer.webp') }}"
                 alt="footer-logo">

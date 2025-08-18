@@ -15,9 +15,16 @@
                 <h1
                     class="uppercase ultraprint-font block p-3 text-4xl md:text-5xl  rounded-2xl mb-2 text-[#0353FF] font-medium">
                     article</h1>
-                <button type="submit" class="btn btn-primary rounded-2xl  text-[18px] bg-[#0353FF] text-white inline-block px-4 py-2">
-                    Lihat Selengkapnya
-                </button>
+                <div class="space-y-4">
+                    @foreach ($articles as $article)
+                        <x-card :campaign="$article->campaign_type" :title="$article->title"  :image="asset('storage/' . $article->thumbnail)" :link="route('explore.articles.show', $article->slug)" />
+                    @endforeach
+                </div>
+
+                <!-- Pagination -->
+                <div class="mt-4">
+                    {{ $articles->links() }} <!-- Pagination links -->
+                </div>
             </div>
         </div>
     </div>
