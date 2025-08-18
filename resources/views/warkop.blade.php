@@ -4,29 +4,18 @@
     <div class="relative">
         <div class=" z-0 md:h-[105vh] h-screen w-full overflow-x-hidden bg-cover relative"
             style="background-image: url('{{ asset('assets/img/atf-bg.webp') }}');">
-            <div
-                class="flex flex-col md:flex-row h-full w-full md:w-[90%] mx-auto justify-end md:justify-between items-center">
-                <div class="max-w-[80%] md:max-w-full">
-                    <h1 class=" text-white font-bold  text-4xl md:text-[35px] lg:text-6xl leading-tight  uppercase">Saatnya
-                        tunjukin <br class="block md:none" />
-                        <img class="inline-block w-[20%] mt-[-10px]" src="{{ asset('assets/img/logo-raw.webp') }}"
-                            alt="logo-raw">
-                        power lo!
-                    </h1>
-                    <h1
-                        class=" mt-2 bg-[#FEFC8B] inline-block p-1 md:p-3  text-[20px] md:text-2xl lg:text-4xl rounded-[10px] md:rounded-2xl text-[#0353FF] font-bold">
-                        #GenerasiGaButuhValidasi</h1>
-                </div>
-
-                <img class="h-auto w-full md:w-[60%] lg:w-[55%] mr-0 md:mr-[-70px]  self-end z-0"
-                    src="{{ asset('assets/img/image-boy-atf.webp') }}" alt="image-boy-atf">
+            <div class="flex h-full w-full  mx-auto justify-center items-center">
+                <img class="h-auto w-4/5 self-end z-0 hidden md:block" src="{{ asset('assets/img/boy-warkop.webp') }}"
+                    alt="boy-warkop">
+                <img class="h-auto w-full self-end z-0 block md:hidden" src="{{ asset('assets/img/boy-warkop-mobile.webp') }}"
+                    alt="boy-warkop-mobile">
             </div>
         </div>
         <div class="  bg-[#FFFFFF] rounded-t-[50px] md:rounded-t-[100px] py-20 mt-[-80px] px-10 md:px-50 z-10 relative">
             <h1 style="font-weight: 400"
-                class="ultraprint-font bg-[#FF5632] inline-block p-3 text-5xl rounded-2xl mb-2 text-[#FFFFFF] font-medium">
+                class="ultraprint-font bg-[#FF5632] inline-block p-3 text-[22px] md:text-5xl rounded-2xl mb-2 text-[#FFFFFF] font-medium">
                 ABOUT WARKOP RAWVOLUTION</h1>
-            <p class="text-[#0353FF] my-3 text-[16px] md:text-2xl"> <b>Warkop RAWvolution</b> itu lebih dari sekadar tempat
+            <p class="text-[#0353FF] my-3 text-[14px] md:text-2xl"> <b>Warkop RAWvolution</b> itu lebih dari sekadar tempat
                 nongkrong.
                 <br>
                 <br>
@@ -38,29 +27,29 @@
                 Di sini, kita nongkrong bisa sambil ngumpulin poin, ikutan tantangan, main game, tampil, sampai bikin karya
                 pertama lo sendiri. Tempat ini jadi wadah kita buat tumbuh bareng sambil tetap seru.
             </p>
-            <h1 class="text-center font-bold text-[#0353FF] text-[16px] md:text-2xl mt-10 mb-5">
+            <h1 class="text-center font-bold text-[#0353FF] text-[14px] md:text-2xl mt-10 mb-5">
                 Ada dua jenis warkop disini:
             </h1>
-            <div class="flex justify-center gap-3 mb-10">
-                <div class=" w-1/2 pb-6 bg-white border  rounded-2xl shadow-xl dark:bg-gray-800 ">
+            <div class="flex flex-wrap flex-row justify-center gap-3 mb-10">
+                <div class=" w-full md:w-5/12 pb-6 bg-white border  rounded-2xl shadow-xl dark:bg-gray-800 ">
                     <h1 class="font-bold bg-[#FF5632] p-3 text-2xl text-center rounded-2xl text-[#FFFFFF]">
                         Base Hub</h1>
-                    <p class="px-5 text-[#0353FF] my-3 text-center text-[16px] md:text-[20px]">
+                    <p class="px-5 text-[#0353FF] my-3 text-center text-[14px] md:text-[20px]">
                         Ruang yang dibuat untuk menampung aktivitas besar seperti workshop, performance, showcase, dan event
                         komunitas. Tempat ini jadi pusat energi kreatif yang dinamis dan ekspresif, ngasih space buat segala
                         hal.
                     </p>
                 </div>
-                <div class=" w-1/2 pb-6 bg-white border rounded-2xl shadow-xl dark:bg-gray-800 ">
+                <div class="  w-full md:w-5/12 pb-6 bg-white border rounded-2xl shadow-xl dark:bg-gray-800 ">
                     <h1 class="font-bold bg-[#FF5632] p-3 text-2xl text-center rounded-2xl text-[#FFFFFF]">
                         Corner Hub</h1>
-                    <p class="px-5 text-[#0353FF] my-3 text-center text-[16px] md:text-[20px]">
+                    <p class="px-5 text-[#0353FF] my-3 text-center text-[14px] md:text-[20px]">
                         Ruang kecil yang dekat, hangat, dan low-key. Formatnya kayak kantung nongkrong tempat ngobrol, tuker
                         ide mentah, atau recharge energi. Gak pretensius, cocok buat interaksi yang lebih santai.
                     </p>
                 </div>
             </div>
-            <p class="text-[#0353FF] text-center my-3 text-[16px] md:text-2xl">
+            <p class="text-[#0353FF] text-center my-3 text-[14px] md:text-2xl">
                 <b>Ini ruang bareng. Ini gerakan bareng.</b> <br>
                 Yuk ikuti perjalanannya, gabung komunitasnya, dan rasain langsung serunya!
                 <br><br>
@@ -68,7 +57,7 @@
             </p>
 
             <div class="my-30 text-center">
-                <h1 class="ultraprint-font inline-block p-3 text-5xl  rounded-2xl mb-2 text-[#0353FF] font-medium">
+                <h1 class="ultraprint-font inline-block p-3 text-4xl md:text-5xl  rounded-2xl mb-2 text-[#0353FF] font-medium">
                     UPCOMING SCHEDULE</h1>
             </div>
         </div>
@@ -99,15 +88,15 @@
                 <div class="flex justify-center items-center space-x-8 lg:mx-20 relative z-0">
                     <div class="my-30 text-center">
                         <h1
-                            class="ultraprint-font inline-block uppercase p-3 text-5xl  rounded-2xl mb-2 text-white font-medium">
+                            class="ultraprint-font inline-block uppercase p-3 text-4xl md:text-5xl  rounded-2xl mb-2 text-white font-medium">
                             WARKOP LOCATIONS</h1>
                         <div id="location-buttons">
                             <button type="button"
-                                class="location-btn font-bold text-[20px] text-white border-2 border-[#FF5632]  rounded-full px-5 py-2.5 text-center me-2 mb-2 bg-[#FF5632]">
+                                class="location-btn font-bold text-[18px] text-white border-2 border-[#FF5632]  rounded-full px-5 py-2.5 text-center me-2 mb-2 bg-[#FF5632]">
                                 Base Hub
                             </button>
                             <button type="button"
-                                class="location-btn text-white border-2 border-[#FF5632]  rounded-full font-bold text-[20px] px-5 py-2.5 text-center me-2 mb-2 bg-transparent">
+                                class="location-btn text-white text-[18px] border-2 border-[#FF5632]  rounded-full font-bold  px-5 py-2.5 text-center me-2 mb-2 bg-transparent">
                                 Corner Hub
                             </button>
                         </div>
@@ -140,12 +129,12 @@
             </div>
         </div>
         <div class="text-center py-20">
-            <h1 class=" ultraprint-font uppercase  inline-block p-3 text-5xl rounded-2xl text-[#0353FF] font-normal">
+            <h1 class=" ultraprint-font uppercase  inline-block p-3 text-4xl md:text-5xl rounded-2xl text-[#0353FF] font-normal">
                 Event Documentation</h1>
 
-            <div class="flex justify-center">
+            {{-- <div class="flex justify-center">
                 @include('components.instagram')
-            </div>
+            </div> --}}
         </div>
 
     </div>
