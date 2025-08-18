@@ -72,8 +72,6 @@
 
          <nav class="flex flex-col space-y-6 text-xl uppercase text-center mr-5 mt-20 ">
              {{-- <a href="/" class="block  ultraprint-font">Home</a> --}}
-             
-
 
              <a href="/warkop-raw" class="block  ultraprint-font">Warkop RAWvolution</a>
              <a href="/raw-league" class="block  ultraprint-font">Youth RAW League</a>
@@ -83,7 +81,7 @@
              <div x-data="{ open: false }" class="relative text-right">
 
                  <!-- Row with link and icon separately -->
-                 <div class="flex justify-end items-center gap-1">
+                 <div class="flex justify-center items-center gap-1">
                      <!-- Real link -->
                      <a href="/explore" class="ultraprint-font">Explore</a>
 
@@ -99,7 +97,7 @@
 
                  <!-- Dropdown Submenu -->
                  <div x-show="open" x-transition @click.away="open = false"
-                     class="mt-2 space-y-2 text-sm text-right flex flex-col items-end">
+                     class="mt-2 space-y-2 text-sm text-center flex flex-col items-center">
                      <a href="/explore/magazine"
                          class="block  px-4 py-2 ultraprint-font hover:bg-gray-100">Magazine</a>
                      <a href="/explore/quiz"

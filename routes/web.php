@@ -21,24 +21,24 @@ Route::get('/raw-fest', function () {
     return view('comingsoon');
 });
 
+Route::get('/contact-us', function () {
+    return view('contact-us');
+});
 Route::get('/parents', function () {
     return view('parents');
 });
 Route::get('/explore', function () {
-    return view('comingsoon');
+    return view('explore');
 });
 Route::get('/explore/magazine', function () {
-    return view('comingsoon');
+    return view('explore.magazine');
 });
 Route::get('/explore/quiz', function () {
-    return view('comingsoon');
+    return view('explore.quiz');
 });
 Route::get('/explore/article', function () {
-    return view('article');
+    return view('explore.article');
 });
 
-Route::get('/contact-us', function () {
-    return view('comingsoon');
-});
 
 
