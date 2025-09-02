@@ -35,8 +35,8 @@
                  <!-- Dropdown Menu -->
                  <div
                      class="absolute left-0 mt-2 w-48 bg-white text-[#0353FF] rounded shadow-lg z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                     <a href="/explore/magazine"
-                         class="block border-b-2 px-4 py-2 ultraprint-font hover:bg-gray-100">Magazine</a>
+                     <a href="/explore/raw-videos"
+                         class="block border-b-2 px-4 py-2 ultraprint-font hover:bg-gray-100">Raw Videos</a>
                      <a href="/explore/quiz"
                          class="block border-b-2 px-4 py-2 ultraprint-font  hover:bg-gray-100">Quiz</a>
                      <a href="/explore/articles" class="block px-4 py-2 ultraprint-font  hover:bg-gray-100">Article</a>
@@ -98,8 +98,8 @@
                  <!-- Dropdown Submenu -->
                  <div x-show="open" x-transition @click.away="open = false"
                      class="mt-2 space-y-2 text-sm text-center flex flex-col items-center">
-                     <a href="/explore/magazine"
-                         class="block  px-4 py-2 ultraprint-font hover:bg-gray-100">Magazine</a>
+                     {{-- <a href="/explore/magazine"
+                         class="block  px-4 py-2 ultraprint-font hover:bg-gray-100">Magazine</a> --}}
                      <a href="/explore/quiz"
                          class="block px-4 py-2 ultraprint-font  hover:bg-gray-100">Quiz</a>
                      <a href="/explore/article" class="block px-4 py-2 ultraprint-font  hover:bg-gray-100">Article</a>

@@ -1,0 +1,97 @@
+@extends('layouts.app')
+
+@section('content')
+    <div class="relative z-0 mb-[-50px] ">
+        <div class=" z-0 md:h-[105vh] h-screen w-full overflow-x-hidden bg-cover relative"
+            style="background-image: url('{{ asset('assets/img/atf-bg.webp') }}');">
+            <div class="flex h-full w-full mx-auto justify-center items-center">
+                <img class="h-auto w-4/5 self-end z-0 hidden md:block" src="{{ asset('assets/img/boy-warkop.webp') }}"
+                    alt="boy-warkop">
+                <img class="h-auto w-full self-end z-0 block md:hidden" src="{{ asset('assets/img/boy-warkop-mobile.webp') }}"
+                    alt="boy-warkop-mobile">
+            </div>
+        </div>
+        <div class=" bg-[#FFFFFF] rounded-t-[50px] md:rounded-t-[100px] py-20 mt-[-80px] px-3 md:px-15 z-10 relative">
+            <a href="{{ route('warkop') }}" class="text-[#0353FF]  text-sm md:text-lg">
+                < Back </a>
+
+                    <div class="my-10 text-center">
+
+                        <div class="flex flex-wrap gap-2  mb-4">
+                            @foreach ($location_list as $key => $location)
+                                <button
+                                    class="flex-1 text-[12px] md:text-[18px] location-button px-4 py-2 rounded-3xl border-[#FF5632] border-2 bg-none 
+                                    text-[#FF5632] hover:text-white  hover:bg-[#FF5632]"
+                                    data-location="{{ $key }}">
+                                    {{ $location }}
+                                </button>
+                            @endforeach
+                        </div>
+                        <div class="flex justify-center">
+                            <div id="schedule-list"
+                                class="flex flex-wrap justify-center lg:justify-start gap-1 md:gap-4 my-10 max-w-screen-xl w-full">
+                                @foreach ($schedules as $schedule)
+                                    @if ($schedule->slug)
+                                        <x-schedule-card :title="$schedule->title" :subtitle="$schedule->subtitle" :slug="route('warkop.schedule.show', $schedule->slug)"
+                                            :typehub="$schedule->type_hub" :location="$schedule->location" :streetloc="$schedule->street_loc" :image="asset('storage/' . $schedule->thumbnail)"
+                                            :scheduledate="$schedule->schedule_date" :starttime="$schedule->start_time" />
+                                    @endif
+                                @endforeach
+                            </div>
+                        </div>
+
+                        <!-- Pagination -->
+                        <div class="mt-4">
+                            {{ $schedules->links() }} <!-- Pagination links -->
+                        </div>
+                    </div>
+        </div>
+    </div>
+    @if (Route::is('warkop.schedule.index'))
+        <script>
+            document.querySelectorAll('.location-button').forEach(button => {
+                const list_loc = button.getAttribute('data-location');
+
+                if (list_loc === 'all') {
+                    button.classList.add('text-white','bg-[#FF5632]')
+                }
+
+                button.addEventListener('click', function() {
+                    const location = this.getAttribute('data-location');
+                    filterSchedules(location);
+
+                    document.querySelectorAll('.location-button').forEach(btn => {
+                        btn.classList.remove('text-white', 'bg-[#FF5632]'); // Reset all buttons to default background color
+                        btn.classList.add('text-[#FF5632]'); // Reset all buttons to default background color
+                    });
+
+                    // Set the background color of the clicked button to orange
+                    this.classList.add('text-white','bg-[#FF5632]')
+
+
+                });
+            });
+
+            function filterSchedules(location) {
+                // Show a loading state or clear the schedule list before filtering
+                const scheduleList = document.getElementById('schedule-list');
+                scheduleList.innerHTML = '<p>Loading...</p>'; // Optional: Loading state
+
+                fetch(`/schedules/filter?location=${location}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        scheduleList.innerHTML = ''; // Clear current schedule cards
+                        // Insert the HTML returned from the server into the DOM
+                        if(data.html){
+
+                            scheduleList.innerHTML = data.html;
+                        }else{
+                            scheduleList.innerHTML = "<div>No Schedule Found</div>";
+
+                        }
+                    })
+                    .catch(error => console.error('Error filtering schedules:', error));
+            }
+        </script>
+    @endif
+@endsection

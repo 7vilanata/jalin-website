@@ -11,7 +11,8 @@
                     alt="boy-warkop-mobile">
             </div>
         </div>
-        <div class="  bg-[#FFFFFF] rounded-t-[50px] md:rounded-t-[100px] py-20 mt-[-80px] px-10 md:px-50 z-10 relative">
+        <div
+            class="bg-[#FFFFFF] rounded-t-[50px] md:rounded-t-[100px] py-20 mt-[-80px] px-3 sm:px-10 lg:px-50 z-10 relative">
             <h1 style="font-weight: 400"
                 class="ultraprint-font bg-[#FF5632] inline-block p-3 text-[22px] md:text-5xl rounded-2xl mb-2 text-[#FFFFFF] font-medium">
                 ABOUT WARKOP RAWVOLUTION</h1>
@@ -57,8 +58,24 @@
             </p>
 
             <div class="my-30 text-center">
-                <h1 class="ultraprint-font inline-block p-3 text-4xl md:text-5xl  rounded-2xl mb-2 text-[#0353FF] font-medium">
+                <h1
+                    class="ultraprint-font inline-block p-3 text-4xl md:text-5xl  rounded-2xl mb-2 text-[#0353FF] font-medium">
                     UPCOMING SCHEDULE</h1>
+
+                <div class="flex justify-center p-0 w-full">
+                    <div class="flex flex-wrap justify-center gap-1 md:gap-4 my-10 md:max-w-screen-xl w-full">
+                        @foreach ($schedules as $schedule)
+                            <x-schedule-card :title="$schedule->title" :subtitle="$schedule->subtitle" :slug="route('warkop.schedule.show', $schedule->slug)" :typehub="$schedule->type_hub"
+                                :location="$schedule->location" :streetloc="$schedule->street_loc" :image="asset('storage/' . $schedule->thumbnail)" :scheduledate="$schedule->schedule_date" :starttime="$schedule->start_time" />
+                        @endforeach
+                    </div>
+                </div>
+                <a href="{{ url('/warkop-raw/schedule') }}">
+                    <button type="button"
+                        class="btn btn-primary rounded-2xl cursor-pointer text-[18px] bg-[#0353FF] text-white inline-block px-4 py-2">
+                        See More
+                    </button>
+                </a>
             </div>
         </div>
         <div class="overflow-hidden bg-yellow-300 whitespace-nowrap">
@@ -129,12 +146,43 @@
             </div>
         </div>
         <div class="text-center py-20">
-            <h1 class=" ultraprint-font uppercase  inline-block p-3 text-4xl md:text-5xl rounded-2xl text-[#0353FF] font-normal">
+            <h1 class=" ultraprint-font uppercase p-3 text-4xl md:text-5xl rounded-2xl text-[#0353FF] font-normal">
                 Event Documentation</h1>
 
-            {{-- <div class="flex justify-center">
-                @include('components.instagram')
-            </div> --}}
+            <!-- Slider wrapper -->
+            <div class="w-full p-20">
+                <div class="swiper gallerySwiper">
+                    <div class="swiper-wrapper">
+
+                        @foreach ($galleries as $gallery)
+                            @if ($gallery->thumbnail)
+                                <a href="{{ route('warkop.gallery.show', $gallery->slug) }}" class="swiper-slide block">
+                                    <div class="relative w-full aspect-video ">
+                                        <img src="{{ asset('storage/' . $gallery->thumbnail) }}" alt="{{ $gallery->title }}"
+                                            class="absolute inset-0 w-full h-full object-cover rounded-3xl"
+                                            loading="lazy" />
+                                    </div>
+                                </a>
+                            @endif
+                        @endforeach
+
+                    </div>
+
+                    <!-- Controls (optional) -->
+                    {{-- <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div> --}}
+                </div>
+            </div>
+
+
+
+
+            <a href="{{ url('/warkop-raw/gallery') }}">
+                <button type="button"
+                    class="btn btn-primary rounded-2xl cursor-pointer text-[18px] bg-[#0353FF] text-white inline-block px-4 py-2">
+                    See Details
+                </button>
+            </a>
         </div>
 
     </div>

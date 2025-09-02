@@ -27,15 +27,15 @@ class ArticleResource extends Resource
                 ->default(true)
                 ->columnSpanFull()
                 ->required(),
-             Forms\Components\Select::make('campaign_type')
+            Forms\Components\Select::make('campaign_type')
                 ->options([
-                    'warkop' => 'Warkop RAWVolution',
-                    'rawleague' => 'Youth RAWLeague',
-                    'rawfest' => 'Youth RAWFest',
-                    'others' => 'Others',
+                    'Warkop RAWVolution' => 'Warkop RAWVolution',
+                    'Youth RAWLeague' => 'Youth RAWLeague',
+                    'Youth RAWFest' => 'Youth RAWFest',
+                    'Others' => 'Others',
                 ])
                 ->label('Campaign Type')
-                ->default('warkop')
+                ->default('Warkop RAWVolution')
                 ->required(),
             Forms\Components\FileUpload::make('thumbnail')
                 ->image()
@@ -51,6 +51,7 @@ class ArticleResource extends Resource
                 Forms\Components\TextInput::make('slug')->required(),
                 Forms\Components\DatePicker::make('publish_date')
                     ->default(now())
+                    ->timezone('Asia/Jakarta')
                     ->required()
                     ->label('Publish Date'),
             ])
@@ -77,12 +78,25 @@ class ArticleResource extends Resource
         return $table->columns([
             Tables\Columns\TextColumn::make('title')->sortable()->searchable(),
             Tables\Columns\TextColumn::make('slug')->sortable()->searchable(),
+            Tables\Columns\TextColumn::make('publish_date')->sortable()->searchable(),
+
             Tables\Columns\IconColumn::make('is_published')
                 ->boolean()  // This will automatically handle true/false values
                 ->label('Published') // Optional: Add a custom label for the column
                 ->trueIcon('heroicon-o-check-circle') // Icon for true value
                 ->falseIcon('heroicon-o-x-circle') // Icon for false value
-        ]);
+        ])
+            ->filters([
+                //
+            ])
+            ->actions([
+                Tables\Actions\EditAction::make(),
+            ])
+            ->bulkActions([
+                Tables\Actions\BulkActionGroup::make([
+                    Tables\Actions\DeleteBulkAction::make(),
+                ]),
+            ]);;
     }
 
     public static function getPages(): array

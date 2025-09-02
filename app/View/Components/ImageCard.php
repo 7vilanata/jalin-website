@@ -1,0 +1,32 @@
+<?php
+
+namespace App\View\Components;
+
+use Closure;
+use Illuminate\Contracts\View\View;
+use Illuminate\View\Component;
+
+class ImageCard extends Component
+{
+    // Declare properties that the component will accept
+    public $title;
+    // public $content;
+    public $image;
+    public $link;
+
+    public function __construct($title,  $image = null, $link = null)
+    {
+        $this->title = $title;
+        // $this->content = $content;
+        $this->image = $image;
+        $this->link = $link;
+    }
+
+    /**
+     * Get the view / contents that represent the component.
+     */
+    public function render(): View|Closure|string
+    {
+        return view('components.image-card');
+    }
+}

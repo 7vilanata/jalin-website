@@ -5,15 +5,20 @@ use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\QuizController;
+use App\Http\Controllers\ExploreController;
+use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\MagazineController;
+use App\Http\Controllers\RawVideosController;
+use App\Http\Controllers\ScheduleController;
+use App\Http\Controllers\WarkopController;
 use App\Http\Livewire\FeatureList;
 
 Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/warkop-raw', function () {
-    return view('warkop');
-});
+
 Route::get('/raw-league', function () {
     return view('comingsoon');
 });
@@ -27,21 +32,27 @@ Route::get('/contact-us', function () {
 Route::get('/parents', function () {
     return view('parents');
 });
-Route::get('/explore', function () {
-    return view('explore');
-});
-Route::get('/explore/magazine', function () {
-    return view('explore.magazine');
-});
-Route::get('/explore/quiz', function () {
-    return view('explore.quiz');
-});
-Route::get('/explore/articles', function () {
-    return view('explore.articles');
+
+// warkop
+
+Route::prefix('warkop-raw')->group(function () {
+    // Add your filter route here under the prefix
+    Route::get('/', [WarkopController::class, 'index'])->name('warkop');
+    Route::get('/gallery/{slug}', [GalleryController::class, 'show'])->name('warkop.gallery.show');
+    Route::get('/gallery', [GalleryController::class, 'index'])->name('warkop.gallery.index');
+    Route::get('/schedule', [ScheduleController::class, 'index'])->name('warkop.schedule.index');
+    Route::get('/schedule/{slug}', [ScheduleController::class, 'show'])->name('warkop.schedule.show');
+    
 });
 
+// warkop (function filtering)
+    Route::get('/schedules/filter', [ScheduleController::class, 'filter'])->name('schedules.filter');
+
+
+
+// explore
+Route::get('/explore', [ExploreController::class, 'index'])->name('explore');
+Route::get('/explore/raw-videos', [RawVideosController::class, 'index'])->name('explore.videos.index');
+Route::get('/explore/quiz', [QuizController::class, 'index'])->name('explore.quiz.index');
 Route::get('/explore/articles', [ArticleController::class, 'index'])->name('explore.articles.index');
 Route::get('/explore/articles/{slug}', [ArticleController::class, 'show'])->name('explore.articles.show');
-
-
-
