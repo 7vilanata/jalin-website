@@ -1,5 +1,5 @@
 <div>
-    <div class="mt-30">
+    <div class="mt-10 md:mt-30">
         <h1 style="font-weight: 400"
             class="uppercase ultraprint-font p-3 text-[22px] text-center md:text-6xl rounded-2xl mb-2 text-[#0353FF] font-medium">
             Yang biasa ditanyain (FAQ)</h1>

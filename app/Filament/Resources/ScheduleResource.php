@@ -94,8 +94,9 @@ class ScheduleResource extends Resource
                 Forms\Components\RichEditor::make('content')->required(),
 
                 Forms\Components\TextInput::make('loc_link')
-                ->label('Google Maps Link')->required(),
-
+                    ->label('Google Maps Link')
+                    ->url()
+                    ->required(),
 
                 Forms\Components\Group::make([
                     Forms\Components\TextInput::make('lat')

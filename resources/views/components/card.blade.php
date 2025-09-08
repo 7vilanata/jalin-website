@@ -1,6 +1,6 @@
 <!-- resources/views/components/card.blade.php -->
 
-<div class="bg-white border rounded-lg overflow-hidden shadow-lg w-[308px] h-[472px]">
+<div class="bg-white border rounded-lg overflow-hidden shadow-lg w-[308px] h-[382px] md:h-[472px]">
 
     <!-- Card Image -->
     @if ($image)

@@ -250,6 +250,11 @@
                     Generasi RAW bukan sekadar komunitas, ini movement yang kami gerakkan bareng-bareng
                 </p>
             </div>
+            <div class="relative w-full pt-[56.25%] rounded-2xl overflow-hidden mt-5 md:mt-25">
+                <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/OZGjJXvqN_U"
+                    frameborder="0" allowfullscreen>
+                </iframe>
+            </div>
             <img class="mt-[20%] h-full w-full object-cover rounded-xl"
                 src="{{ asset('assets/img/before-footer-parent.webp') }}" alt="before-footer-parent">
         </section>
