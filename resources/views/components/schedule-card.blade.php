@@ -3,7 +3,7 @@
 <div
     class="bg-white border rounded-lg flex flex-col justify-between overflow-hidden shadow-lg w-[170px] md:w-[308px] h-auto">
     <div class="bg-[#0353FF] text-white content-top text-left p-4 md:p-7  ">
-        <h5 class="uppercase text-[9px] md:text-[10px] mb-2">{{ $type_hub }}</h5>
+        <h5 class="uppercase text-[9px] md:text-[10px] mb-2 text-[#FEFC8B]">{{ $type_hub }}</h5>
         @if ($slug)
             <a href="{{ $slug }}" class=" hover:underline block">
                 <h2 class="text-[14px] md:text-2xl font-semibold ">{{ Str::words($title, 6, '...') }}</h2>

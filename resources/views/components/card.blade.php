@@ -10,7 +10,7 @@
     <!-- Card Title -->
     <div class="bg-[#0353FF] text-white content-top text-left p-7  h-[30%]">
 
-        <span class="uppercase text-[12px]">{{ $campaign }}</span>
+        <span class="uppercase text-[12px] text-[#FEFC8B]">{{ $campaign }}</span>
 
         @if ($link)
             <a href="{{ $link }}" class=" hover:underline block">
