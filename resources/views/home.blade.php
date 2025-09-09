@@ -44,7 +44,7 @@
                 diceritain. Kita dengerin lo, bro
             </p>
             <div class="relative w-full pt-[56.25%] rounded-2xl overflow-hidden mt-5 md:mt-25">
-                <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/OZGjJXvqN_U"
+                <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/3mVB9zd3NUo"
                     frameborder="0" allowfullscreen>
                 </iframe>
             </div>
