@@ -61,21 +61,28 @@
                 <h1
                     class="ultraprint-font inline-block p-3 text-4xl md:text-5xl  rounded-2xl mb-2 text-[#0353FF] font-medium">
                     UPCOMING SCHEDULE</h1>
-
                 <div class="flex justify-center p-0 w-full">
-                    <div class="flex flex-wrap justify-center gap-1 md:gap-4 my-10 md:max-w-screen-xl w-full">
-                        @foreach ($schedules as $schedule)
-                            <x-schedule-card :title="$schedule->title" :subtitle="$schedule->subtitle" :slug="route('warkop.schedule.show', $schedule->slug)" :typehub="$schedule->type_hub"
-                                :location="$schedule->location" :streetloc="$schedule->street_loc" :image="asset('storage/' . $schedule->thumbnail)" :scheduledate="$schedule->schedule_date" :starttime="$schedule->start_time" />
-                        @endforeach
+                    <div class="flex flex-col">
+                        @if ($schedules->isEmpty())
+                            <p class="text-center text-lg text-gray-500">No schedule right now</p>
+                        @else
+                            <div class="flex flex-wrap justify-center gap-1 md:gap-4 my-10 md:max-w-screen-xl w-full">
+
+                                @foreach ($schedules as $schedule)
+                                    <x-schedule-card :title="$schedule->title" :subtitle="$schedule->subtitle" :slug="route('warkop.schedule.show', $schedule->slug)" :typehub="$schedule->type_hub"
+                                        :location="$schedule->location" :streetloc="$schedule->street_loc" :image="asset('storage/' . $schedule->thumbnail)" :scheduledate="$schedule->schedule_date"
+                                        :starttime="$schedule->start_time" />
+                                @endforeach
+                            </div>
+                            <a href="{{ url('/warkop-raw/schedule') }}">
+                                <button type="button"
+                                    class="btn btn-primary rounded-2xl cursor-pointer text-[18px] bg-[#0353FF] text-white inline-block px-4 py-2">
+                                    See More
+                                </button>
+                            </a>
+                        @endif
                     </div>
                 </div>
-                <a href="{{ url('/warkop-raw/schedule') }}">
-                    <button type="button"
-                        class="btn btn-primary rounded-2xl cursor-pointer text-[18px] bg-[#0353FF] text-white inline-block px-4 py-2">
-                        See More
-                    </button>
-                </a>
             </div>
         </div>
         <div class="overflow-hidden bg-yellow-300 whitespace-nowrap">
@@ -201,39 +208,44 @@
 
             <!-- Slider wrapper -->
             <div class="w-full p-20">
-                <div class="swiper gallerySwiper">
-                    <div class="swiper-wrapper">
+                @if ($galleries->isEmpty())
+                    <p class="text-center text-lg text-gray-500">No event documentation right now</p>
+                @else
+                    <div class="swiper gallerySwiper">
+                        <div class="swiper-wrapper">
+                            @foreach ($galleries as $gallery)
+                                @if ($gallery->thumbnail)
+                                    <a href="{{ route('warkop.gallery.show', $gallery->slug) }}"
+                                        class="swiper-slide block">
+                                        <div class="relative w-full aspect-video ">
+                                            <img src="{{ asset('storage/' . $gallery->thumbnail) }}"
+                                                alt="{{ $gallery->title }}"
+                                                class="absolute inset-0 w-full h-full object-cover rounded-3xl"
+                                                loading="lazy" />
+                                        </div>
+                                    </a>
+                                @endif
+                            @endforeach
+                        </div>
 
-                        @foreach ($galleries as $gallery)
-                            @if ($gallery->thumbnail)
-                                <a href="{{ route('warkop.gallery.show', $gallery->slug) }}" class="swiper-slide block">
-                                    <div class="relative w-full aspect-video ">
-                                        <img src="{{ asset('storage/' . $gallery->thumbnail) }}"
-                                            alt="{{ $gallery->title }}"
-                                            class="absolute inset-0 w-full h-full object-cover rounded-3xl"
-                                            loading="lazy" />
-                                    </div>
-                                </a>
-                            @endif
-                        @endforeach
-
+                        <!-- Controls (optional) -->
+                        @if (count($galleries) > 0)
+                            <div class="swiper-button-prev "></div>
+                            <div class="swiper-button-next"></div>
+                        @endif
                     </div>
-
-                    <!-- Controls (optional) -->
-                    @if (count($galleries) > 0)
-                        <div class="swiper-button-prev "></div>
-                        <div class="swiper-button-next"></div>
-                    @endif
-                </div>
+                @endif
             </div>
 
 
-            <a href="{{ url('/warkop-raw/gallery') }}">
-                <button type="button"
-                    class="btn btn-primary rounded-2xl cursor-pointer text-[18px] bg-[#0353FF] text-white inline-block px-4 py-2">
-                    See Details
-                </button>
-            </a>
+            @if (!$galleries->isEmpty())
+                <a href="{{ url('/warkop-raw/gallery') }}">
+                    <button type="button"
+                        class="btn btn-primary rounded-2xl cursor-pointer text-[18px] bg-[#0353FF] text-white inline-block px-4 py-2">
+                        See Details
+                    </button>
+                </a>
+            @endif
         </div>
 
         <dialog id="dialog" class="p-0 rounded-lg  m-auto">
@@ -243,97 +255,96 @@
         </dialog>
 
     </div>
-
-    <style>
-        @keyframes marquee {
-            0% {
-                transform: translateX(0%);
-            }
-
-            100% {
-                transform: translateX(-50%);
-            }
-        }
-
-        dialog::backdrop {
-            background-color: rgba(0, 0, 0, 0.372);
-
-            /* Tailwind utility classes via @apply */
-        }
-
-        #map-overlay {
-            pointer-events: none;
-            /* Ensure overlay doesn't block clicks */
-            position: absolute;
-            /* Ensure it's above the image */
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 40;
-            /* Make sure it's above the image but not interfering with clicks */
-        }
-
-        .marquee-wrapper {
-            display: flex;
-            width: 200%;
-            /* Important: double width for seamless scroll */
-            animation: marquee 20s linear infinite;
-        }
-
-        .swiper-button-prev,
-        .swiper-button-next {
-            color: white;
-        }
-
-        .swiper-button-prev::after,
-        .swiper-button-next::after {
-            font-size: 20px
-        }
-
-
-
-        .swiper-pagination-bullet {
-            background-color: white;
-            opacity: 1;
-            width: 11px;
-            height: 11px;
-        }
-
-        .swiper-pagination-bullet-active {
-            opacity: 1;
-            width: 20px;
-            height: 20px;
-        }
-
-        swiper-slide {
-            text-align: center;
-            font-size: 18px;
-            background: #444;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        swiper-slide img {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .dot {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background: red;
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            pointer-events: none;
-        }
-    </style>
-
     @if (Route::is('warkop'))
+        <style>
+            @keyframes marquee {
+                0% {
+                    transform: translateX(0%);
+                }
+
+                100% {
+                    transform: translateX(-50%);
+                }
+            }
+
+            dialog::backdrop {
+                background-color: rgba(0, 0, 0, 0.372);
+
+                /* Tailwind utility classes via @apply */
+            }
+
+            #map-overlay {
+                pointer-events: none;
+                /* Ensure overlay doesn't block clicks */
+                position: absolute;
+                /* Ensure it's above the image */
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 40;
+                /* Make sure it's above the image but not interfering with clicks */
+            }
+
+            .marquee-wrapper {
+                display: flex;
+                width: 200%;
+                /* Important: double width for seamless scroll */
+                animation: marquee 20s linear infinite;
+            }
+
+            .swiper-button-prev,
+            .swiper-button-next {
+                color: white;
+            }
+
+            .swiper-button-prev::after,
+            .swiper-button-next::after {
+                font-size: 20px
+            }
+
+
+
+            .swiper-pagination-bullet {
+                background-color: white;
+                opacity: 1;
+                width: 11px;
+                height: 11px;
+            }
+
+            .swiper-pagination-bullet-active {
+                opacity: 1;
+                width: 20px;
+                height: 20px;
+            }
+
+            swiper-slide {
+                text-align: center;
+                font-size: 18px;
+                background: #444;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            swiper-slide img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .dot {
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                background: red;
+                border-radius: 50%;
+                transform: translate(-50%, -50%);
+                pointer-events: none;
+            }
+        </style>
+
         <script>
             // dialog logic
             const dialog = document.getElementById('dialog');
@@ -453,7 +464,7 @@
                             top: `${parseFloat(item.y) * 100}%`,
                             transform: 'translate(-50%, -50%)',
                             pointerEvents: 'auto',
-                            backgroundColor:'red',
+                            backgroundColor: 'red',
                             zIndex: '50',
                         });
 

@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Services\GoogleSheetsService;
 use Livewire\Component;
 
 class ContactForm extends Component
@@ -19,11 +20,22 @@ class ContactForm extends Component
         'message' => 'required|max:200',
     ];
 
-    public function submit()
+    public function submit(GoogleSheetsService $googleSheetsService)
     {
         $this->validate();
 
-        // Here you can process the data, like sending an email or storing it in the database.
+        $data = [
+            $this->name,
+            $this->email,
+            $this->instansi,
+            $this->message,
+            now()->setTimezone('Asia/Jakarta')->toDateTimeString(),  // Add timestamp for when the message was sent
+        ];
+        $spreadsheetId = '1eStefVSVOGNy7mA_s8S-8gn0hP1NycQyVgvYbvODzDA';  // Replace with your actual Spreadsheet ID
+
+        // Append data to the Google Sheet
+        $googleSheetsService->appendToSpreadsheet($spreadsheetId, $data);
+
 
         session()->flash('success', 'Message sent successfully!');
         $this->reset();  // Reset the form after submission

@@ -1,7 +1,13 @@
 <div class="container my-10">
     @if (session()->has('success'))
-        <div class="alert alert-success bg-green-400 p-3 rounded-2xl text-white">
-            {{ session('success') }}
+        <div id="success-alert"
+            class="fixed top-20 right-5 z-[9999] bg-green-500 text-white p-4 rounded-2xl shadow-lg flex items-center justify-between space-x-2"
+            style="min-width: 250px; opacity:1; transition: opacity 0.5s ease;">
+            <span>{{ session('success') }}</span>
+            <button onclick="closeSuccessAlert()"
+                class="ml-4 font-bold text-white hover:text-gray-200 focus:outline-none">
+                ✕
+            </button>
         </div>
     @endif
 
@@ -9,7 +15,8 @@
         class="p-5 md:p-20 text-[#0353FF] bg-white shadow-[0px_0px_50px_0px_#00000036] rounded-2xl">
         @csrf
         <div class="mb-5 flex flex-col gap-3">
-            <label for="name" class="form-label font-bold">Nama <span class="text-[#FF5632] font-bold">*</span></label>
+            <label for="name" class="form-label font-bold">Nama <span
+                    class="text-[#FF5632] font-bold">*</span></label>
             <input type="text" class="form-control border-2 p-1 text-gray-500 border-[#00000026] rounded-2xl"
                 id="name" wire:model="name" required>
             @error('name')
@@ -43,7 +50,8 @@
                 <small class="form-text text-gray-400">maximum 200 characters</small>
             </div>
             <textarea class="form-control border-2 p-1 text-gray-500 border-[#00000026] rounded-2xl" id="message"
-                wire:model="message" rows="10" required></textarea>
+                wire:model="message" rows="10" maxlength="200" required oninput="updateCounter()"></textarea>
+            <div id="char-counter" class="text-sm text-gray-400 text-right">200 characters remaining</div>
             @error('message')
                 <div class="text-danger">{{ $message }}</div>
             @enderror
@@ -64,3 +72,23 @@
     </form>
 
 </div>
+
+<script>
+    function closeSuccessAlert() {
+        const alert = document.getElementById('success-alert');
+        if (alert) {
+            alert.style.opacity = 0;
+            setTimeout(() => alert.remove(), 500);
+        }
+    }
+    setTimeout(() => {
+        closeSuccessAlert();
+    }, 1000);
+
+    function updateCounter() {
+        const messageText = document.getElementById('message').value;
+        const remaining = 200 - messageText.length;
+        const counter = document.getElementById('char-counter');
+        counter.textContent = `${remaining} characters remaining`;
+    }
+</script>

@@ -18,45 +18,60 @@
                 <h1
                     class="uppercase ultraprint-font block p-3 text-4xl md:text-5xl rounded-2xl mb-2 text-[#0353FF] font-medium">
                     quiz</h1>
-                <div class="flex justify-center">
-                    <div class="flex flex-wrap justify-center gap-4 my-10 max-w-screen-xl w-full">
-                        @foreach ($quizzes as $quiz)
-                            <x-card :campaign="'Quiz'" :title="$quiz->title" :image="asset('storage/' . $quiz->thumbnail)" :link="$quiz->destination_link" />
-                        @endforeach
+
+                @if ($quizzes->isEmpty())
+                    <p class="text-center text-lg text-gray-500">No quiz right now</p>
+                @else
+                    <div class="flex justify-center">
+
+                        <div class="flex flex-wrap justify-center gap-4 my-10 max-w-screen-xl w-full">
+                            @foreach ($quizzes as $quiz)
+                                <x-card :campaign="'Quiz'" :title="$quiz->title" :image="asset('storage/' . $quiz->thumbnail)" :link="$quiz->destination_link" />
+                            @endforeach
+                        </div>
                     </div>
-                </div>
-                <a href="{{ url('/explore/quiz') }}" class="inline-block ">
-                    <button type="button"
-                        class="btn btn-primary rounded-2xl cursor-pointer text-[18px] bg-[#0353FF] text-white inline-block px-4 py-2">
-                        Lihat Selengkapnya
-                    </button>
-                </a>
+                    <a href="{{ url('/explore/quiz') }}" class="inline-block ">
+                        <button type="button"
+                            class="btn btn-primary rounded-2xl cursor-pointer text-[18px] bg-[#0353FF] text-white inline-block px-4 py-2">
+                            Lihat Selengkapnya
+                        </button>
+                    </a>
+                @endif
             </div>
             <div class="my-10 text-center">
                 <h1
                     class="uppercase ultraprint-font block p-3 text-4xl md:text-5xl rounded-2xl mb-2 text-[#0353FF] font-medium">
                     Article
                 </h1>
-                <div class="flex justify-center">
-                    <div class="flex flex-wrap justify-center gap-4 my-10 max-w-screen-xl w-full">
-                        @foreach ($articles as $article)
-                            <x-card :campaign="$article->campaign_type" :title="$article->title" :image="asset('storage/' . $article->thumbnail)" :link="route('explore.articles.show', $article->slug)" />
-                        @endforeach
+                @if ($articles->isEmpty())
+                    <p class="text-center text-lg text-gray-500">No articles right now</p>
+                @else
+                    <div class="flex justify-center">
+                        <div class="flex flex-wrap justify-center gap-4 my-10 max-w-screen-xl w-full">
+                            @foreach ($articles as $article)
+                                <x-card :campaign="$article->campaign_type" :title="$article->title" :image="asset('storage/' . $article->thumbnail)" :link="route('explore.articles.show', $article->slug)" />
+                            @endforeach
+                        </div>
                     </div>
-                </div>
-                <a href="{{ url('/explore/articles') }}" class="inline-block">
-                    <button type="button"
-                        class="btn btn-primary rounded-2xl cursor-pointer text-[18px] bg-[#0353FF] text-white inline-block px-4 py-2">
-                        Lihat Selengkapnya
-                    </button>
-                </a>
+                    <a href="{{ url('/explore/articles') }}" class="inline-block">
+                        <button type="button"
+                            class="btn btn-primary rounded-2xl cursor-pointer text-[18px] bg-[#0353FF] text-white inline-block px-4 py-2">
+                            Lihat Selengkapnya
+                        </button>
+                    </a>
+                @endif
+
             </div>
             <div class="my-10 text-center">
                 <h1
                     class="uppercase ultraprint-font block p-3 text-4xl md:text-5xl  rounded-2xl mb-2 text-[#0353FF] font-medium">
                     RAW Videos</h1>
-                <div class="flex justify-center p-0 w-full">
-                    <div class="flex flex-wrap justify-center  gap-4 my-10 max-w-screen-xl w-full">
+                {{-- @if ($articles->isEmpty()) --}}
+                    {{-- <p class="text-center text-lg text-gray-500">No videos right now</p> --}}
+                {{-- @else --}}
+                    <div class="flex justify-center p-0 w-full">
+
+                        <div class="flex flex-wrap justify-center  gap-4 my-10 max-w-screen-xl w-full">
                             <iframe class="w-full  md:w-[32%] h-[201px] md:h-[300px] rounded-2xl"
                                 src="https://www.youtube.com/embed/OZGjJXvqN_U" frameborder="0" allowfullscreen>
                             </iframe>
@@ -67,14 +82,15 @@
                             <iframe class="w-full  md:w-[32%] h-[201px] md:h-[300px] rounded-2xl"
                                 src="https://www.youtube.com/embed/OZGjJXvqN_U" frameborder="0" allowfullscreen>
                             </iframe>
+                        </div>
                     </div>
-                </div>
-                <a href="{{ url('/explore/raw-videos') }}" class="inline-block ">
-                    <button type="button"
-                        class="btn btn-primary rounded-2xl cursor-pointer text-[18px] bg-[#0353FF] text-white inline-block px-4 py-2">
-                        Lihat Selengkapnya
-                    </button>
-                </a>
+                    <a href="{{ url('/explore/raw-videos') }}" class="inline-block ">
+                        <button type="button"
+                            class="btn btn-primary rounded-2xl cursor-pointer text-[18px] bg-[#0353FF] text-white inline-block px-4 py-2">
+                            Lihat Selengkapnya
+                        </button>
+                    </a>
+                {{-- @endif --}}
             </div>
 
         </div>
