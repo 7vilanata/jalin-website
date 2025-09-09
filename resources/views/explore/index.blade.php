@@ -67,29 +67,27 @@
                     class="uppercase ultraprint-font block p-3 text-4xl md:text-5xl  rounded-2xl mb-2 text-[#0353FF] font-medium">
                     RAW Videos</h1>
                 {{-- @if ($articles->isEmpty()) --}}
-                    {{-- <p class="text-center text-lg text-gray-500">No videos right now</p> --}}
+                {{-- <p class="text-center text-lg text-gray-500">No videos right now</p> --}}
                 {{-- @else --}}
-                    <div class="flex justify-center p-0 w-full">
-
-                        <div class="flex flex-wrap justify-center  gap-4 my-10 max-w-screen-xl w-full">
-                            <iframe class="w-full  md:w-[32%] h-[201px] md:h-[300px] rounded-2xl"
-                                src="https://www.youtube.com/embed/OZGjJXvqN_U" frameborder="0" allowfullscreen>
-                            </iframe>
-
-                            <iframe class="w-full  md:w-[32%] h-[201px] md:h-[300px] rounded-2xl"
-                                src="https://www.youtube.com/embed/OZGjJXvqN_U" frameborder="0" allowfullscreen>
-                            </iframe>
-                            <iframe class="w-full  md:w-[32%] h-[201px] md:h-[300px] rounded-2xl"
-                                src="https://www.youtube.com/embed/OZGjJXvqN_U" frameborder="0" allowfullscreen>
-                            </iframe>
-                        </div>
+                <div class="flex justify-center p-0 w-full">
+                    <div class="flex flex-wrap justify-center  gap-4 my-10 max-w-screen-xl w-full">
+                        <iframe class="w-full  md:w-[32%] h-[201px] md:h-[300px] rounded-2xl"
+                            src="https://www.youtube.com/embed/3mVB9zd3NUo" frameborder="0" allowfullscreen>
+                        </iframe>
+                        <iframe class="w-full  md:w-[32%] h-[201px] md:h-[300px] rounded-2xl"
+                            src="https://www.youtube.com/embed/1YBa6c8WQ3o" frameborder="0" allowfullscreen>
+                        </iframe>
+                        <iframe class="w-full  md:w-[32%] h-[201px] md:h-[300px] rounded-2xl"
+                            src="https://www.youtube.com/embed/xbCaNmcQGnI" frameborder="0" allowfullscreen>
+                        </iframe>
                     </div>
-                    <a href="{{ url('/explore/raw-videos') }}" class="inline-block ">
-                        <button type="button"
-                            class="btn btn-primary rounded-2xl cursor-pointer text-[18px] bg-[#0353FF] text-white inline-block px-4 py-2">
-                            Lihat Selengkapnya
-                        </button>
-                    </a>
+                </div>
+                <a href="{{ url('/explore/raw-videos') }}" class="inline-block ">
+                    <button type="button"
+                        class="btn btn-primary rounded-2xl cursor-pointer text-[18px] bg-[#0353FF] text-white inline-block px-4 py-2">
+                        Lihat Selengkapnya
+                    </button>
+                </a>
                 {{-- @endif --}}
             </div>
 

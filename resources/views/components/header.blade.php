@@ -7,7 +7,7 @@
 
 
          <!-- Hamburger Button (Mobile) -->
-         <button id="nav-toggle" class="md:hidden text-white focus:outline-none relative z-50">
+         <button id="nav-toggle" class="lg:hidden text-white focus:outline-none relative z-50">
              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                  stroke="currentColor" stroke-width="2">
                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
@@ -15,7 +15,7 @@
          </button>
 
          <!-- Desktop Nav -->
-         <nav class="hidden md:flex uppercase space-x-4">
+         <nav class="hidden lg:flex uppercase space-x-4 text-[20px]">
              <a href="/warkop-raw" class="px-2  ultraprint-font">Warkop RAWvolution</a>
              <a href="/raw-league" class="px-2  ultraprint-font">Youth RAW League</a>
              <a href="/raw-fest" class="px-2  ultraprint-font">Youth RAW Fest</a>
@@ -35,18 +35,18 @@
                  <!-- Dropdown Menu -->
                  <div
                      class="absolute left-0 mt-2 w-48 bg-white text-[#0353FF] rounded shadow-lg z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                     <a href="/explore/quiz" class="block border-b-2  px-4 py-2 ultraprint-font  hover:bg-gray-100">Quiz</a>
+                     <a href="/explore/articles"
+                         class="block border-b-2 px-4 py-2 ultraprint-font  hover:bg-gray-100">Article</a>
                      <a href="/explore/raw-videos"
-                         class="block border-b-2 px-4 py-2 ultraprint-font hover:bg-gray-100">Raw Videos</a>
-                     <a href="/explore/quiz"
-                         class="block border-b-2 px-4 py-2 ultraprint-font  hover:bg-gray-100">Quiz</a>
-                     <a href="/explore/articles" class="block px-4 py-2 ultraprint-font  hover:bg-gray-100">Article</a>
+                         class="block px-4 py-2 ultraprint-font hover:bg-gray-100">Videos</a>
                  </div>
              </div>
              <a href="/contact-us" class="px-2  ultraprint-font">Contact Us</a>
          </nav>
 
          <!-- Auth Button (Desktop) -->
-         <div class="hidden md:flex gap-2 text-lg">
+         {{-- <div class="hidden md:flex gap-2 text-lg">
              <i>
                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                      stroke="currentColor" class="size-6">
@@ -56,7 +56,7 @@
              </i>
              <a href="https://forms.gle/EdU7KEgaUUZam59F9" target="_blank"
                  class="font-medium ultraprint-font">REGISTER</a>
-         </div>
+         </div> --}}
      </div>
 
      <!-- Fullscreen Mobile Dropdown -->
@@ -100,13 +100,13 @@
                      class="mt-2 space-y-2 text-sm text-center flex flex-col items-center">
                      {{-- <a href="/explore/magazine"
                          class="block  px-4 py-2 ultraprint-font hover:bg-gray-100">Magazine</a> --}}
-                     <a href="/explore/quiz"
-                         class="block px-4 py-2 ultraprint-font  hover:bg-gray-100">Quiz</a>
+                     <a href="/explore/quiz" class="block px-4 py-2 ultraprint-font  hover:bg-gray-100">Quiz</a>
                      <a href="/explore/article" class="block px-4 py-2 ultraprint-font  hover:bg-gray-100">Article</a>
+                     <a href="/explore/raw-videos" class="block px-4 py-2 ultraprint-font  hover:bg-gray-100">Videos</a>
                  </div>
              </div>
              <a href="/contact-us" class="block  ultraprint-font">Contact Us</a>
-             <a href="https://forms.gle/EdU7KEgaUUZam59F9" target="_blank" class="block ultraprint-font">REGISTER</a>
+             {{-- <a href="https://forms.gle/EdU7KEgaUUZam59F9" target="_blank" class="block ultraprint-font">REGISTER</a> --}}
          </nav>
      </div>
  </header>

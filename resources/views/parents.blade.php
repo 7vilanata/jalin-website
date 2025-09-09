@@ -243,7 +243,7 @@
                 @include('components.faq')
             </section>
             <div class=" mt-[10%] text-[14px] md:text-2xl">
-                <p style="font-weight: 400" class=" text-center  rounded-2xl mb-2 text-[#0353FF] font-semibold">
+                <p class=" text-center  rounded-2xl mb-2 text-[#0353FF] font-medium">
                     Kami tahu, jadi remaja cowok hari ini nggak gampang. Tapi kami juga percaya: dengan ruang yang pas dan
                     dukungan yang tulus, kami bisa berdiri kuat, dengan cara kami sendiri.</p>
                 <p class="text-center rounded-2xl mt-10 text-[#0353FF] font-semibold">
@@ -251,9 +251,15 @@
                 </p>
             </div>
             <div class="relative w-full pt-[56.25%] rounded-2xl overflow-hidden mt-5 md:mt-25">
-                <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/OZGjJXvqN_U"
+                <div class="absolute flex justify-center items-center top-0 left-0 w-full h-full bg-gray-400">
+                    <h1
+                        class=" ultraprint-font text-center text-white font-medium md:text-7xl text-4xl leading-tight  uppercase">
+                        COMING SOON
+                    </h1>
+                </div>
+                {{-- <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/OZGjJXvqN_U"
                     frameborder="0" allowfullscreen>
-                </iframe>
+                </iframe> --}}
             </div>
             <img class="mt-[20%] h-full w-full object-cover rounded-xl"
                 src="{{ asset('assets/img/before-footer-parent.webp') }}" alt="before-footer-parent">

@@ -1,5 +1,8 @@
 @extends('layouts.app')
-
+@php
+    $rows = 5;
+    $columns = 4;
+@endphp
 @section('content')
     <div class="relative">
         <div class=" z-0 md:h-[105vh] h-screen w-full overflow-x-hidden bg-cover relative"
@@ -85,31 +88,20 @@
                 </div>
             </div>
         </div>
-        <div class="overflow-hidden bg-yellow-300 whitespace-nowrap">
+        <div class="overflow-hidden bg-[#FEFC8B] whitespace-nowrap">
             <div class="marquee-wrapper">
-                <div class="flex">
-                    <span class="mx-4 text-blue-800 font-bold text-lg">#GenerasiGaButuhValidasi</span>
-                    <span class="mx-4 text-blue-800 font-bold text-lg">#GenerasiGaButuhValidasi</span>
-                    <span class="mx-4 text-blue-800 font-bold text-lg">#GenerasiGaButuhValidasi</span>
-                    <span class="mx-4 text-blue-800 font-bold text-lg">#GenerasiGaButuhValidasi</span>
-                </div>
-                <div class="flex">
-                    <span class="mx-4 text-blue-800 font-bold text-lg">#GenerasiGaButuhValidasi</span>
-                    <span class="mx-4 text-blue-800 font-bold text-lg">#GenerasiGaButuhValidasi</span>
-                    <span class="mx-4 text-blue-800 font-bold text-lg">#GenerasiGaButuhValidasi</span>
-                    <span class="mx-4 text-blue-800 font-bold text-lg">#GenerasiGaButuhValidasi</span>
-                </div>
-                <div class="flex">
-                    <span class="mx-4 text-blue-800 font-bold text-lg">#GenerasiGaButuhValidasi</span>
-                    <span class="mx-4 text-blue-800 font-bold text-lg">#GenerasiGaButuhValidasi</span>
-                    <span class="mx-4 text-blue-800 font-bold text-lg">#GenerasiGaButuhValidasi</span>
-                    <span class="mx-4 text-blue-800 font-bold text-lg">#GenerasiGaButuhValidasi</span>
-                </div>
+                @for ($i = 0; $i < $rows; $i++)
+                    <div class="flex">
+                        @for ($j = 0; $j < $columns; $j++)
+                            <span class="mx-4 text-blue-800 font-bold text-lg">Generasi RAW</span>
+                        @endfor
+                    </div>
+                @endfor
             </div>
         </div>
         <div class="bg-blue-600 text-white py-20 md:py-50 px-8 relative">
             <div class="flex flex-col justify-center">
-                <div class="flex justify-center items-center space-x-8 lg:mx-20 relative z-0">
+                <div class="flex justify-center items-center  lg:mx-10 relative z-0">
                     <div class="my-30 text-center">
                         <h1
                             class="ultraprint-font inline-block uppercase p-3 text-4xl md:text-5xl  rounded-2xl mb-2 text-white font-medium">
@@ -125,8 +117,8 @@
                             </button>
                         </div>
                         <div
-                            class="flex flex-col md:flex-row gap-10 md:gap-0 justify-center items-center md:justify-between mt-30">
-                            <div class="container mx-auto w-full md:w-1/2  relative">
+                            class="flex flex-col md:flex-row gap-10 md:gap-0 justify-center items-start md:justify-between mt-30">
+                            <div class="container mx-auto w-full md:w-[30vw]  relative flex-shrink-0">
                                 <img id="warkop_map" src="{{ asset('assets/img/warkop_place/all-location.webp') }}"
                                     alt="Locations" usemap="#map_locations"
                                     class="block w-full mx-auto transition-opacity duration-300 ease-in-out opacity-100">
@@ -165,7 +157,7 @@
                                 </div>
                             </div>
 
-                            <div class="w-full md:w-1/2 flex flex-col gap-3 ">
+                            <div class="w-full md:w-[30vw] flex  flex-none flex-col gap-3 ">
                                 @foreach ($location_list as $loc)
                                     <div class="location-text text-[18px] md:text-2xl cursor-pointer font-bold  text-white opacity-60 hover:opacity-100 "
                                         onclick="updateMapImage('{{ $loc }}')">
@@ -180,26 +172,15 @@
             </div>
 
         </div>
-        <div class="overflow-hidden bg-yellow-300 whitespace-nowrap">
+        <div class="overflow-hidden bg-[#FEFC8B] whitespace-nowrap">
             <div class="marquee-wrapper">
-                <div class="flex">
-                    <span class="mx-4 text-blue-800 font-bold text-lg">Inspirasi Menyala, Ga Perlu Ngebul</span>
-                    <span class="mx-4 text-blue-800 font-bold text-lg">Inspirasi Menyala, Ga Perlu Ngebul</span>
-                    <span class="mx-4 text-blue-800 font-bold text-lg">Inspirasi Menyala, Ga Perlu Ngebul</span>
-                    <span class="mx-4 text-blue-800 font-bold text-lg">Inspirasi Menyala, Ga Perlu Ngebul</span>
-                </div>
-                <div class="flex">
-                    <span class="mx-4 text-blue-800 font-bold text-lg">Inspirasi Menyala, Ga Perlu Ngebul</span>
-                    <span class="mx-4 text-blue-800 font-bold text-lg">Inspirasi Menyala, Ga Perlu Ngebul</span>
-                    <span class="mx-4 text-blue-800 font-bold text-lg">Inspirasi Menyala, Ga Perlu Ngebul</span>
-                    <span class="mx-4 text-blue-800 font-bold text-lg">Inspirasi Menyala, Ga Perlu Ngebul</span>
-                </div>
-                <div class="flex">
-                    <span class="mx-4 text-blue-800 font-bold text-lg">Inspirasi Menyala, Ga Perlu Ngebul</span>
-                    <span class="mx-4 text-blue-800 font-bold text-lg">Inspirasi Menyala, Ga Perlu Ngebul</span>
-                    <span class="mx-4 text-blue-800 font-bold text-lg">Inspirasi Menyala, Ga Perlu Ngebul</span>
-                    <span class="mx-4 text-blue-800 font-bold text-lg">Inspirasi Menyala, Ga Perlu Ngebul</span>
-                </div>
+                @for ($i = 0; $i < $rows; $i++)
+                    <div class="flex">
+                        @for ($j = 0; $j < $columns; $j++)
+                            <span class="mx-4 text-blue-800 font-bold text-lg">#GenerasiGaButuhValidasi</span>
+                        @endfor
+                    </div>
+                @endfor
             </div>
         </div>
         <div class="text-center py-20">
@@ -215,8 +196,7 @@
                         <div class="swiper-wrapper">
                             @foreach ($galleries as $gallery)
                                 @if ($gallery->thumbnail)
-                                    <a href="{{ route('warkop.gallery.show', $gallery->slug) }}"
-                                        class="swiper-slide block">
+                                    <a href="{{ route('warkop.gallery.show', $gallery->slug) }}" class="swiper-slide block">
                                         <div class="relative w-full aspect-video ">
                                             <img src="{{ asset('storage/' . $gallery->thumbnail) }}"
                                                 alt="{{ $gallery->title }}"

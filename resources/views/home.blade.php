@@ -1,5 +1,8 @@
 @extends('layouts.app')
-
+@php
+    $rows = 5;
+    $columns = 4;
+@endphp
 @section('content')
     <div class="relative">
         <div class=" z-0 md:h-[105vh] h-screen w-full overflow-x-hidden bg-cover relative"
@@ -46,26 +49,15 @@
                 </iframe>
             </div>
         </div>
-        <div class="overflow-hidden bg-yellow-300 whitespace-nowrap">
+        <div class="overflow-hidden bg-[#FEFC8B] whitespace-nowrap">
             <div class="marquee-wrapper">
-                <div class="flex">
-                    <span class="mx-4 text-blue-800 font-bold text-lg">#GenerasiGaButuhValidasi</span>
-                    <span class="mx-4 text-blue-800 font-bold text-lg">#GenerasiGaButuhValidasi</span>
-                    <span class="mx-4 text-blue-800 font-bold text-lg">#GenerasiGaButuhValidasi</span>
-                    <span class="mx-4 text-blue-800 font-bold text-lg">#GenerasiGaButuhValidasi</span>
-                </div>
-                <div class="flex">
-                    <span class="mx-4 text-blue-800 font-bold text-lg">#GenerasiGaButuhValidasi</span>
-                    <span class="mx-4 text-blue-800 font-bold text-lg">#GenerasiGaButuhValidasi</span>
-                    <span class="mx-4 text-blue-800 font-bold text-lg">#GenerasiGaButuhValidasi</span>
-                    <span class="mx-4 text-blue-800 font-bold text-lg">#GenerasiGaButuhValidasi</span>
-                </div>
-                <div class="flex">
-                    <span class="mx-4 text-blue-800 font-bold text-lg">#GenerasiGaButuhValidasi</span>
-                    <span class="mx-4 text-blue-800 font-bold text-lg">#GenerasiGaButuhValidasi</span>
-                    <span class="mx-4 text-blue-800 font-bold text-lg">#GenerasiGaButuhValidasi</span>
-                    <span class="mx-4 text-blue-800 font-bold text-lg">#GenerasiGaButuhValidasi</span>
-                </div>
+                @for ($i = 0; $i < $rows; $i++)
+                    <div class="flex">
+                        @for ($j = 0; $j < $columns; $j++)
+                            <span class="mx-4 text-blue-800 font-bold text-lg">Generasi RAW</span>
+                        @endfor
+                    </div>
+                @endfor
             </div>
         </div>
         <div class="bg-blue-600 text-white py-20 md:py-50 px-8 relative">
@@ -201,26 +193,15 @@
             </div>
 
         </div>
-        <div class="overflow-hidden bg-yellow-300 whitespace-nowrap">
+        <div class="overflow-hidden bg-[#FEFC8B] whitespace-nowrap">
             <div class="marquee-wrapper">
-                <div class="flex">
-                    <span class="mx-4 text-blue-800 font-bold text-lg">Inspirasi Menyala, Ga Perlu Ngebul</span>
-                    <span class="mx-4 text-blue-800 font-bold text-lg">Inspirasi Menyala, Ga Perlu Ngebul</span>
-                    <span class="mx-4 text-blue-800 font-bold text-lg">Inspirasi Menyala, Ga Perlu Ngebul</span>
-                    <span class="mx-4 text-blue-800 font-bold text-lg">Inspirasi Menyala, Ga Perlu Ngebul</span>
-                </div>
-                <div class="flex">
-                    <span class="mx-4 text-blue-800 font-bold text-lg">Inspirasi Menyala, Ga Perlu Ngebul</span>
-                    <span class="mx-4 text-blue-800 font-bold text-lg">Inspirasi Menyala, Ga Perlu Ngebul</span>
-                    <span class="mx-4 text-blue-800 font-bold text-lg">Inspirasi Menyala, Ga Perlu Ngebul</span>
-                    <span class="mx-4 text-blue-800 font-bold text-lg">Inspirasi Menyala, Ga Perlu Ngebul</span>
-                </div>
-                <div class="flex">
-                    <span class="mx-4 text-blue-800 font-bold text-lg">Inspirasi Menyala, Ga Perlu Ngebul</span>
-                    <span class="mx-4 text-blue-800 font-bold text-lg">Inspirasi Menyala, Ga Perlu Ngebul</span>
-                    <span class="mx-4 text-blue-800 font-bold text-lg">Inspirasi Menyala, Ga Perlu Ngebul</span>
-                    <span class="mx-4 text-blue-800 font-bold text-lg">Inspirasi Menyala, Ga Perlu Ngebul</span>
-                </div>
+                @for ($i = 0; $i < $rows; $i++)
+                    <div class="flex">
+                        @for ($j = 0; $j < $columns; $j++)
+                            <span class="mx-4 text-blue-800 font-bold text-lg">#GenerasiGaButuhValidasi</span>
+                        @endfor
+                    </div>
+                @endfor
             </div>
         </div>
         <div class="text-center py-20">
