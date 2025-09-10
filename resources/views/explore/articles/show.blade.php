@@ -1,5 +1,31 @@
 @extends('layouts.app')
 
+@php
+    if ($article) {
+        $metaTitle = $article->meta_title;
+        $metaDescription = $article->meta_description;
+
+        // Set keywords based on locale
+        $metaKeywords = $article->meta_keywords;
+
+        // Set Open Graph image
+        $ogImage = asset($article->thumbnail ?? '');
+        $slug = $article->slug;
+        $publishedAt = $article->created_at;
+    }
+@endphp
+
+@if ($article !== null)
+    @section('title', $metaTitle)
+    @section('author', 'Admin')
+    @section('meta_description', $metaDescription)
+    @section('meta_keywords', $metaKeywords)
+    @section('published_at', $publishedAt)
+    @section('og_title', $metaTitle)
+    @section('og_description', $metaDescription)
+    @section('og_image', $ogImage)
+@endif
+
 @section('content')
     <div class="relative z-0 mb-[-50px]">
         <!-- Background image container -->
@@ -36,7 +62,8 @@
         <hr>
         {{-- Related Articles --}}
         <div class="bg-[#FFFFFF] py-20">
-            <h1 class="uppercase text-center ultraprint-font block text-4xl md:text-6xl rounded-2xl mb-2 text-[#0353FF] font-medium">
+            <h1
+                class="uppercase text-center ultraprint-font block text-4xl md:text-6xl rounded-2xl mb-2 text-[#0353FF] font-medium">
                 Related Article
             </h1>
             <div class="flex justify-center">

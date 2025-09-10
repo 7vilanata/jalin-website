@@ -6,6 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Generasi RAW - #GenerasiGaButuhValidasi')</title>
     <meta name="description" content="@yield('meta_description', '#GenerasiGaButuhValidasi')">
+    <meta name="keywords" content="@yield('meta_keywords', '#GenerasiGaButuhValidasi')">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+    <!-- Open Graph for Social Media -->
+    <meta property="og:locale" content="{{ app()->getLocale() . '_' . strtoupper(app()->getLocale()) }}">
+    <meta property="og:title" content="@yield('og_title', 'Generasi RAW - #GenerasiGaButuhValidasi')">
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="@yield('og_description', '')">
+    <meta property="og:image" content="@yield('og_image', '')">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:image:alt" content="@yield('og_image', '')">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="article:publisher" content="">
+    <meta property="article:author" content="@yield('author', 'admin')">
+    <meta property="article:published_time" content="@yield('published_at', '')">
+    <meta property="article:modified_time" content="@yield('published_at', '')">
+
+    <meta name="twitter:card" content="">
+    <meta name="twitter:site" content="">
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:title" content="@yield('og_title', 'Generasi RAW - #GenerasiGaButuhValidasi')">
+    <meta name="twitter:description" content="@yield('og_description', '')">
+    <meta name="twitter:image" content="@yield('og_image', '')">
+    <meta name="twitter:image:alt" content="">
+
+    <link rel="canonical" href="{{ url()->current() }}">
 
     <!-- Livewire Styles -->
     @livewireStyles
