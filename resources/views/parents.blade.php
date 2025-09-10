@@ -3,7 +3,7 @@
 @section('content')
     <section class="relative">
         <section class=" z-0 md:h-[105vh] h-screen w-full overflow-x-hidden bg-cover relative"
-            style="background-image: url('{{ asset('assets/img/atf-bg.webp') }}');">
+            style="background-image: url('{{ asset('assets/gif/mesh-gradient.gif') }}');">
             <div class="flex h-full w-full mx-auto justify-center items-center">
                 <img class="h-auto w-4/5 self-end z-0 hidden md:block" src="{{ asset('assets/img/boy-parents.webp') }}"
                     alt="boy-parents">

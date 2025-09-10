@@ -11,7 +11,7 @@ class GalleryController extends Controller
     {
 
         $galleries = Gallery::query()
-
+            ->where('is_published', true)
             ->orderBy('image_date', 'desc')
             ->paginate(10); 
 

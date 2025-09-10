@@ -34,7 +34,7 @@ class QuizResource extends Resource
             Forms\Components\FileUpload::make('thumbnail')
                 ->image()
                 ->disk('public')
-                ->directory('images')
+                ->directory('quiz')
                 ->columnSpanFull()
                 ->visibility('public')
                 ->preserveFilenames()

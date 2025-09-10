@@ -36,7 +36,7 @@ class GalleryResource extends Resource
                 Forms\Components\FileUpload::make('thumbnail')
                     ->image()
                     ->disk('public')
-                    ->directory('images')
+                    ->directory('gallery')
                     ->columnSpanFull()
                     ->visibility('public')
                     ->preserveFilenames()

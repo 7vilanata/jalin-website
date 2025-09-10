@@ -40,7 +40,7 @@ class ArticleResource extends Resource
             Forms\Components\FileUpload::make('thumbnail')
                 ->image()
                 ->disk('public')
-                ->directory('images')
+                ->directory('article')
                 ->columnSpanFull()
                 ->visibility('public')
                 ->preserveFilenames()

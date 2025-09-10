@@ -44,7 +44,7 @@ class ScheduleResource extends Resource
                 Forms\Components\FileUpload::make('thumbnail')
                     ->image()
                     ->disk('public')
-                    ->directory('images')
+                    ->directory('schedule')
                     ->columnSpanFull()
                     ->visibility('public')
                     ->preserveFilenames()

@@ -8,7 +8,6 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\ExploreController;
 use App\Http\Controllers\GalleryController;
-use App\Http\Controllers\MagazineController;
 use App\Http\Controllers\RawVideosController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\WarkopController;

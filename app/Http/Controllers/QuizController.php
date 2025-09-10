@@ -11,7 +11,7 @@ class QuizController extends Controller
     {
 
         $quizzes = Quiz::query()
-
+            ->where('is_published', true)
             ->orderBy('publish_date', 'desc')
             ->paginate(10); // You can change the pagination value if needed
 

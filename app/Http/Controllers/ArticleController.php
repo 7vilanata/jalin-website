@@ -13,7 +13,7 @@ class ArticleController extends Controller
     {
 
         $articles = Article::query()
-
+            ->where('is_published', true)
             ->orderBy('publish_date', 'desc')
             ->paginate(10); // You can change the pagination value if needed
 
@@ -25,7 +25,7 @@ class ArticleController extends Controller
     {
         $article = Article::where('slug', $slug)->firstOrFail();
         $article->content = preg_replace('/<figcaption[^>]*>.*?<\/figcaption>/is', '', $article->content);
-        
+
         $articles = Article::where('slug', '!=', $slug)  // Ensure the slug is not equal to the current article
             ->limit(4)  // Limit the number of articles to 4
             ->get();  // Get the articles

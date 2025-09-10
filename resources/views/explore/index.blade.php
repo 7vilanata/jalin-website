@@ -3,7 +3,7 @@
 @section('content')
     <div class="relative z-0 mb-[-50px] ">
         <div class=" z-0 md:h-[105vh] h-screen w-full overflow-x-hidden bg-cover relative"
-            style="background-image: url('{{ asset('assets/img/atf-bg.webp') }}');">
+            style="background-image: url('{{ asset('assets/gif/mesh-gradient.gif') }}');;">
             <div class="flex h-full w-full mx-auto justify-center items-center">
                 <img class="h-auto w-4/5 self-end z-0 hidden md:block" src="{{ asset('assets/img/boy-explore.webp') }}"
                     alt="boy-explore">
@@ -66,29 +66,26 @@
                 <h1
                     class="uppercase ultraprint-font block p-3 text-4xl md:text-5xl  rounded-2xl mb-2 text-[#0353FF] font-medium">
                     RAW Videos</h1>
-                {{-- @if ($articles->isEmpty()) --}}
-                {{-- <p class="text-center text-lg text-gray-500">No videos right now</p> --}}
-                {{-- @else --}}
-                <div class="flex justify-center p-0 w-full">
-                    <div class="flex flex-wrap justify-center  gap-4 my-10 max-w-screen-xl w-full">
-                        <iframe class="w-full  md:w-[32%] h-[201px] md:h-[300px] rounded-2xl"
-                            src="https://www.youtube.com/embed/3mVB9zd3NUo" frameborder="0" allowfullscreen>
-                        </iframe>
-                        <iframe class="w-full  md:w-[32%] h-[201px] md:h-[300px] rounded-2xl"
-                            src="https://www.youtube.com/embed/1YBa6c8WQ3o" frameborder="0" allowfullscreen>
-                        </iframe>
-                        <iframe class="w-full  md:w-[32%] h-[201px] md:h-[300px] rounded-2xl"
-                            src="https://www.youtube.com/embed/xbCaNmcQGnI" frameborder="0" allowfullscreen>
-                        </iframe>
+                @if ($videos->isEmpty())
+                    <p class="text-center text-lg text-gray-500">No videos right now</p>
+                @else
+                    <div class="flex justify-center p-0 w-full">
+                        <div class="flex flex-wrap justify-center  gap-4 my-10 max-w-screen-xl w-full">
+                            @foreach ($videos as $video)
+                                <iframe class="w-full  md:w-[32%] h-[201px] md:h-[300px] rounded-2xl"
+                                    src="{{ $video->embed_link }}" frameborder="0" allowfullscreen>
+                                </iframe>
+                            @endforeach
+
+                        </div>
                     </div>
-                </div>
-                <a href="{{ url('/explore/raw-videos') }}" class="inline-block ">
-                    <button type="button"
-                        class="btn btn-primary rounded-2xl cursor-pointer text-[18px] bg-[#0353FF] text-white inline-block px-4 py-2">
-                        Lihat Selengkapnya
-                    </button>
-                </a>
-                {{-- @endif --}}
+                    <a href="{{ url('/explore/raw-videos') }}" class="inline-block ">
+                        <button type="button"
+                            class="btn btn-primary rounded-2xl cursor-pointer text-[18px] bg-[#0353FF] text-white inline-block px-4 py-2">
+                            Lihat Selengkapnya
+                        </button>
+                    </a>
+                @endif
             </div>
 
         </div>

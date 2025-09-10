@@ -16,15 +16,15 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 class VideosResource extends Resource
 {
     protected static ?string $model = Videos::class;
-
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationGroup = 'Content';
+    protected static ?string $navigationIcon = 'heroicon-o-video-camera';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 Forms\Components\Toggle::make('is_published')
-                    ->label('Publish Schedule')
+                    ->label('Publish Video')
                     ->onColor('success')
                     ->offColor('danger')
                     ->default(true)
@@ -42,7 +42,8 @@ class VideosResource extends Resource
                 Forms\Components\TextInput::make('embed_link')
                     ->label('Link Embed Youtube')
                     ->url()
-                    ->required(),
+                    ->required()
+                    ->placeholder('Example: https://www.youtube.com/embed/1YBa6c8WQ3o (Replace VIDEO_ID with your YouTube video ID)'),
             ])->columns(1);
     }
 
@@ -51,11 +52,7 @@ class VideosResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('title')->sortable()->searchable(),
-                Tables\Columns\IconColumn::make('embed_link')
-                    ->label('Map')
-                    ->icon('heroicon-o-link')
-                    ->url(fn($record) => "{$record->embed_link}", true)
-                    ->openUrlInNewTab(),
+
                 Tables\Columns\IconColumn::make('is_published')
                     ->boolean()
                     ->label('Published')

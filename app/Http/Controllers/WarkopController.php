@@ -19,9 +19,9 @@ class WarkopController extends Controller
             'Jakarta Selatan' => 'Jakarta Selatan',
         ];
 
-        $galleries = Gallery::limit(5)->get();
-        $schedules = Schedule::limit(4)->get();
-        $warloc = WarkopLocation::get();
+        $galleries = Gallery::where('is_published', true)->limit(5)->get();
+        $schedules = Schedule::where('is_published', true)->limit(4)->get();
+        $warloc = WarkopLocation::where('is_published', true)->get();
         return view('warkop.index', compact('galleries','schedules','location_list', 'warloc'));
     }
 }

@@ -11,7 +11,7 @@ class ScheduleController extends Controller
     {
 
         $schedules = Schedule::query()
-
+            ->where('is_published', true)
             ->orderBy('schedule_date', 'desc')
             ->paginate(10);
 
@@ -33,6 +33,7 @@ class ScheduleController extends Controller
 
         // Filter schedules based on location
         $schedules = Schedule::query()
+            ->where('is_published', true)
             ->when($location !== 'all', function ($query) use ($location) {
                 return $query->where('location', $location);
             })
