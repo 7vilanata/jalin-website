@@ -101,7 +101,7 @@
                      {{-- <a href="/explore/magazine"
                          class="block  px-4 py-2 ultraprint-font hover:bg-gray-100">Magazine</a> --}}
                      <a href="/explore/quiz" class="block px-4 py-2 ultraprint-font  hover:bg-gray-100">Quiz</a>
-                     <a href="/explore/article" class="block px-4 py-2 ultraprint-font  hover:bg-gray-100">Article</a>
+                     <a href="/explore/articles" class="block px-4 py-2 ultraprint-font  hover:bg-gray-100">Article</a>
                      <a href="/explore/raw-videos" class="block px-4 py-2 ultraprint-font  hover:bg-gray-100">Videos</a>
                  </div>
              </div>
