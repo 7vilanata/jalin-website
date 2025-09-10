@@ -226,6 +226,12 @@
             }
         }
 
+        .instagram-media {
+            max-width: 22% !important;
+            height: 571px !important;
+            width: 100% !important;
+        }
+
         .marquee-wrapper {
             display: flex;
             width: 200%;

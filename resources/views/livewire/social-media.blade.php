@@ -1,5 +1,4 @@
 <div>
-
     <div class="flex gap-5 justify-center flex-wrap p-4">
         @if (!$socmedTiktok->isEmpty())
             @foreach ($socmedTiktok as $tiktok)
@@ -17,10 +16,4 @@
         @endif
     </div>
 </div>
-<style>
-    .instagram-media {
-        max-width: 22% !important;
-        height: 571px !important;
-        width: 100% !important;
-    }
-</style>
+
