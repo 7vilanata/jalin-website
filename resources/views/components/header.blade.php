@@ -61,7 +61,7 @@
 
      <!-- Fullscreen Mobile Dropdown -->
      <div id="mobile-menu"
-         class="fixed inset-0 bg-[#0353FF]/97  text-white hidden flex-col justify-center items-center z-50 md:hidden">
+         class="fixed inset-0 bg-[#0353FF]/97  text-white hidden flex-col justify-center items-center z-50 lg:hidden">
          <div class="flex justify-between">
              <a class="absolute top-4 left-4" href="{{ url('/') }}">
                  <img class="w-[60px] md:w-[100px]" src="{{ asset('assets/img/logo-raw.webp') }}" alt="logo-raw">
