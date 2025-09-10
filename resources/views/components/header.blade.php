@@ -46,7 +46,7 @@
          </nav>
 
          <!-- Auth Button (Desktop) -->
-         <div class="hidden md:flex gap-2 text-lg opacity-0">
+         <div class="hidden lg:flex gap-2 text-lg opacity-0">
              <i>
                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                      stroke="currentColor" class="size-6">
