@@ -71,23 +71,24 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const lazyBackgrounds = document.querySelectorAll(".lazy-background");
-            const placeholderImage =
-            `{{ asset('assets/img/atf-bg.webp') }}`; // Path to your placeholder image
-            const gifImage = `{{ asset('assets/gif/mesh-gradient.gif') }}`; // Path to your GIF
 
             // Set the initial background image as the placeholder
-            lazyBackgrounds.style.backgroundImage = `url('${placeholderImage}')`;
 
+            lazyBackgrounds.forEach(background => {
+                background.style.backgroundImage = `url('{{ asset('assets/gif/mesh-gradient.gif') }}')`;
+            });
+
+            // Create the IntersectionObserver
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         // Create an Image object to load the GIF
                         const img = new Image();
-                        img.src = gifImage;
+                        img.src = `{{ asset('assets/gif/mesh-gradient.gif') }}`;
 
                         // When the GIF is loaded, replace the background image
                         img.onload = () => {
-                            lazyBackground.style.backgroundImage = `url('${gifImage}')`;
+                            entry.target.style.backgroundImage = `url('{{ asset('assets/gif/mesh-gradient.gif') }}')`;
                         };
 
                         // Stop observing once the background is set
@@ -98,7 +99,10 @@
                 threshold: 0.1
             }); // 0.1 means the element is 10% in the viewport
 
-            observer.observe(lazyBackground);
+            // Observe each element with the 'lazy-background' class
+            lazyBackgrounds.forEach(element => {
+                observer.observe(element);
+            });
         });
 
         const logo = document.getElementById('logo');

@@ -5,8 +5,7 @@
 @endphp
 @section('content')
     <div class="relative">
-        <div class="lazy-background z-0 md:h-[105vh] h-screen w-full overflow-x-hidden bg-cover relative"
-            style="background-image: url('{{ asset('assets/gif/mesh-gradient.gif') }}');">
+        <div class="lazy-background z-0 md:h-[105vh] h-screen w-full overflow-x-hidden bg-cover relative">
             <div
                 class="flex flex-col md:flex-row h-full w-full md:w-[90%] mx-auto justify-end md:justify-between items-center">
                 <div class="max-w-[80%] md:max-w-full">

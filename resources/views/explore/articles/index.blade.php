@@ -2,8 +2,7 @@
 
 @section('content')
     <div class="relative z-0 mb-[-50px] ">
-        <div class="lazy-background z-0 md:h-[105vh] h-screen w-full overflow-x-hidden bg-cover relative"
-            style="background-image: url('{{ asset('assets/gif/mesh-gradient.gif') }}');;">
+        <div class="lazy-background z-0 md:h-[105vh] h-screen w-full overflow-x-hidden bg-cover relative">
             <div class="flex h-full w-full mx-auto justify-center items-center">
                 <img class="h-auto w-4/5 self-end z-0 hidden md:block" src="{{ asset('assets/img/explore/article.webp') }}"
                     alt="article">
