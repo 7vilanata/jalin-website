@@ -76,7 +76,7 @@
             const gifImage = `{{ asset('assets/gif/mesh-gradient.gif') }}`; // Path to your GIF
 
             // Set the initial background image as the placeholder
-            lazyBackground.style.backgroundImage = `url('${placeholderImage}')`;
+            lazyBackgrounds.style.backgroundImage = `url('${placeholderImage}')`;
 
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
