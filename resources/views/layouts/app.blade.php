@@ -69,25 +69,22 @@
 
 
     <script>
-        // Wait for the page to fully load
-        window.onload = () => {
-            const logo = document.getElementById('logo');
-            const splash = document.getElementById('splash-screen');
+        const logo = document.getElementById('logo');
+        const splash = document.getElementById('splash-screen');
 
-            logo.classList.remove('opacity-0');
-            logo.classList.add('opacity-100');
+        logo.classList.remove('opacity-0');
+        logo.classList.add('opacity-100');
 
-            // Fade out splash after delay
-            setTimeout(() => {
-                splash.classList.add('opacity-0');
-                splash.classList.add('pointer-events-none'); // Avoid blocking interaction
-            }, 800);
+        // Fade out splash after delay
+        setTimeout(() => {
+            splash.classList.add('opacity-0');
+            splash.classList.add('pointer-events-none'); // Avoid blocking interaction
+        }, 800);
 
-            // Optional: Remove splash from DOM after transition
-            setTimeout(() => {
-                splash.remove();
-            }, 1000);
-        };
+        // Optional: Remove splash from DOM after transition
+        setTimeout(() => {
+            splash.remove();
+        }, 1000);
 
 
         // Optionally: Hide splash when switching tabs (visibilitychange event)
