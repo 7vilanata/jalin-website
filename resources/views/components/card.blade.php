@@ -8,7 +8,7 @@
     @endif
 
     <!-- Card Title -->
-    <div class="bg-[#0353FF] text-white content-top text-left p-7  h-[30%]">
+    <div class="bg-[#0353FF] text-white content-top text-left p-5 md:p-7  h-[30%]">
 
         <span class="uppercase text-[12px] text-[#FEFC8B]">{{ $campaign }}</span>
 

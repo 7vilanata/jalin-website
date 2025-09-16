@@ -69,6 +69,38 @@
 
 
     <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const lazyBackgrounds = document.querySelectorAll(".lazy-background");
+            const placeholderImage =
+            `{{ asset('assets/img/atf-bg.webp') }}`; // Path to your placeholder image
+            const gifImage = `{{ asset('assets/gif/mesh-gradient.gif') }}`; // Path to your GIF
+
+            // Set the initial background image as the placeholder
+            lazyBackground.style.backgroundImage = `url('${placeholderImage}')`;
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Create an Image object to load the GIF
+                        const img = new Image();
+                        img.src = gifImage;
+
+                        // When the GIF is loaded, replace the background image
+                        img.onload = () => {
+                            lazyBackground.style.backgroundImage = `url('${gifImage}')`;
+                        };
+
+                        // Stop observing once the background is set
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            }); // 0.1 means the element is 10% in the viewport
+
+            observer.observe(lazyBackground);
+        });
+
         const logo = document.getElementById('logo');
         const splash = document.getElementById('splash-screen');
 
@@ -85,16 +117,6 @@
         setTimeout(() => {
             splash.remove();
         }, 1000);
-
-
-        // Optionally: Hide splash when switching tabs (visibilitychange event)
-        // document.addEventListener('visibilitychange', () => {
-        //     if (document.hidden) {
-        //         document.getElementById('splash-screen').style.display = 'block';
-        //     } else {
-        //         document.getElementById('splash-screen').style.display = 'none';
-        //     }
-        // });
     </script>
 
 
