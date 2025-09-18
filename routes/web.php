@@ -55,3 +55,7 @@ Route::get('/explore/raw-videos', [RawVideosController::class, 'index'])->name('
 Route::get('/explore/quiz', [QuizController::class, 'index'])->name('explore.quiz.index');
 Route::get('/explore/articles', [ArticleController::class, 'index'])->name('explore.articles.index');
 Route::get('/explore/articles/{slug}', [ArticleController::class, 'show'])->name('explore.articles.show');
+
+
+
+Route::get('/send-test-email', [TestMailController::class, 'sendTestEmail']);
