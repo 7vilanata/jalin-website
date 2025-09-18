@@ -10,7 +10,6 @@ use App\Http\Controllers\ExploreController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\RawVideosController;
 use App\Http\Controllers\ScheduleController;
-use App\Http\Controllers\TestMailController;
 use App\Http\Controllers\WarkopController;
 use App\Http\Livewire\FeatureList;
 
@@ -58,5 +57,3 @@ Route::get('/explore/articles', [ArticleController::class, 'index'])->name('expl
 Route::get('/explore/articles/{slug}', [ArticleController::class, 'show'])->name('explore.articles.show');
 
 
-
-Route::get('/send-test-email', [TestMailController::class, 'sendTestEmail']);
