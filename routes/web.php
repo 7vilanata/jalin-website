@@ -10,6 +10,7 @@ use App\Http\Controllers\ExploreController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\RawVideosController;
 use App\Http\Controllers\ScheduleController;
+use App\Http\Controllers\TestMailController;
 use App\Http\Controllers\WarkopController;
 use App\Http\Livewire\FeatureList;
 
