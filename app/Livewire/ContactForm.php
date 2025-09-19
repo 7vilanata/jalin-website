@@ -2,7 +2,7 @@
 
 namespace App\Livewire;
 
-use App\Services\GoogleSheetsService;
+// use App\Services\GoogleSheetsService;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Http;
@@ -64,7 +64,6 @@ class ContactForm extends Component
                 return response()->json(['error' => 'Failed to obtain access token'], 400);
             }
         }
-
         // Set the Zoho Mail API endpoint (replace with your actual account ID)
         $accountId = config('services.zoho.acc_id');  // Replace with your actual Zoho account ID
         $url = "https://mail.zoho.com/api/accounts/{$accountId}/messages";
@@ -72,16 +71,18 @@ class ContactForm extends Component
         // Prepare the email data
         $emailData = [
             'fromAddress' => 'admin@generasiraw.org',  // Your Zoho email address
-            'toAddresses' => [$email],                 // Recipient email address
+            'toAddress' => $email,                 // Recipient email address
             'subject' => 'Contact Form Message',
             'content' => "Name: {$name}\nInstansi: {$instansi}\nMessage: {$message}",  // Email body
-            'isHTML' => false, // Set to true if sending HTML content
         ];
 
         // Send the email via Zoho API using the access token
         $response = Http::withHeaders([
             'Authorization' => 'Zoho-oauthtoken ' . $accessToken,
+            'Accept' => 'application/json',
+            'Content-Type' => 'application/json'
         ])->post($url, $emailData);
+
 
         // Check if the request was successful
         if ($response->successful()) {
@@ -91,17 +92,18 @@ class ContactForm extends Component
             Log::error('Failed to send email via Zoho: ' . $response->body());
             return response()->json(['error' => 'Failed to send email', 'details' => $response->body()], 400);
         }
+
     }
 
     public function generateAccessToken()
     {
         $refreshToken = config('services.zoho.refresh_token');
         // dd(config('app.zoho.refresh_token'));
-        
+
         if (!$refreshToken) {
             return null; // Return null if refresh token is not available
         }
-        
+
         $response = Http::asForm()->post('https://accounts.zoho.com/oauth/v2/token', [
             'client_id' => config('services.zoho.client_id'),
             'client_secret' => config('services.zoho.client_secret'),
@@ -117,7 +119,7 @@ class ContactForm extends Component
 
             // Store tokens in cookies for 30 days
             $newAccessToken = $data['access_token'];
-            $expiresAt =$data['expires_in'];
+            $expiresAt = $data['expires_in'];
 
             // Set the access token cookie (expires in 30 days)
             Cookie::queue('zoho_access_token', $newAccessToken, $expiresAt);
