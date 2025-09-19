@@ -8,6 +8,7 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\ExploreController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\OAuthController;
 use App\Http\Controllers\RawVideosController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\WarkopController;
@@ -56,4 +57,5 @@ Route::get('/explore/quiz', [QuizController::class, 'index'])->name('explore.qui
 Route::get('/explore/articles', [ArticleController::class, 'index'])->name('explore.articles.index');
 Route::get('/explore/articles/{slug}', [ArticleController::class, 'show'])->name('explore.articles.show');
 
+Route::get('/callback', [OAuthController::class, 'handleCallback']);
 
