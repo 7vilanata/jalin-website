@@ -73,7 +73,8 @@ class ContactForm extends Component
             'fromAddress' => 'admin@generasiraw.org',  // Your Zoho email address
             'toAddress' => $email,                 // Recipient email address
             'subject' => 'Contact Form Message',
-            'content' => "Name: {$name}\nInstansi: {$instansi}\nMessage: {$message}",  // Email body
+            'content' =>  "Name: <b>{$name}</b><br>Instansi: <b>{$instansi}</b><br>Message: <b>{$message}</b> ",  // Email body
+
         ];
 
         // Send the email via Zoho API using the access token
@@ -92,7 +93,6 @@ class ContactForm extends Component
             Log::error('Failed to send email via Zoho: ' . $response->body());
             return response()->json(['error' => 'Failed to send email', 'details' => $response->body()], 400);
         }
-
     }
 
     public function generateAccessToken()
