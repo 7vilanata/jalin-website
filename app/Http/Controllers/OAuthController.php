@@ -20,7 +20,7 @@ class OAuthController extends Controller
             'client_id' => config('services.zoho.client_id'),
             'client_secret' => config('services.zoho.client_secret'),
             'code' => $authorizationCode,
-            'redirect_uri' => 'http://localhost:8000/callback',
+            'redirect_uri' => 'https://generasiraw.org/callback',
             'grant_type' => 'authorization_code',
             'scope' => 'ZohoMail.messages.CREATE'
         ]);
