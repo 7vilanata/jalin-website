@@ -66,7 +66,7 @@ class ContactForm extends Component
         }
 
         // Set the Zoho Mail API endpoint (replace with your actual account ID)
-        $accountId = env('ZOHO_ACC_ID');  // Replace with your actual Zoho account ID
+        $accountId = config('services.zoho.acc_id');  // Replace with your actual Zoho account ID
         $url = "https://mail.zoho.com/api/accounts/{$accountId}/messages";
 
         // Prepare the email data
@@ -95,19 +95,21 @@ class ContactForm extends Component
 
     public function generateAccessToken()
     {
-        $refreshToken = env('ZOHO_REFRESH_TOKEN');
-
+        $refreshToken = config('services.zoho.refresh_token');
+        // dd(config('app.zoho.refresh_token'));
+        
         if (!$refreshToken) {
             return null; // Return null if refresh token is not available
         }
-
+        
         $response = Http::asForm()->post('https://accounts.zoho.com/oauth/v2/token', [
-            'client_id' => env('ZOHO_CLIENT_ID'),
-            'client_secret' => env('ZOHO_CLIENT_SECRET'),
+            'client_id' => config('services.zoho.client_id'),
+            'client_secret' => config('services.zoho.client_secret'),
             'refresh_token' => $refreshToken,
             'grant_type' => 'refresh_token',
-            // 'scope' => 'ZohoMail.accounts.READ'
+            'scope' => 'ZohoMail.messages.CREATE'
         ]);
+
 
         // Process the response (access token, refresh token, etc.)
         if ($response->successful()) {
@@ -115,11 +117,11 @@ class ContactForm extends Component
 
             // Store tokens in cookies for 30 days
             $newAccessToken = $data['access_token'];
-            $expiresAt = now()->addSeconds($data['expires_in']);
+            $expiresAt =$data['expires_in'];
 
             // Set the access token cookie (expires in 30 days)
             Cookie::queue('zoho_access_token', $newAccessToken, $expiresAt);
-            Cookie::queue('zoho_access_token_expires_at', $expiresAt->toDateTimeString(), 43200);
+            Cookie::queue('zoho_access_token_expires_at', $expiresAt, 43200);
 
             // Optionally log the cookies' values
             // Log::info('Access Token Cookie: ' . $accessToken);
