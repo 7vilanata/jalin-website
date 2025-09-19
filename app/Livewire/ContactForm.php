@@ -39,7 +39,7 @@ class ContactForm extends Component
         $googleSheetsService->appendToSpreadsheet($spreadsheetId, $data);
 
         // Send email
-        Mail::to('wiboworaffi82@gmail.com')->send(new ContactFormMailable($this->name, $this->email, $this->instansi, $this->message));
+        // Mail::to('wiboworaffi82@gmail.com')->send(new ContactFormMailable($this->name, $this->email, $this->instansi, $this->message));
 
 
         session()->flash('success', 'Message sent successfully!');
