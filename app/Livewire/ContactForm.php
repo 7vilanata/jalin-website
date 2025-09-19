@@ -73,8 +73,7 @@ class ContactForm extends Component
             'fromAddress' => 'admin@generasiraw.org',  // Your Zoho email address
             'toAddress' => $email,                 // Recipient email address
             'subject' => 'Contact Form Message',
-            'content' =>  "Name: <b>{$name}</b><br>Instansi: <b>{$instansi}</b><br>Message: <b>{$message}</b> ",  // Email body
-
+            'content' =>  "Thankyou For your Submission",  // Email body
         ];
 
         // Send the email via Zoho API using the access token
