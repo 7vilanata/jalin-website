@@ -59,7 +59,7 @@ class ContactForm extends Component
 
         if (!$accessToken) {
             // If no access token is found, attempt to refresh the token
-            $accessToken = $this->refreshAccessToken();
+            $accessToken = $this->generateAccessToken();
             if (!$accessToken) {
                 return response()->json(['error' => 'Failed to obtain access token'], 400);
             }
