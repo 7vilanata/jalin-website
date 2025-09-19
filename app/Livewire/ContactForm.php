@@ -3,6 +3,8 @@
 namespace App\Livewire;
 
 use App\Services\GoogleSheetsService;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ContactFormMailable;
 use Livewire\Component;
 
 class ContactForm extends Component
@@ -35,6 +37,9 @@ class ContactForm extends Component
 
         // Append data to the Google Sheet
         $googleSheetsService->appendToSpreadsheet($spreadsheetId, $data);
+
+        // Send email
+        Mail::to('wiboworaffi82@gmail.com')->send(new ContactFormMailable($this->name, $this->email, $this->instansi, $this->message));
 
 
         session()->flash('success', 'Message sent successfully!');
