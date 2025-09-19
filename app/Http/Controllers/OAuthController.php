@@ -15,13 +15,13 @@ class OAuthController extends Controller
         // Exchange the authorization code for an access token
         // You'll need to make a POST request to Zoho's token endpoint here
         // Example (use Guzzle or cURL to send the request):
-        $response = Http::post('https://accounts.zoho.com/oauth/v2/token', [
-            'client_id' => '1000.OOIKL1VUWTZXWXYQLLM1XNS7QEZCMQ',
-            'client_secret' => '3b98c0adbd9f81303634fc30c3b88016498f36d8a9',
-            'code' => $authorizationCode,
-            'redirect_uri' => 'https://generasiraw.org/callback',
-            'grant_type' => 'authorization_code',
-        ]);
+        // $response = Http::post('https://accounts.zoho.com/oauth/v2/token', [
+        //     'client_id' => '',
+        //     'client_secret' => '',
+        //     'code' => $authorizationCode,
+        //     'redirect_uri' => 'https://generasiraw.org/callback',
+        //     'grant_type' => 'authorization_code',
+        // ]);
 
         // Process the response (access token, refresh token, etc.)
 
