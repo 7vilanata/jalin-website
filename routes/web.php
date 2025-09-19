@@ -4,6 +4,7 @@ use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\ExploreController;
@@ -11,7 +12,9 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\RawVideosController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\WarkopController;
+use App\Http\Controllers\OAuthController;
 use App\Http\Livewire\FeatureList;
+use Illuminate\Support\Facades\Cookie;
 
 Route::get('/', function () {
     return view('home');
@@ -57,3 +60,17 @@ Route::get('/explore/articles', [ArticleController::class, 'index'])->name('expl
 Route::get('/explore/articles/{slug}', [ArticleController::class, 'show'])->name('explore.articles.show');
 
 
+Route::get('/callback', [OAuthController::class, 'handleCallback']);
+
+// Route::get('/get-token', function () {
+//     // Retrieve the access token and refresh token from the session
+//     $accessToken = Cookie::get('zoho_access_token');
+//     $refreshToken = Cookie::get('zoho_refresh_token');
+    
+
+//     // Return the tokens in a structured response
+//     return response()->json([
+//         'access_token' => $accessToken,
+//         'refresh_token' => $refreshToken,
+//     ]);
+// });
