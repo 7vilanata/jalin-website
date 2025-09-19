@@ -95,7 +95,7 @@ class ContactForm extends Component
 
     public function generateAccessToken()
     {
-        $refreshToken = Cookie::get('zoho_refresh_token');
+        $refreshToken = env('ZOHO_REFRESH_TOKEN');
 
         if (!$refreshToken) {
             return null; // Return null if refresh token is not available

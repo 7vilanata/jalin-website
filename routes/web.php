@@ -62,15 +62,15 @@ Route::get('/explore/articles/{slug}', [ArticleController::class, 'show'])->name
 
 Route::get('/callback', [OAuthController::class, 'handleCallback']);
 
-// Route::get('/get-token', function () {
-//     // Retrieve the access token and refresh token from the session
-//     $accessToken = Cookie::get('zoho_access_token');
-//     $refreshToken = Cookie::get('zoho_refresh_token');
+Route::get('/get-token', function () {
+    // Retrieve the access token and refresh token from the session
+    $accessToken = Cookie::get('zoho_access_token');
+    $refreshToken = Cookie::get('zoho_refresh_token');
     
 
-//     // Return the tokens in a structured response
-//     return response()->json([
-//         'access_token' => $accessToken,
-//         'refresh_token' => $refreshToken,
-//     ]);
-// });
+    // Return the tokens in a structured response
+    return response()->json([
+        'access_token' => $accessToken,
+        'refresh_token' => $refreshToken,
+    ]);
+});
