@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;  // Add the Log facade
+use Illuminate\Support\Facades\Cookie;
 
 class OAuthController extends Controller
 {
@@ -11,37 +13,41 @@ class OAuthController extends Controller
     {
         // Zoho sends the authorization code as 'code'
         $authorizationCode = $request->input('code');
-
+        Log::info('Zoho OAuth callback received. Code: ' . $authorizationCode);
         // Exchange the authorization code for an access token
         // You'll need to make a POST request to Zoho's token endpoint here
-        // Example (use Guzzle or cURL to send the request):
-        $response = Http::post('', [
-            'client_id' => '',
-            'client_secret' => '',
+        $response = Http::asForm()->post('https://accounts.zoho.com/oauth/v2/token', [
+            'client_id' => config('services.zoho.client_id'),
+            'client_secret' => config('services.zoho.client_secret'),
             'code' => $authorizationCode,
-            'redirect_uri' => '',
+            'redirect_uri' => 'https://generasiraw.org/callback',
             'grant_type' => 'authorization_code',
+            'scope' => 'ZohoMail.messages.CREATE'
         ]);
 
+        // dd($response);
         // Process the response (access token, refresh token, etc.)
-
         if ($response->successful()) {
-            // Extract the access token (and refresh token, if available)
             $data = $response->json();
+            // Store tokens in cookies for 30 days
+            $accessToken = $data['access_token'];
+            $refreshToken = $data['refresh_token'] ?? null;
+            $expiresAt = $data['expires_in'] / 60;
 
-            // Store the access token and refresh token in the session
-            session([
-                'zoho_access_token' => $data['access_token'],
-                'zoho_refresh_token' => $data['refresh_token'] ?? null, // Store refresh token if available
-            ]);
+            // Set the access token cookie (expires in 30 days)
+            Cookie::queue('zoho_access_token', $accessToken, $expiresAt);
+            Cookie::queue('zoho_refresh_token', $refreshToken, 43200); // 30 days
 
-            // Optionally, you can also store the expiration time if Zoho provides that
-            session(['zoho_access_token_expires_at' => now()->addSeconds($data['expires_in'])]);
+            // Set the expiration time of the access token
+            // Cookie::queue('zoho_access_token_expires_at', $expiresAt->toDateTimeString(), 43200);
 
-            // Redirect or send a response indicating success
-            return redirect('/'); // Example redirect
+
+            return response()->json([
+                'access_token' => $accessToken,
+                'refresh_token' => $refreshToken,
+            ]); // Redirect after successful OAuth authentication
         } else {
-            // Handle error if the request failed
+            // Log::error('Zoho OAuth failed: ' . $response->body());
             return response()->json(['error' => 'Failed to get access token'], 400);
         }
     }

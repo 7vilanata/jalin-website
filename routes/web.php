@@ -4,6 +4,7 @@ use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\ExploreController;
@@ -12,7 +13,10 @@ use App\Http\Controllers\OAuthController;
 use App\Http\Controllers\RawVideosController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\WarkopController;
+use App\Http\Controllers\OAuthController;
 use App\Http\Livewire\FeatureList;
+use App\Livewire\ContactForm;
+use Illuminate\Support\Facades\Cookie;
 
 Route::get('/', function () {
     return view('home');
@@ -42,11 +46,10 @@ Route::prefix('warkop-raw')->group(function () {
     Route::get('/gallery', [GalleryController::class, 'index'])->name('warkop.gallery.index');
     Route::get('/schedule', [ScheduleController::class, 'index'])->name('warkop.schedule.index');
     Route::get('/schedule/{slug}', [ScheduleController::class, 'show'])->name('warkop.schedule.show');
-    
 });
 
 // warkop (function filtering)
-    Route::get('/schedules/filter', [ScheduleController::class, 'filter'])->name('schedules.filter');
+Route::get('/schedules/filter', [ScheduleController::class, 'filter'])->name('schedules.filter');
 
 
 
@@ -59,3 +62,18 @@ Route::get('/explore/articles/{slug}', [ArticleController::class, 'show'])->name
 
 Route::get('/callback', [OAuthController::class, 'handleCallback']);
 
+Route::get('/callback', [OAuthController::class, 'handleCallback']);
+
+// Route::get('/get-token', function () {
+//     // Retrieve the access token and refresh token from the session
+//     $contactForm = new ContactForm();
+//     $accessToken = $contactForm->generateAccessToken();
+//     $refreshToken = config('services.zoho.refresh_token');
+
+
+//     // Return the tokens in a structured response
+//     return response()->json([
+//         'access_token' => $accessToken,
+//         'refresh_token' => $refreshToken,
+//     ]);
+// });
