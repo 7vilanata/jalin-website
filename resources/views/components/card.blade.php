@@ -4,7 +4,7 @@
 
     <!-- Card Image -->
     @if ($image)
-        <img src="{{ $image }}" alt="{{ $title }}" class="w-full h-[70%] object-cover ">
+        <img src="{{ $image }}" alt="{{ $alt ? $alt:$title }}" class="w-full h-[70%] object-cover ">
     @endif
 
     <!-- Card Title -->

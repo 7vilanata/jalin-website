@@ -25,7 +25,7 @@
                                 <div
                                     class="flex flex-wrap justify-center lg:justify-start gap-4 my-10 max-w-screen-xl w-full">
                                     @foreach ($articles as $article)
-                                        <x-card :campaign="$article->campaign_type" :title="$article->title" :image="asset('storage/' . $article->thumbnail)" :link="route('explore.articles.show', $article->slug)" />
+                                        <x-card :campaign="$article->campaign_type" :title="$article->title" :image="asset('storage/' . $article->thumbnail)" :alt="$article->thumbnail_alt_text" :link="route('explore.articles.show', $article->slug)" />
                                     @endforeach
                                 </div>
                             </div>

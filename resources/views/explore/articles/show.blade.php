@@ -30,7 +30,8 @@
     <div class="relative z-0 mb-[-50px]">
         <!-- Background image container -->
         <div class="bg-cover bg-center z-0 md:h-[105vh] h-screen w-full overflow-x-hidden relative"
-            style="background-image: url('{{ asset('storage/' . $article->thumbnail) }}');">
+            style="background-image: url('{{ asset('storage/' . $article->thumbnail) }}');"
+            aria-label="{{ $article->thumbnail_alt_text ? $article->thumbnail_alt_text : 'Default description if no alt text' }}">
             <div class="absolute inset-0 bg-black opacity-50"></div>
 
             <div class="flex flex-col absolute bottom-25 md:bottom-40 px-5 md:px-20 ">
@@ -69,7 +70,7 @@
             <div class="flex justify-center">
                 <div class="flex flex-wrap justify-center gap-4 my-10 max-w-screen-xl w-full">
                     @foreach ($articles as $article)
-                        <x-card :campaign="$article->campaign_type" :title="$article->title" :image="asset('storage/' . $article->thumbnail)" :link="route('explore.articles.show', $article->slug)" />
+                        <x-card :campaign="$article->campaign_type" :title="$article->title" :image="asset('storage/' . $article->thumbnail)" :alt="$article->thumbnail_alt_text"  :link="route('explore.articles.show', $article->slug)" />
                     @endforeach
                 </div>
             </div>

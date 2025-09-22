@@ -47,6 +47,14 @@ class ArticleResource extends Resource
                 ->label('Thumbnail')
                 ->required(),
 
+            Forms\Components\TextInput::make('thumbnail_alt_text')
+                ->label('Thumbnail Alt Text')
+                ->placeholder('Enter alt text for the thumbnail')
+                ->required()
+                ->columnSpanFull()
+                ->reactive() // Make this field reactive
+                ->hidden(fn($get) => !$get('thumbnail')),
+
             Forms\Components\Group::make([
                 Forms\Components\TextInput::make('slug')->required(),
                 Forms\Components\DatePicker::make('publish_date')
