@@ -53,8 +53,9 @@
         </div>
     </div>
     <div id="app-content">
-        @include('components.header')
-
+        @if (!isset($hideHeader) || !$hideHeader)
+            @include('components.header')
+        @endif
 
         <!-- Main Content Section -->
         <div class="mx-auto">
@@ -88,7 +89,8 @@
 
                         // When the GIF is loaded, replace the background image
                         img.onload = () => {
-                            entry.target.style.backgroundImage = `url('{{ asset('assets/gif/mesh-gradient.gif') }}')`;
+                            entry.target.style.backgroundImage =
+                                `url('{{ asset('assets/gif/mesh-gradient.gif') }}')`;
                         };
 
                         // Stop observing once the background is set

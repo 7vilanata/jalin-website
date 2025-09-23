@@ -40,6 +40,10 @@ Route::get('/parents', function () {
 
 Route::prefix('warkop-raw')->group(function () {
     // Add your filter route here under the prefix
+
+    Route::get('/embed-section', [WarkopController::class, 'embedSection'])
+        ->name('warkop.embeded.index')
+        ->middleware(\App\Http\Middleware\CorsMiddleware::class);
     Route::get('/', [WarkopController::class, 'index'])->name('warkop');
     Route::get('/gallery/{slug}', [GalleryController::class, 'show'])->name('warkop.gallery.show');
     Route::get('/gallery', [GalleryController::class, 'index'])->name('warkop.gallery.index');
