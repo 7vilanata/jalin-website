@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="relative">
-        <div class="bg-blue-600 text-white py-20 px-8 relative">
+        <div class="bg-blue-600 overflow-hidden text-white py-20 px-8 relative">
             <div class="flex flex-col justify-center">
                 <div class="flex justify-center items-center  lg:mx-10 relative z-0">
                     <div class=" text-center">

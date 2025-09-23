@@ -59,6 +59,8 @@
                 <b>Let’s hang, grow, and be part of Generasi RAW!</b>
             </p>
 
+            {{-- <iframe src="https://generasiraw.org/warkop-raw/embed-section" width="100%" height="800"></iframe> --}}
+            
             <div class="my-30 text-center">
                 <h1
                     class="ultraprint-font inline-block p-3 text-4xl md:text-5xl  rounded-2xl mb-2 text-[#0353FF] font-medium">
@@ -98,6 +100,7 @@
                 @endfor
             </div>
         </div>
+
         <div class="bg-blue-600 overflow-hidden text-white py-20 px-8 relative">
             <div class="flex flex-col justify-center">
                 <div class="flex justify-center items-center  lg:mx-10 relative z-0">
@@ -171,6 +174,7 @@
             </div>
 
         </div>
+
         <div class="overflow-hidden bg-[#FEFC8B] whitespace-nowrap">
             <div class="marquee-wrapper">
                 @for ($i = 0; $i < $rows; $i++)
