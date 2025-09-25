@@ -20,7 +20,7 @@ class SuccessReplyMail extends Mailable
 
     public function build()
     {
-        return $this->subject('Terima kasih telah menghubungi kami!')
+        return $this->subject('We got your message! 🚀')
                     ->view('emails.success_reply');  // Create a new view for the email
     }
 }
