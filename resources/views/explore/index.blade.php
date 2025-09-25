@@ -25,7 +25,7 @@
 
                         <div class="flex flex-wrap justify-center gap-4 my-10 max-w-screen-xl w-full">
                             @foreach ($quizzes as $quiz)
-                                <x-card :campaign="'Quiz'" :title="$quiz->title" :image="asset('storage/' . $quiz->thumbnail)" :link="$quiz->destination_link" />
+                                <x-card :campaign="'Quiz'" :alt="" :title="$quiz->title" :image="asset('storage/' . $quiz->thumbnail)" :link="$quiz->destination_link" />
                             @endforeach
                         </div>
                     </div>
