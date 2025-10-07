@@ -35,18 +35,18 @@
                  <!-- Dropdown Menu -->
                  <div
                      class="absolute left-0 mt-2 w-48 bg-white text-[#0353FF] rounded shadow-lg z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                     <a href="/explore/quiz" class="block border-b-2  px-4 py-2 ultraprint-font  hover:bg-gray-100">Quiz</a>
+                     <a href="/explore/quiz"
+                         class="block border-b-2  px-4 py-2 ultraprint-font  hover:bg-gray-100">Quiz</a>
                      <a href="/explore/articles"
                          class="block border-b-2 px-4 py-2 ultraprint-font  hover:bg-gray-100">Article</a>
-                     <a href="/explore/raw-videos"
-                         class="block px-4 py-2 ultraprint-font hover:bg-gray-100">Videos</a>
+                     <a href="/explore/raw-videos" class="block px-4 py-2 ultraprint-font hover:bg-gray-100">Videos</a>
                  </div>
              </div>
              <a href="/contact-us" class="px-2  ultraprint-font">Contact Us</a>
          </nav>
 
          <!-- Auth Button (Desktop) -->
-         <div class="hidden lg:flex gap-2 text-lg opacity-0">
+         <div class="hidden lg:flex gap-2 text-lg ">
              <i>
                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                      stroke="currentColor" class="size-6">
@@ -54,8 +54,8 @@
                          d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15M12 9l-3 3m0 0 3 3m-3-3h12.75" />
                  </svg>
              </i>
-             <a href="https://forms.gle/EdU7KEgaUUZam59F9" target="_blank"
-                 class="font-medium ultraprint-font">REGISTER</a>
+             <a href="https://student.generasiraw.org/login" target="_blank"
+                 class="font-medium ultraprint-font">LOGIN</a>
          </div>
      </div>
 
@@ -102,11 +102,23 @@
                          class="block  px-4 py-2 ultraprint-font hover:bg-gray-100">Magazine</a> --}}
                      <a href="/explore/quiz" class="block px-4 py-2 ultraprint-font  hover:bg-gray-100">Quiz</a>
                      <a href="/explore/articles" class="block px-4 py-2 ultraprint-font  hover:bg-gray-100">Article</a>
-                     <a href="/explore/raw-videos" class="block px-4 py-2 ultraprint-font  hover:bg-gray-100">Videos</a>
+                     <a href="/explore/raw-videos"
+                         class="block px-4 py-2 ultraprint-font  hover:bg-gray-100">Videos</a>
                  </div>
              </div>
              <a href="/contact-us" class="block  ultraprint-font">Contact Us</a>
-             {{-- <a href="https://forms.gle/EdU7KEgaUUZam59F9" target="_blank" class="block ultraprint-font">REGISTER</a> --}}
+             <div class="flex gap-2 justify-center">
+                 <i>
+                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                         stroke="currentColor" class="size-6">
+                         <path stroke-linecap="round" stroke-linejoin="round"
+                             d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15M12 9l-3 3m0 0 3 3m-3-3h12.75" />
+                     </svg>
+                 </i>
+                 <a href="https://student.generasiraw.org/login" target="_blank"
+                     class="block ultraprint-font">LOGIN</a>
+
+             </div>
          </nav>
      </div>
  </header>
