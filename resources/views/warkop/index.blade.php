@@ -11,6 +11,16 @@
                     alt="boy-warkop">
                 <img class="h-auto w-full self-end z-0 block md:hidden" src="{{ asset('assets/img/boy-warkop-mobile.webp') }}"
                     alt="boy-warkop-mobile">
+                <a href="https://student.generasiraw.org/login" class="inline-block ">
+                    <button
+                        class="hover:scale-110 ease-in-out text-[16px] md:text-4xl flex items-center bg-[#0353FF] py-1.5 px-8 text-white rounded-3xl absolute z-10 bottom-1/8 left-1/2 transform -translate-x-1/2 transition-all duration-300">
+                        <span class="ultraprint-font">Gas Tanpa Basa-Basi!</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                            stroke="currentColor" class="size-4 md:size-8 ml-2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                        </svg>
+                    </button>
+                </a>
             </div>
         </div>
         <div
@@ -60,7 +70,7 @@
             </p>
 
             {{-- <iframe src="https://generasiraw.org/warkop-raw/embed-section" width="100%" height="800"></iframe> --}}
-            
+
             <div class="my-30 text-center">
                 <h1
                     class="ultraprint-font inline-block p-3 text-4xl md:text-5xl  rounded-2xl mb-2 text-[#0353FF] font-medium">
@@ -199,7 +209,8 @@
                         <div class="swiper-wrapper">
                             @foreach ($galleries as $gallery)
                                 @if ($gallery->thumbnail)
-                                    <a href="{{ route('warkop.gallery.show', $gallery->slug) }}" class="swiper-slide block">
+                                    <a href="{{ route('warkop.gallery.show', $gallery->slug) }}"
+                                        class="swiper-slide block">
                                         <div class="relative w-full aspect-video ">
                                             <img src="{{ asset('storage/' . $gallery->thumbnail) }}"
                                                 alt="{{ $gallery->title }}"

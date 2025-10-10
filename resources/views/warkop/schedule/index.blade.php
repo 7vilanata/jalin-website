@@ -8,6 +8,16 @@
                     alt="boy-warkop">
                 <img class="h-auto w-full self-end z-0 block md:hidden" src="{{ asset('assets/img/boy-warkop-mobile.webp') }}"
                     alt="boy-warkop-mobile">
+                <a href="https://student.generasiraw.org/login" class="inline-block ">
+                    <button
+                        class="hover:scale-110 ease-in-out text-[16px] md:text-4xl flex items-center bg-[#0353FF] py-1.5 px-8 text-white rounded-3xl absolute z-10 bottom-1/8 left-1/2 transform -translate-x-1/2 transition-all duration-300">
+                        <span class="ultraprint-font">Gas Tanpa Basa-Basi!</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                            stroke="currentColor" class="size-4 md:size-8 ml-2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                        </svg>
+                    </button>
+                </a>
             </div>
         </div>
         <div class=" bg-[#FFFFFF] rounded-t-[50px] md:rounded-t-[100px] py-20 mt-[-80px] px-3 md:px-15 z-10 relative">
@@ -52,7 +62,7 @@
                 const list_loc = button.getAttribute('data-location');
 
                 if (list_loc === 'all') {
-                    button.classList.add('text-white','bg-[#FF5632]')
+                    button.classList.add('text-white', 'bg-[#FF5632]')
                 }
 
                 button.addEventListener('click', function() {
@@ -60,12 +70,14 @@
                     filterSchedules(location);
 
                     document.querySelectorAll('.location-button').forEach(btn => {
-                        btn.classList.remove('text-white', 'bg-[#FF5632]'); // Reset all buttons to default background color
-                        btn.classList.add('text-[#FF5632]'); // Reset all buttons to default background color
+                        btn.classList.remove('text-white',
+                        'bg-[#FF5632]'); // Reset all buttons to default background color
+                        btn.classList.add(
+                        'text-[#FF5632]'); // Reset all buttons to default background color
                     });
 
                     // Set the background color of the clicked button to orange
-                    this.classList.add('text-white','bg-[#FF5632]')
+                    this.classList.add('text-white', 'bg-[#FF5632]')
 
 
                 });
@@ -81,10 +93,10 @@
                     .then(data => {
                         scheduleList.innerHTML = ''; // Clear current schedule cards
                         // Insert the HTML returned from the server into the DOM
-                        if(data.html){
+                        if (data.html) {
 
                             scheduleList.innerHTML = data.html;
-                        }else{
+                        } else {
                             scheduleList.innerHTML = "<div>No Schedule Found</div>";
 
                         }

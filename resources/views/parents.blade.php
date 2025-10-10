@@ -8,6 +8,16 @@
                     alt="boy-parents">
                 <img class="h-auto w-full self-end z-0 block md:hidden"
                     src="{{ asset('assets/img/boy-parents-mobile.webp') }}" alt="boy-parents-mobile">
+                <a href="https://student.generasiraw.org/login" class="inline-block ">
+                    <button
+                        class="hover:scale-110 ease-in-out text-[16px] md:text-4xl flex items-center bg-[#0353FF] py-1.5 px-8 text-white rounded-3xl absolute z-10 bottom-1/8 left-1/2 transform -translate-x-1/2 transition-all duration-300">
+                        <span class="ultraprint-font">Gas Tanpa Basa-Basi!</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                            stroke="currentColor" class="size-4 md:size-8 ml-2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                        </svg>
+                    </button>
+                </a>
             </div>
         </section>
         <section class=" bg-white rounded-t-[50px] md:rounded-t-[100px] py-20 mt-[-80px] px-10 md:px-50 z-10 relative">
