@@ -7,8 +7,8 @@
     <div class="relative">
         <div class="lazy-background z-0 md:h-[105vh] h-screen w-full overflow-x-hidden bg-cover relative">
             <div
-                class="relative flex flex-col md:flex-row h-full w-full md:w-[90%] mx-auto justify-end md:justify-between items-center">
-                <div class="max-w-[80%] md:max-w-full">
+                class="relative flex flex-col md:flex-row h-full w-full md:w-[100%]  justify-end md:justify-between items-center">
+                <div class="ml-[5%] max-w-[80%] md:max-w-full absolute top-2/9 md:top-1/3 z-10">
                     <h1 class=" text-white font-bold  text-4xl md:text-[35px] lg:text-6xl leading-tight  uppercase">Saatnya
                         tunjukin <br class="block md:none" />
                         <img class="inline-block w-[20%] mt-[-10px]" src="{{ asset('assets/img/logo-raw.webp') }}"
@@ -20,7 +20,7 @@
                         #GenerasiGaButuhValidasi</h1>
                 </div>
 
-                <img class="h-auto w-full md:w-[60%] lg:w-[55%] mr-0 md:mr-[-70px]  self-end z-0"
+                <img class="h-auto w-full md:w-[60%] lg:w-[55%] 2xl:w-[40%] mr-0 absolute right-0 self-end z-0"
                     src="{{ asset('assets/img/image-boy-atf.webp') }}" alt="image-boy-atf">
 
                 <a href="https://student.generasiraw.org/login" class="inline-block ">
