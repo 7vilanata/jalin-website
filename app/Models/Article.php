@@ -16,6 +16,7 @@ class Article extends Model
         'slug', 
         'campaign_type', 
         'thumbnail', 
+        'thumbnail_alt_text',
         'content', 
         'is_published', 
         'meta_title', 

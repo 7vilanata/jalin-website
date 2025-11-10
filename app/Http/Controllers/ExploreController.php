@@ -21,7 +21,7 @@ class ExploreController extends Controller
             ->get();
 
         $videos = Videos::where('is_published', true)  // Filter published videos
-            ->limit(4)
+            ->limit(3)
             ->get();
 
 

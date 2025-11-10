@@ -35,4 +35,10 @@ return [
         ],
     ],
 
+  'zoho' => [
+        'refresh_token' => env('ZOHO_REFRESH_TOKEN'),
+        'acc_id' => env('ZOHO_ACC_ID'),
+        'client_id' => env('ZOHO_CLIENT_ID'),
+        'client_secret' => env('ZOHO_CLIENT_SECRET')
+    ]
 ];

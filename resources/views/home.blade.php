@@ -5,11 +5,10 @@
 @endphp
 @section('content')
     <div class="relative">
-        <div class=" z-0 md:h-[105vh] h-screen w-full overflow-x-hidden bg-cover relative"
-            style="background-image: url('{{ asset('assets/gif/mesh-gradient.gif') }}');">
+        <div class="lazy-background z-0 md:h-[105vh] h-screen w-full overflow-x-hidden bg-cover relative">
             <div
-                class="flex flex-col md:flex-row h-full w-full md:w-[90%] mx-auto justify-end md:justify-between items-center">
-                <div class="max-w-[80%] md:max-w-full">
+                class="relative flex flex-col md:flex-row h-full w-full md:w-[100%]  justify-end md:justify-between items-center">
+                <div class="ml-[5%] max-w-[80%] md:max-w-full absolute top-2/9 md:top-1/3 z-10">
                     <h1 class=" text-white font-bold  text-4xl md:text-[35px] lg:text-6xl leading-tight  uppercase">Saatnya
                         tunjukin <br class="block md:none" />
                         <img class="inline-block w-[20%] mt-[-10px]" src="{{ asset('assets/img/logo-raw.webp') }}"
@@ -21,8 +20,19 @@
                         #GenerasiGaButuhValidasi</h1>
                 </div>
 
-                <img class="h-auto w-full md:w-[60%] lg:w-[55%] mr-0 md:mr-[-70px]  self-end z-0"
+                <img class="h-auto w-full md:w-[60%] lg:w-[55%] 2xl:w-[40%] mr-0 absolute right-0 self-end z-0"
                     src="{{ asset('assets/img/image-boy-atf.webp') }}" alt="image-boy-atf">
+
+                <a href="https://student.generasiraw.org/login" class="inline-block ">
+                    <button
+                        class="hover:scale-110 ease-in-out text-[16px] md:text-4xl flex items-center bg-[#0353FF] py-1.5 px-8 text-white rounded-3xl absolute z-10 bottom-1/8 left-1/2 transform -translate-x-1/2 transition-all duration-300">
+                        <span class="ultraprint-font">Gas Tanpa Basa-Basi!</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                            stroke="currentColor" class="size-4 md:size-8 ml-2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                        </svg>
+                    </button>
+                </a>
             </div>
         </div>
         <div
@@ -224,6 +234,12 @@
             100% {
                 transform: translateX(-50%);
             }
+        }
+
+        .instagram-media {
+            max-width: 22% !important;
+            height: 571px !important;
+            width: 100% !important;
         }
 
         .marquee-wrapper {

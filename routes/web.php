@@ -4,6 +4,7 @@ use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\ExploreController;
@@ -14,6 +15,8 @@ use App\Http\Controllers\RawVideosController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\WarkopController;
 use App\Http\Livewire\FeatureList;
+use App\Livewire\ContactForm;
+use Illuminate\Support\Facades\Cookie;
 
 Route::get('/', function () {
     return view('home');
@@ -34,16 +37,19 @@ Route::get('/parents', function () {
 // warkop
 Route::prefix('warkop-raw')->group(function () {
     // Add your filter route here under the prefix
+
+    Route::get('/embed-section', [WarkopController::class, 'embedSection'])
+        ->name('warkop.embeded.index')
+        ->middleware(\App\Http\Middleware\CorsMiddleware::class);
     Route::get('/', [WarkopController::class, 'index'])->name('warkop');
     Route::get('/gallery/{slug}', [GalleryController::class, 'show'])->name('warkop.gallery.show');
     Route::get('/gallery', [GalleryController::class, 'index'])->name('warkop.gallery.index');
     Route::get('/schedule', [ScheduleController::class, 'index'])->name('warkop.schedule.index');
     Route::get('/schedule/{slug}', [ScheduleController::class, 'show'])->name('warkop.schedule.show');
-    
 });
 
 // warkop (function filtering)
-    Route::get('/schedules/filter', [ScheduleController::class, 'filter'])->name('schedules.filter');
+Route::get('/schedules/filter', [ScheduleController::class, 'filter'])->name('schedules.filter');
 
 // rawleague
 Route::prefix('raw-league')->group(function () {

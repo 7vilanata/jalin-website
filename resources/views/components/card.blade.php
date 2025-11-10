@@ -4,11 +4,11 @@
 
     <!-- Card Image -->
     @if ($image)
-        <img src="{{ $image }}" alt="{{ $title }}" class="w-full h-[70%] object-cover ">
+        <img src="{{ $image }}" alt="{{ $alt ? $alt:$title }}" class="w-full h-[70%] object-cover ">
     @endif
 
     <!-- Card Title -->
-    <div class="bg-[#0353FF] text-white content-top text-left p-7  h-[30%]">
+    <div class="bg-[#0353FF] text-white content-top text-left p-5 md:p-7  h-[30%]">
 
         <span class="uppercase text-[12px] text-[#FEFC8B]">{{ $campaign }}</span>
 

@@ -14,12 +14,14 @@ class Card extends Component
     // public $content;
     public $image;
     public $link;
+    public $alt;
 
     // Constructor to accept data via the component
-    public function __construct($campaign, $title,  $image = null, $link = null)
+    public function __construct($campaign, $title, $alt,  $image = null, $link = null)
     {
         $this->campaign = $campaign;
         $this->title = $title;
+        $this->alt = $alt;
         // $this->content = $content;
         $this->image = $image;
         $this->link = $link;
