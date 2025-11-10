@@ -82,7 +82,7 @@
                         allowfullscreen>
                     </iframe>
 
-                    <a href="#">
+                    <a href="https://student.generasiraw.org/login">
                         <button type="button"
                             class="inline-block gap-3 btn btn-primary rounded-2xl cursor-pointer text-[18px] text-white bg-[#0353FF] px-4 py-2">
 
