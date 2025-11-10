@@ -26,19 +26,21 @@
     @endif
     <div class="bg-[#FF5632] text-white content-end text-left p-1 md:p-2 ">
         <div class="text-left justify-between flex gap-4 md:gap-10 text-[7px] md:text-[10px]">
-            <span class="flex items-center gap-1"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+            <span class="flex w-[70%] items-center gap-1">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-4 min-w-4">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                     <path stroke-linecap="round" stroke-linejoin="round"
                         d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
                 </svg>
-                <span>{{ $street_loc }}</span></span>
-            <span class="flex items-center gap-1"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                <span>{{ Str::words($street_loc, 8, '...') }}</span>
+            </span>
+            <span class="flex w-[30%] items-center gap-1"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 min-w-4">
                     <path stroke-linecap="round" stroke-linejoin="round"
                         d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                 </svg>
-                <span>{{ \Carbon\Carbon::parse($start_time)->format('d F Y') }}</span>
+                <span>{{ \Carbon\Carbon::parse($start_time)->setTimezone('Asia/Jakarta')->format('H:i') }} WIB</span>
             </span>
         </div>
     </div>
