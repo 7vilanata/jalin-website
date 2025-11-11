@@ -61,7 +61,10 @@ class ScheduleController extends Controller
         }
 
         // Return the HTML to the client as JSON
-        return response()->json(['html' => $html]);
+        return response()->json([
+            'html' => $html,
+            'pagination' => $schedules->appends(['location' => $location])->links()  // Add the location parameter to pagination links
+        ]);
     }
 
 

@@ -51,7 +51,8 @@
 
                         <!-- Pagination -->
                         <div class="mt-4">
-                            {{ $schedules->links() }} <!-- Pagination links -->
+                            {{ $schedules->appends(['location' => request('location')])->links() }}
+                            <!-- Ensure location filter is preserved in pagination links -->
                         </div>
                     </div>
         </div>
@@ -71,9 +72,9 @@
 
                     document.querySelectorAll('.location-button').forEach(btn => {
                         btn.classList.remove('text-white',
-                        'bg-[#FF5632]'); // Reset all buttons to default background color
+                            'bg-[#FF5632]'); // Reset all buttons to default background color
                         btn.classList.add(
-                        'text-[#FF5632]'); // Reset all buttons to default background color
+                            'text-[#FF5632]'); // Reset all buttons to default background color
                     });
 
                     // Set the background color of the clicked button to orange
