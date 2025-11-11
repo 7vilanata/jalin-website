@@ -38,8 +38,7 @@ class ScheduleController extends Controller
                 return $query->where('location', $location);
             })
             ->orderBy('schedule_date', 'desc')
-            ->paginate(10)
-            ->get();
+            ->paginate(10);
 
         // Prepare the HTML for each schedule card using the Blade component
         $html = '';
