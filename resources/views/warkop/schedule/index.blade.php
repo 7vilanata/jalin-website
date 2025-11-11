@@ -87,7 +87,7 @@
             function filterSchedules(location) {
                 const scheduleList = document.getElementById('schedule-list');
                 const paginationContainer = document.getElementById(
-                'pagination-container'); // Container for pagination controls
+                    'pagination-container'); // Container for pagination controls
 
                 // Show a loading spinner while waiting for data
                 scheduleList.innerHTML = '<div class="spinner"></div>'; // Show spinner
@@ -111,15 +111,36 @@
                         }
 
                         if (data.pagination) {
-                            // Insert the pagination links returned from the server
-                            paginationContainer.innerHTML = data.pagination;
+                            // Handle pagination links
+                            paginationContainer.innerHTML = generatePaginationLinks(data.pagination);
                         }
                     })
                     .catch(error => {
                         console.error('Error filtering schedules:', error);
                         scheduleList.innerHTML =
-                        "<div>Error loading schedules. Please try again later.</div>"; // Error message
+                            "<div>Error loading schedules. Please try again later.</div>"; // Error message
                     });
+            }
+
+            function generatePaginationLinks(pagination) {
+                let paginationHtml = '';
+
+                // If there are previous pages, create a link
+                if (pagination.prev_page_url) {
+                    paginationHtml += `<a href="#" data-page="${pagination.current_page - 1}" class="prev-page">Previous</a>`;
+                }
+
+                // Loop through pages and create page number links
+                for (let i = 1; i <= pagination.last_page; i++) {
+                    paginationHtml += `<a href="#" data-page="${i}" class="page-number">${i}</a>`;
+                }
+
+                // If there are next pages, create a link
+                if (pagination.next_page_url) {
+                    paginationHtml += `<a href="#" data-page="${pagination.current_page + 1}" class="next-page">Next</a>`;
+                }
+
+                return paginationHtml;
             }
         </script>
     @endif

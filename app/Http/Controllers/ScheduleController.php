@@ -60,10 +60,19 @@ class ScheduleController extends Controller
             ])->render();  // Render the component to HTML
         }
 
+        $pagination = [
+            'current_page' => $schedules->currentPage(),
+            'last_page' => $schedules->lastPage(),
+            'next_page_url' => $schedules->nextPageUrl(),
+            'prev_page_url' => $schedules->previousPageUrl(),
+            'total' => $schedules->total(),
+            'per_page' => $schedules->perPage(),
+        ];
+
         // Return the HTML to the client as JSON
         return response()->json([
             'html' => $html,
-            'pagination' => $schedules->appends(['location' => $location])->links()  // Add the location parameter to pagination links
+            'pagination' => $pagination,  // Pass pagination metadata instead of HTML links
         ]);
     }
 
