@@ -50,9 +50,8 @@
                         </div>
 
                         <!-- Pagination -->
-                        <div id="pagination-container" class="mt-4">
-                            {{ $schedules->appends(['location' => request('location')])->links() }}
-                            <!-- Ensure location filter is preserved in pagination links -->
+                        <div class="mt-4">
+                            {{ $schedules->links() }} <!-- Pagination links -->
                         </div>
                     </div>
         </div>
@@ -72,9 +71,9 @@
 
                     document.querySelectorAll('.location-button').forEach(btn => {
                         btn.classList.remove('text-white',
-                            'bg-[#FF5632]'); // Reset all buttons to default background color
+                        'bg-[#FF5632]'); // Reset all buttons to default background color
                         btn.classList.add(
-                            'text-[#FF5632]'); // Reset all buttons to default background color
+                        'text-[#FF5632]'); // Reset all buttons to default background color
                     });
 
                     // Set the background color of the clicked button to orange
@@ -85,62 +84,24 @@
             });
 
             function filterSchedules(location) {
+                // Show a loading state or clear the schedule list before filtering
                 const scheduleList = document.getElementById('schedule-list');
-                const paginationContainer = document.getElementById(
-                    'pagination-container'); // Container for pagination controls
-
-                // Show a loading spinner while waiting for data
-                scheduleList.innerHTML = '<div class="spinner"></div>'; // Show spinner
-                paginationContainer.innerHTML = ''; // Clear pagination controls
+                scheduleList.innerHTML = '<p>Loading...</p>'; // Optional: Loading state
 
                 fetch(`/schedules/filter?location=${location}`)
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error('Failed to fetch schedules');
-                        }
-                        return response.json();
-                    })
+                    .then(response => response.json())
                     .then(data => {
-                        scheduleList.innerHTML = ''; // Clear spinner
-
+                        scheduleList.innerHTML = ''; // Clear current schedule cards
+                        // Insert the HTML returned from the server into the DOM
                         if (data.html) {
-                            // Insert the schedule cards returned from the server
+
                             scheduleList.innerHTML = data.html;
                         } else {
-                            scheduleList.innerHTML = "<div>No Schedule Found</div>"; // If no data
-                        }
+                            scheduleList.innerHTML = "<div>No Schedule Found</div>";
 
-                        if (data.pagination) {
-                            // Handle pagination links
-                            paginationContainer.innerHTML = generatePaginationLinks(data.pagination);
                         }
                     })
-                    .catch(error => {
-                        console.error('Error filtering schedules:', error);
-                        scheduleList.innerHTML =
-                            "<div>Error loading schedules. Please try again later.</div>"; // Error message
-                    });
-            }
-
-            function generatePaginationLinks(pagination) {
-                let paginationHtml = '';
-
-                // If there are previous pages, create a link
-                if (pagination.prev_page_url) {
-                    paginationHtml += `<a href="#" data-page="${pagination.current_page - 1}" class="prev-page">Previous</a>`;
-                }
-
-                // Loop through pages and create page number links
-                for (let i = 1; i <= pagination.last_page; i++) {
-                    paginationHtml += `<a href="#" data-page="${i}" class="page-number">${i}</a>`;
-                }
-
-                // If there are next pages, create a link
-                if (pagination.next_page_url) {
-                    paginationHtml += `<a href="#" data-page="${pagination.current_page + 1}" class="next-page">Next</a>`;
-                }
-
-                return paginationHtml;
+                    .catch(error => console.error('Error filtering schedules:', error));
             }
         </script>
     @endif

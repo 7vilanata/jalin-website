@@ -38,7 +38,7 @@ class ScheduleController extends Controller
                 return $query->where('location', $location);
             })
             ->orderBy('schedule_date', 'desc')
-            ->paginate(10);
+            ->get();
 
         // Prepare the HTML for each schedule card using the Blade component
         $html = '';
@@ -60,20 +60,8 @@ class ScheduleController extends Controller
             ])->render();  // Render the component to HTML
         }
 
-        $pagination = [
-            'current_page' => $schedules->currentPage(),
-            'last_page' => $schedules->lastPage(),
-            'next_page_url' => $schedules->nextPageUrl(),
-            'prev_page_url' => $schedules->previousPageUrl(),
-            'total' => $schedules->total(),
-            'per_page' => $schedules->perPage(),
-        ];
-
         // Return the HTML to the client as JSON
-        return response()->json([
-            'html' => $html,
-            'pagination' => $pagination,  // Pass pagination metadata instead of HTML links
-        ]);
+        return response()->json(['html' => $html]);
     }
 
 
