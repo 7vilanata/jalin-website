@@ -50,7 +50,7 @@
                         </div>
 
                         <!-- Pagination -->
-                        <div class="mt-4">
+                        <div id="pagination-container" class="mt-4">
                             {{ $schedules->appends(['location' => request('location')])->links() }}
                             <!-- Ensure location filter is preserved in pagination links -->
                         </div>
@@ -85,24 +85,41 @@
             });
 
             function filterSchedules(location) {
-                // Show a loading state or clear the schedule list before filtering
                 const scheduleList = document.getElementById('schedule-list');
-                scheduleList.innerHTML = '<p>Loading...</p>'; // Optional: Loading state
+                const paginationContainer = document.getElementById(
+                'pagination-container'); // Container for pagination controls
+
+                // Show a loading spinner while waiting for data
+                scheduleList.innerHTML = '<div class="spinner"></div>'; // Show spinner
+                paginationContainer.innerHTML = ''; // Clear pagination controls
 
                 fetch(`/schedules/filter?location=${location}`)
-                    .then(response => response.json())
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Failed to fetch schedules');
+                        }
+                        return response.json();
+                    })
                     .then(data => {
-                        scheduleList.innerHTML = ''; // Clear current schedule cards
-                        // Insert the HTML returned from the server into the DOM
-                        if (data.html) {
+                        scheduleList.innerHTML = ''; // Clear spinner
 
+                        if (data.html) {
+                            // Insert the schedule cards returned from the server
                             scheduleList.innerHTML = data.html;
                         } else {
-                            scheduleList.innerHTML = "<div>No Schedule Found</div>";
+                            scheduleList.innerHTML = "<div>No Schedule Found</div>"; // If no data
+                        }
 
+                        if (data.pagination) {
+                            // Insert the pagination links returned from the server
+                            paginationContainer.innerHTML = data.pagination;
                         }
                     })
-                    .catch(error => console.error('Error filtering schedules:', error));
+                    .catch(error => {
+                        console.error('Error filtering schedules:', error);
+                        scheduleList.innerHTML =
+                        "<div>Error loading schedules. Please try again later.</div>"; // Error message
+                    });
             }
         </script>
     @endif
