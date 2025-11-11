@@ -20,7 +20,7 @@ class WarkopController extends Controller
         ];
 
         $galleries = Gallery::where('is_published', true)->limit(5)->get();
-        $schedules = Schedule::where('is_published', true)->limit(4)->get();
+        $schedules = Schedule::where('is_published', true)->orderBy('schedule_date')->limit(4)->get();
         $warloc = WarkopLocation::where('is_published', true)->get();
         return view('warkop.index', compact('galleries', 'schedules', 'location_list', 'warloc'));
     }
