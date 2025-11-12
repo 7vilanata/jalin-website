@@ -80,7 +80,7 @@
                         @if ($schedules->isEmpty())
                             <p class="text-center text-lg text-gray-500">No schedule right now</p>
                         @else
-                            <div class="flex flex-wrap justify-center gap-1 md:gap-4 my-10 md:max-w-screen-xl w-full">
+                            <div class="flex flex-wrap justify-center gap-1 lg:justify-start md:gap-4 my-10  max-w-screen-xl w-full">
 
                                 @foreach ($schedules as $schedule)
                                     <x-schedule-card :title="$schedule->title" :subtitle="$schedule->subtitle" :slug="route('warkop.schedule.show', $schedule->slug)" :typehub="$schedule->type_hub"
