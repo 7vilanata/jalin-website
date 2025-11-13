@@ -65,6 +65,70 @@
                 @endfor
             </div>
         </div>
+
+        <div
+            class=" bg-[linear-gradient(to_bottom,_#0353FF_0%,_rgba(255,86,50,0.5)_100%)]  h-[1000px] bg-center overflow-hidden text-white py-20 px-8 relative text-center">
+            <img class="h-auto w-[20%] top-0 absolute right-0 self-end z-0"
+                src="{{ asset('assets/img/rawleague/game-controller.webp') }}" alt="game-controller">
+            <img class="h-auto w-[20%] bottom-0 absolute left-0 self-end z-0"
+                src="{{ asset('assets/img/rawleague/soccer-ball.webp') }}" alt="game-controller">
+            <h1 class="ultraprint-font  inline-block p-3 text-4xl md:text-5xl  rounded-2xl mb-2  font-medium">
+                RAW LEAGUE PRIZE POOL</h1>
+
+            <div class="flex justify-center w-full">
+                <div class=" flex flex-wrap justify-between items-center w-[60%] mt-15">
+                    <div>
+                        <h3 class="mx-4 text-blue-800 bg-[#FEFC8B] font-bold text-2xl p-3">Futsal</h3>
+                    </div>
+                    <div>
+                        <h3 class="mx-4 text-blue-800 bg-[#FEFC8B] font-bold text-2xl p-3">Mobile Legend</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="overflow-hidden bg-[#FEFC8B] whitespace-nowrap">
+            <div class="marquee-wrapper">
+                @for ($i = 0; $i < $rows; $i++)
+                    <div class="flex">
+                        @for ($j = 0; $j < $columns; $j++)
+                            <span class="mx-4 text-blue-800 font-bold text-lg">Generasi RAW</span>
+                        @endfor
+                    </div>
+                @endfor
+            </div>
+        </div>
+
+        <div class="bg-[#FFFFFF] py-20 px-3 sm:px-10 lg:px-50 z-10 relative">
+            <h1 style="font-weight: 400"
+                class="ultraprint-font bg-[#FF5632] inline-block p-3 text-[22px] md:text-5xl rounded-2xl mb-2 text-[#FFFFFF] font-medium">
+                DETAIL TERM AND CONDITION</h1>
+
+            <p class="text-[#0353FF] my-3 text-[14px] md:text-2xl">
+                Sebelum lo daftar, ada beberapa hal penting yang wajib lo baca dulu biar semuanya jelas dan fair, bro.
+                <br>
+                <br>
+                <b>Ketentuan Umum</b>
+            <ul class="text-[#0353FF] list-disc pl-7 text-[14px] md:text-2xl">
+                <li>RAW League adalah kompetisi pra-acara menuju RAW Festival 2026 dengan dua cabang: Mobile Legends dan
+                    Futsal.</li>
+                <li>Kompetisi ini cuma bisa diikuti oleh pelajar SMP dan SMA (usia maksimal 17 tahun).</li>
+                <li>Peserta wajib mendaftar melalui WebApp resmi student.generasiraw.org</li>
+                <li>Setiap peserta hanya boleh ikut salah satu cabang lomba, antara Mobile Legends atau Futsal (gak bisa
+                    dua-duanya, bro!).</li>
+            </ul>
+            </p>
+
+            <div class="text-center mt-10">
+                <h1
+                    class="ultraprint-font inline-block p-3 text-4xl md:text-5xl  rounded-2xl mb-2 text-[#0353FF] font-medium">
+                    RAW LEAGUE MOBILE LEGEND</h1>
+                <section>
+                    @include('components.faq-rawleague')
+                </section>
+            </div>
+
+        </div>
     </div>
 
     @if (Route::is('rawleague'))
