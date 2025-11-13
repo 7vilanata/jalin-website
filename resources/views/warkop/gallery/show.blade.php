@@ -36,7 +36,7 @@
                         {{ $gallery->title }}
                     </h1>
                     <div class="justify-center flex flex-wrap gap-3 md:gap-10 text-[#0353FF] text-[10px] md:text-[16px]">
-                        <span class="flex text-left  items-center gap-1"><svg xmlns="http://www.w3.org/2000/svg"
+                        <span class="flex text-center md:text-left  items-center gap-1"><svg xmlns="http://www.w3.org/2000/svg"
                                 fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 min-w-4">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
