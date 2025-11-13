@@ -64,7 +64,7 @@
                     $content = preg_replace('/<figcaption[^>]*>.*?<\/figcaption>/si', '', $gallery->content);
                 @endphp
                 <div
-                    class="article-content text-sm md:text-lg text-[#0353FF] text-left md:text-center leading-relaxed prose">
+                    class="article-content text-sm md:text-lg text-[#0353FF] text-left md:text-center leading-relaxed prose flex justify-center">
                     {!! $content !!}
                 </div>
 
