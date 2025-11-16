@@ -38,7 +38,7 @@
                                         @if ($gallery->slug)
                                             <div>
                                                 <a href="{{ route('warkop.gallery.show', $gallery->slug) }}"
-                                                    class="bg-white rounded-2xl overflow-hidden shadow-2xl hover:underline block max-w-[418px] h-[200px] md:h-[290px]">
+                                                    class="bg-white rounded-2xl overflow-hidden shadow-2xl hover:underline block w-[308px] md:w-[418px] h-[200px] md:h-[290px]">
                                                     <!-- Card Image -->
                                                     @if ($gallery->thumbnail)
                                                         <img src="{{ asset('storage/' . $gallery->thumbnail) }}"
