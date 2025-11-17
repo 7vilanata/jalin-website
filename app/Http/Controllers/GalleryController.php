@@ -28,4 +28,15 @@ class GalleryController extends Controller
 
         return view('warkop.gallery.show', compact('gallery', 'galleries'));
     }
+
+    public function showLeague($slug)
+    {
+        $gallery = Gallery::where('slug', $slug)->firstOrFail();
+
+        $galleries = Gallery::where('slug', '!=', $slug)  
+            ->get();  
+
+
+        return view('rawleague.gallery.show', compact('gallery', 'galleries'));
+    }
 }

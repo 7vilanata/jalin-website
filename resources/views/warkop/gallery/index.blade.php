@@ -43,7 +43,7 @@
                                                     @if ($gallery->thumbnail)
                                                         <img src="{{ asset('storage/' . $gallery->thumbnail) }}"
                                                             alt="{{ $gallery->title }}"
-                                                            class="w-full h-full object-stretch ">
+                                                            class="w-full h-full object-cover ">
                                                     @endif
                                                 </a>
                                                 <h4 class=" mt-4 text-[#0353FF] text-[18px] text-left font-bold ">
