@@ -6,6 +6,7 @@ use App\Livewire\Settings\Profile;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\ExploreController;
 use App\Http\Controllers\GalleryController;
@@ -17,9 +18,7 @@ use App\Http\Livewire\FeatureList;
 use App\Livewire\ContactForm;
 use Illuminate\Support\Facades\Cookie;
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 
 Route::get('/raw-league', function () {
