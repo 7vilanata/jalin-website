@@ -83,34 +83,55 @@
                     <div
                         class="absolute inset-0 flex-col md:!left-[80px] !top-[-45px] md:!top-[-60px] justify-left z-20 pointer-events-none">
                         <h1 class="uppercase font-semibold text-xs md:text-sm">warkop RAWvolution</h1>
-                        <h1 class="ultraprint-font text-[30px] md:text-7xl uppercase text-white drop-shadow-md">Coming Soon
+                        <h1 id="bigTitle-1"
+                            class="ultraprint-font text-[30px] md:text-7xl uppercase text-white drop-shadow-md">
+                            {{ $warkopCarousel->first()->big_title ?? 'Coming Soon' }}
                         </h1>
                     </div>
                     <div
                         class="absolute inset-0 flex md:hidden mr-0 !top-[-45px] md:!top-[-60px] justify-end z-20 pointer-events-none">
-                        <h1 class="uppercase font-semibold text-xs md:text-sm">Upcoming Event</h1>
+                        <h1 id="mobileSideTitle-1" class="uppercase font-semibold text-xs md:text-sm">
+                            {{ $warkopCarousel->first()->side_title ?? 'Upcoming Event' }}</h1>
                     </div>
                     <div class="relative swiper swiper-container-1 h-52  md:h-[450px] lg:h-[600px]  w-full  flex-shrink">
 
                         <!-- Swiper Slides -->
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <img class="h-full w-full object-cover rounded-xl"
-                                    src="{{ asset('assets/img/carousel_warkop/carousel_1.webp') }}" alt="carousel_warkop_1">
-                            </div>
-                            <div class="swiper-slide">
-                                <img class="h-full w-full object-cover rounded-xl"
-                                    src="{{ asset('assets/img/carousel_warkop/carousel_1.webp') }}" alt="carousel_warkop_1">
-                            </div>
-                            <div class="swiper-slide">
-                                <img class="h-full w-full object-cover rounded-xl"
-                                    src="{{ asset('assets/img/carousel_warkop/carousel_1.webp') }}" alt="carousel_warkop_1">
-                            </div>
+                            @if (!$warkopCarousel->isEmpty())
+                                @foreach ($warkopCarousel as $slide)
+                                    <div class="swiper-slide" data-big-title="{{ $slide->big_title }}"
+                                        data-mobile-side-title="{{ $slide->side_title }}"
+                                        data-side-title="{{ $slide->side_title }}">
+                                        <img class="h-full w-full object-cover rounded-xl"
+                                            src="{{ asset('storage/' . $slide->image_path) }}"
+                                            alt="{{ $slide->big_title ?? 'carousel_warkop' }}">
+                                    </div>
+                                @endforeach
+                            @else
+                                <div class="swiper-slide">
+                                    <img class="h-full w-full object-cover rounded-xl"
+                                        src="{{ asset('assets/img/carousel_warkop/carousel_1.webp') }}"
+                                        alt="carousel_warkop_1">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img class="h-full w-full object-cover rounded-xl"
+                                        src="{{ asset('assets/img/carousel_warkop/carousel_1.webp') }}"
+                                        alt="carousel_warkop_1">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img class="h-full w-full object-cover rounded-xl"
+                                        src="{{ asset('assets/img/carousel_warkop/carousel_1.webp') }}"
+                                        alt="carousel_warkop_1">
+                                </div>
+                            @endif
+
                         </div>
                     </div>
 
-                    <div class="flex-shrink-0 w-40 text-left z-10 hidden md:block">
-                        <h1 class="uppercase font-semibold text-lg ml-[40px]">Upcoming Event</h1>
+                    <div class="flex-shrink-0 w-40 text-left z-10 hidden md:block ">
+                        <h1 id="sideTitle-1" class="uppercase font-semibold text-lg ml-[40px]">
+                            {{ $warkopCarousel->first()->side_title ?? 'Upcoming Event' }}
+                        </h1>
                     </div>
                 </div>
                 <div class="flex justify-center items-center space-x-8  mt-20 md:mt-40 lg:mx-20 relative z-0">
@@ -123,37 +144,53 @@
                     <div
                         class="absolute inset-0 flex-col md:!left-[80px] !top-[-45px] md:!top-[-60px] justify-left z-20 pointer-events-none">
                         <h1 class="uppercase font-semibold text-xs md:text-sm">raw league</h1>
-                        <h1 class="ultraprint-font text-[30px] md:text-7xl uppercase text-white drop-shadow-md">Coming Soon
+                        <h1 id="bigTitle-2"
+                            class="ultraprint-font text-[30px] md:text-7xl uppercase text-white drop-shadow-md">
+                            {{ $rawleagueCarousel->first()->big_title ?? 'Coming Soon' }}
                         </h1>
                     </div>
                     <div
                         class="absolute inset-0 flex md:hidden mr-0 !top-[-45px] md:!top-[-60px] justify-end z-20 pointer-events-none">
-                        <h1 class="uppercase font-semibold text-xs md:text-sm">Upcoming Event</h1>
+                        <h1 id="mobileSideTitle-2" class="uppercase font-semibold text-xs md:text-sm">
+                            {{ $rawleagueCarousel->first()->side_title ?? 'Upcoming Event' }}</h1>
                     </div>
                     <div class="relative swiper  swiper-container-2 h-52 md:h-[450px] lg:h-[600px] w-full flex-shrink">
 
                         <!-- Swiper Slides -->
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <img class="h-full w-full object-cover rounded-xl"
-                                    src="{{ asset('assets/img/carousel_rawleague/carousel_1.webp') }}"
-                                    alt="carousel_rawleague_1">
-                            </div>
-                            <div class="swiper-slide">
-                                <img class="h-full w-full object-cover rounded-xl"
-                                    src="{{ asset('assets/img/carousel_rawleague/carousel_1.webp') }}"
-                                    alt="carousel_rawleague_1">
-                            </div>
-                            <div class="swiper-slide">
-                                <img class="h-full w-full object-cover rounded-xl"
-                                    src="{{ asset('assets/img/carousel_rawleague/carousel_1.webp') }}"
-                                    alt="carousel_rawleague_1">
-                            </div>
+                            @if (!$rawleagueCarousel->isEmpty())
+                                @foreach ($rawleagueCarousel as $slide)
+                                    <div class="swiper-slide" data-big-title="{{ $slide->big_title }}"
+                                        data-mobile-side-title="{{ $slide->side_title }}"
+                                        data-side-title="{{ $slide->side_title }}">
+                                        <img class="h-full w-full object-cover rounded-xl"
+                                            src="{{ asset('storage/' . $slide->image_path) }}"
+                                            alt="{{ $slide->big_title ?? 'carousel_rawleague' }}">
+                                    </div>
+                                @endforeach
+                            @else
+                                <div class="swiper-slide">
+                                    <img class="h-full w-full object-cover rounded-xl"
+                                        src="{{ asset('assets/img/carousel_rawleague/carousel_1.webp') }}"
+                                        alt="carousel_rawleague_1">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img class="h-full w-full object-cover rounded-xl"
+                                        src="{{ asset('assets/img/carousel_rawleague/carousel_1.webp') }}"
+                                        alt="carousel_rawleague_1">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img class="h-full w-full object-cover rounded-xl"
+                                        src="{{ asset('assets/img/carousel_rawleague/carousel_1.webp') }}"
+                                        alt="carousel_rawleague_1">
+                                </div>
+                            @endif
                         </div>
                     </div>
 
                     <div class="flex-shrink-0 w-40 text-left z-10 hidden md:block">
-                        <h1 class="uppercase font-semibold ml-[40px] text-lg">Upcoming Event</h1>
+                        <h1 id="sideTitle-2" class="uppercase font-semibold ml-[40px] text-lg">
+                            {{ $rawleagueCarousel->first()->side_title ?? 'Upcoming Event' }}</h1>
                     </div>
                 </div>
 
@@ -167,37 +204,53 @@
                     <div
                         class="absolute inset-0 flex-col md:!left-[80px] !top-[-45px] md:!top-[-60px] justify-left z-20 pointer-events-none">
                         <h1 class="uppercase font-semibold text-xs md:text-sm">raw Fest</h1>
-                        <h1 class="ultraprint-font text-[30px] md:text-7xl uppercase text-white drop-shadow-md">Coming Soon
+                        <h1 id="bigTitle-3"
+                            class="ultraprint-font text-[30px] md:text-7xl uppercase text-white drop-shadow-md">
+                            {{ $rawfestCarousel->first()->big_title ?? 'Coming Soon' }}
                         </h1>
                     </div>
                     <div
                         class="absolute inset-0 flex md:hidden mr-0 !top-[-45px] md:!top-[-60px] justify-end z-20 pointer-events-none">
-                        <h1 class="uppercase font-semibold text-xs md:text-sm">Upcoming Event</h1>
+                        <h1 id="mobileSideTitle-3" class="uppercase font-semibold text-xs md:text-sm">
+                            {{ $rawfestCarousel->first()->side_title ?? 'Upcoming Event' }}</h1>
                     </div>
                     <div class="relative swiper  swiper-container-3 h-52 md:h-[450px] lg:h-[600px] w-full  flex-shrink">
 
                         <!-- Swiper Slides -->
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <img class="h-full w-full object-cover rounded-xl"
-                                    src="{{ asset('assets/img/carousel_rawfest/carousel_1.webp') }}"
-                                    alt="carousel_rawfest_1">
-                            </div>
-                            <div class="swiper-slide">
-                                <img class="h-full w-full object-cover rounded-xl"
-                                    src="{{ asset('assets/img/carousel_rawfest/carousel_1.webp') }}"
-                                    alt="carousel_rawfest_1">
-                            </div>
-                            <div class="swiper-slide">
-                                <img class="h-full w-full object-cover rounded-xl"
-                                    src="{{ asset('assets/img/carousel_rawfest/carousel_1.webp') }}"
-                                    alt="carousel_rawfest_1">
-                            </div>
+                            @if (!$rawfestCarousel->isEmpty())
+                                @foreach ($rawfestCarousel as $slide)
+                                    <div class="swiper-slide" data-big-title="{{ $slide->big_title }}"
+                                        data-mobile-side-title="{{ $slide->side_title }}"
+                                        data-side-title="{{ $slide->side_title }}">
+                                        <img class="h-full w-full object-cover rounded-xl"
+                                            src="{{ asset('storage/' . $slide->image_path) }}"
+                                            alt="{{ $slide->big_title ?? 'carousel_rawfest' }}">
+                                    </div>
+                                @endforeach
+                            @else
+                                <div class="swiper-slide">
+                                    <img class="h-full w-full object-cover rounded-xl"
+                                        src="{{ asset('assets/img/carousel_rawfest/carousel_1.webp') }}"
+                                        alt="carousel_rawfest_1">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img class="h-full w-full object-cover rounded-xl"
+                                        src="{{ asset('assets/img/carousel_rawfest/carousel_1.webp') }}"
+                                        alt="carousel_rawfest_1">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img class="h-full w-full object-cover rounded-xl"
+                                        src="{{ asset('assets/img/carousel_rawfest/carousel_1.webp') }}"
+                                        alt="carousel_rawfest_1">
+                                </div>
+                            @endif
                         </div>
                     </div>
 
                     <div class="flex-shrink-0 w-40 text-left z-10 hidden md:block">
-                        <h1 class="uppercase font-semibold ml-[40px] text-lg">Upcoming Event</h1>
+                        <h1 id="sideTitle-3" class="uppercase font-semibold ml-[40px] text-lg">
+                            {{ $rawfestCarousel->first()->side_title ?? 'Upcoming Event' }}</h1>
                     </div>
                 </div>
             </div>

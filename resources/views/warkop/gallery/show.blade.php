@@ -35,9 +35,10 @@
                         class="uppercase ultraprint-font block text-4xl md:text-6xl rounded-2xl mb-2 text-[#0353FF] font-medium">
                         {{ $gallery->title }}
                     </h1>
-                    <div class="justify-center flex flex-wrap gap-3 md:gap-10 text-[#0353FF] text-[16px]">
-                        <span class="flex text-left  items-center gap-1"><svg xmlns="http://www.w3.org/2000/svg"
-                                fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                    <div class="justify-center flex flex-wrap gap-3 md:gap-10 text-[#0353FF] text-[10px] md:text-[16px]">
+                        <span class="flex text-center md:text-left  items-center gap-1"><svg
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-4 min-w-4">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -45,7 +46,8 @@
                             </svg>
                             {{ $gallery->street_loc }}</span>
                         <span class="flex text-left items-center gap-1"><svg xmlns="http://www.w3.org/2000/svg"
-                                fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                                fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                class="size-4 min-w-4">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
                             </svg>
@@ -58,9 +60,12 @@
                         class="w-full h-full object-cover rounded-2xl ">
                 </div>
                 <!-- Article content -->
+                @php
+                    $content = preg_replace('/<figcaption[^>]*>.*?<\/figcaption>/si', '', $gallery->content);
+                @endphp
                 <div
-                    class="article-content text-sm md:text-lg text-[#0353FF] text-left md:text-center leading-relaxed prose">
-                    {!! $gallery->content !!}
+                    class="article-content text-sm md:text-lg text-[#0353FF] text-left md:text-center leading-relaxed prose flex justify-center">
+                    {!! $content !!}
                 </div>
 
             </div>
