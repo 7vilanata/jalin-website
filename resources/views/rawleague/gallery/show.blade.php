@@ -5,9 +5,9 @@
         <!-- Background image container -->
         <div class="lazy-background z-0 md:h-[105vh] h-screen w-full overflow-x-hidden bg-cover relative">
             <div class="flex h-full w-full mx-auto justify-center items-center">
-                <img class="h-auto w-4/5 self-end z-0 hidden md:block" src="{{ asset('assets/img/boy-warkop.webp') }}"
+                <img class="h-auto w-4/5 self-end z-0 hidden md:block" src="{{ asset('assets/img/boy-rawleague.webp.webp') }}"
                     alt="boy-warkop">
-                <img class="h-auto w-full self-end z-0 block md:hidden" src="{{ asset('assets/img/boy-warkop-mobile.webp') }}"
+                <img class="h-auto w-full self-end z-0 block md:hidden" src="{{ asset('assets/img/boy-rawleague.webp.webp') }}"
                     alt="boy-warkop-mobile">
                 <a href="https://student.generasiraw.org/login" class="inline-block ">
                     <button
