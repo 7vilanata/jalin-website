@@ -53,7 +53,7 @@ Route::get('/schedules/filter', [ScheduleController::class, 'filter'])->name('sc
 // rawleague
 Route::prefix('raw-league')->group(function () {
     Route::get('/', [RawLeagueController::class, 'index'])->name('rawleague');
-    Route::get('/gallery/{slug}', [GalleryController::class, 'showLeague'])->name('rawleague.gallery.show');
+    Route::get('/{slug}', [GalleryController::class, 'showLeague'])->name('rawleague.gallery');
 });
 
 

@@ -21,6 +21,23 @@ window.addEventListener("load", () => {
         if (sideTitleEl)   sideTitleEl.textContent   = data.sideTitle   || 'Upcoming Event';
     }
 
+    new Swiper('.swiper-gallery-rawleague', {
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 10,
+        autoplay: {
+            delay: 3000,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+
     new Swiper(".swiper-container-1", {
         direction: "vertical", // 👈 Vertical scroll
         loop: true, // 👈 Infinite loop

@@ -9,8 +9,8 @@
             <div class="flex h-full w-full  mx-auto justify-center items-center">
                 <img class="h-auto w-4/5 self-end z-0 hidden md:block" src="{{ asset('assets/img/boy-rawleague.webp') }}"
                     alt="boy-warkop">
-                <img class="h-auto w-full self-end z-0 block md:hidden" src="{{ asset('assets/img/boy-rawleague.webp') }}"
-                    alt="boy-warkop-mobile">
+                <img class="h-auto w-full self-end z-0 block md:hidden"
+                    src="{{ asset('assets/img/boy-rawleague-mobile.webp') }}" alt="boy-warkop-mobile">
                 <a href="https://student.generasiraw.org/login" class="inline-block ">
                     <button
                         class="hover:scale-110 ease-in-out text-[16px] md:text-4xl flex items-center bg-[#0353FF] py-1.5 px-8 text-white rounded-3xl absolute z-10 bottom-1/8 left-1/2 transform -translate-x-1/2 transition-all duration-300">
@@ -32,23 +32,28 @@
                 class="ultraprint-font bg-[#FF5632] inline-block p-3 text-[22px] md:text-5xl rounded-2xl mb-2 text-[#FFFFFF] font-medium">
                 ABOUT RAW LEAGUE</h1>
 
-            <p class="text-[#0353FF] my-3 text-[14px] md:text-2xl">
-                <b>Raw League</b> adalah rangkaian kompetisi pra-acara menuju
-                RAW Festival 2026.
-                Di sini lo bisa buktiin skill lo — mau itu nge-goal di futsal atau nge-gank di Mobile Legends.
-                <br>
-                <br>
-                Tapi ini bukan cuma soal menang. RAW League tuh soal proses bareng temen, ngasah mental kompetitif, dan
-                nunjukin versi terbaik dari diri lo sendiri. Kita pengen lo seru-seruan, ngerasain semangat kompetisi, tapi
-                tetap solid dan saling support.
-                <br>
-                <br>
-                Dan yang paling keren, tim yang berhasil bakal naik ke panggung Grand Final RAW Festival 2026 bukti nyata
-                perjuangan lo dari nol.
-            </p>
+            <div class="flex flex-wrap items-start my-3 flex-col-reverse md:flex-row">
+                <p class="text-[#0353FF] text-[14px] mt-6 md:mt-0 md:text-2xl w-full md:w-1/2">
+                    <b>Raw League</b> bukan sekadar turnamen, bro! Ini ajang buat lo nunjukin skill, strategi, dan mental
+                    Resilient,
+                    Awesome, Wise! Buat lo yang jago futsal, siap-siap wakilin sekolah lo (SMP atau SMA) dan buktiin kalau
+                    lo
+                    bisa jadi tim paling solid di lapangan. Buat lo yang lebih jago di Mobile Legends, bebas gabung tim
+                    campuran
+                    yang penting umur lo di antara 12 sampai 19 tahun.
+                    <br>
+                    <br>
+                    Di sini, menang bukan cuma soal skor, tapi gimana lo berani tampil dengan cara lo sendiri, tanpa perlu
+                    pembuktian dari siapa pun. Yuk, daftar sekarang dan jadi bagian dari Generasi Ga Butuh Validasi!
+
+                </p>
+                <img class=" object-contain rounded-xl w-full md:w-1/2"
+                    src="{{ asset('assets/img/rawleague/kv-raw-league.webp') }}" alt="kv_rawleague">
+            </div>
+
             <div class="mt-10">
                 <img class="h-full w-full object-cover rounded-xl"
-                    src="{{ asset('assets/img/rawleague/banner-rawleague.webp') }}" alt="banner_rawleague">
+                    src="{{ asset('assets/img/rawleague/prize-rawleague.webp') }}" alt="prize_rawleague">
             </div>
 
         </section>
@@ -66,23 +71,40 @@
             </div>
         </section>
 
-        <section
-            class=" bg-[linear-gradient(to_bottom,_#0353FF_0%,_rgba(255,86,50,0.5)_100%)]  h-[1000px] bg-center overflow-hidden text-white py-20 px-8 relative text-center">
+        <section class=" bg-[#0353FF]  h-auto bg-center overflow-hidden text-white py-20 px-8 relative text-center">
             <img class="h-auto w-[20%] top-0 absolute right-0 self-end z-0"
                 src="{{ asset('assets/img/rawleague/game-controller.webp') }}" alt="game-controller">
             <img class="h-auto w-[20%] bottom-0 absolute left-0 self-end z-0"
                 src="{{ asset('assets/img/rawleague/soccer-ball.webp') }}" alt="game-controller">
             <h1 class="ultraprint-font  inline-block p-3 text-4xl md:text-5xl  rounded-2xl mb-2  font-medium">
-                RAW LEAGUE PRIZE POOL</h1>
+                DETAIL TERM AND CONDITION</h1>
 
-            <div class="flex justify-center w-full">
-                <div class=" flex flex-wrap justify-between items-center w-[60%] mt-15">
-                    <div>
-                        <h3 class="mx-4 text-blue-800 bg-[#FEFC8B] font-bold text-2xl p-3">Futsal</h3>
+            <div class="flex justify-center items-center w-full">
+                <div class=" flex flex-wrap flex-col justify-center items-center w-[80%] mt-8">
+                    <div id="terms-buttons" class="transition-opacity duration-300 ease-in-out mb-8">
+                        <button type="button" value="futsal"
+                            class="terms-btn font-bold text-[18px] text-white border-2 border-[#FF5632] rounded-full px-5 py-2.5 text-center me-2 mb-2 bg-[#FF5632]"
+                            onclick="showImage('futsal')">
+                            Futsal
+                        </button>
+                        <button type="button" value="mobile_legend"
+                            class="terms-btn text-white text-[18px] border-2 border-[#FF5632] rounded-full font-bold px-5 py-2.5 text-center me-2 mb-2 bg-transparent"
+                            onclick="showImage('mobile_legend')">
+                            Mobile Legend
+                        </button>
                     </div>
-                    <div>
-                        <h3 class="mx-4 text-blue-800 bg-[#FEFC8B] font-bold text-2xl p-3">Mobile Legend</h3>
+
+                    <!-- Image Container -->
+                    <div id="image-container" class=" z-10">
+                        <img id="display-image" src="" alt="Event Image" class="w-full h-auto hidden" />
+                        <p class=" my-3 text-[14px] text-left md:text-2xl">
+                            *Oh iya bro, ada dokumen wajib yang mesti lo siapin (kartu pelajar + form izin ortu). Download
+                            dulu
+                            di sini <a class="underline" href="#">👉 Download Formulir</a>, terus bawa pas Technical Meeting nanti!
+                        </p>
                     </div>
+
+
                 </div>
             </div>
         </section>
@@ -100,42 +122,11 @@
     </div>
 
     <section class="bg-[#FFFFFF] py-20 px-3 sm:px-10 lg:px-50 z-10 relative">
-        <h1 style="font-weight: 400"
-            class="ultraprint-font bg-[#FF5632] inline-block p-3 text-[22px] md:text-5xl rounded-2xl mb-2 text-[#FFFFFF] font-medium">
-            DETAIL TERM AND CONDITION</h1>
-
-        <div class="text-[#0353FF]">
-            <p class=" my-3 text-[14px] md:text-2xl">
-                Sebelum lo daftar, ada beberapa hal penting yang wajib lo baca dulu biar semuanya jelas dan fair, bro.
-                <br>
-                <br>
-                <b>Ketentuan Umum</b>
-
-            </p>
-            <ul class="text-[#0353FF] list-disc pl-7 text-[14px] md:text-2xl">
-                <li>RAW League adalah kompetisi pra-acara menuju RAW Festival 2026 dengan dua cabang: Mobile Legends dan
-                    Futsal.</li>
-                <li>Kompetisi ini cuma bisa diikuti oleh pelajar SMP dan SMA (usia maksimal 17 tahun).</li>
-                <li>Peserta wajib mendaftar melalui WebApp resmi <a class=" underline"
-                        href="https://student.generasiraw.org">student.generasiraw.org</a></li>
-                <li>Setiap peserta hanya boleh ikut salah satu cabang lomba, antara Mobile Legends atau Futsal (gak bisa
-                    dua-duanya, bro!).</li>
-            </ul>
-            <br>
-            <br>
-            <p class="  text-[14px] md:text-2xl">
-                *Oh iya bro, ada dokumen wajib yang mesti lo siapin (kartu pelajar + form izin ortu). Download dulu di
-                sini
-                <a class="underline" href="#">👉 Download Formulir</a> , terus bawa pas Technical Meeting nanti!
-            </p>
-        </div>
-
         <div class="text-center mt-10">
             <section>
                 @include('components.faq-rawleague')
             </section>
         </div>
-
     </section>
 
     {{-- apa aja di grand final --}}
@@ -184,7 +175,7 @@
                             @foreach ($galleries as $gallery)
                                 @if ($gallery->slug)
                                     <div>
-                                        <a href="{{ route('rawleague.gallery.show', $gallery->slug) }}"
+                                        <a href="{{ route('rawleague.gallery', $gallery->slug) }}"
                                             class="bg-white rounded-2xl overflow-hidden shadow-2xl hover:underline block max-w-[418px] h-[200px] md:h-[290px]">
                                             <!-- Card Image -->
                                             @if ($gallery->thumbnail)
@@ -204,7 +195,7 @@
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
                                                 </svg>
-                                                {{ $gallery->street_loc }}</span>
+                                                {{ Str::limit($gallery->street_loc, 20, '...') }}</span>
                                             <span class="flex items-center gap-1"><svg xmlns="http://www.w3.org/2000/svg"
                                                     fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                                     stroke="currentColor" class="size-3 md:size-4">
@@ -357,5 +348,44 @@
                 pointer-events: none;
             }
         </style>
+        <script>
+            const termsBtn = document.querySelectorAll('.terms-btn');
+            let selectedBtnValue = 'futsal';
+            showImage('futsal')
+
+            termsBtn.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    selectedBtnValue = btn.value;
+
+                    termsBtn.forEach(b => {
+                        b.classList.remove('bg-[#FF5632]');
+                        b.classList.add('bg-transparent');
+                    });
+                    btn.classList.remove('bg-transparent');
+                    btn.classList.add('bg-[#FF5632]');
+
+                });
+            });
+
+            function showImage(buttonValue) {
+                // Get the image container and image element
+                const imageContainer = document.getElementById('image-container');
+                const imageElement = document.getElementById('display-image');
+
+                // Set the image source based on the button clicked
+                if (buttonValue === 'futsal') {
+                    imageElement.src =
+                        `{{ asset('assets/img/rawleague/terms-futsal.webp') }}`; // Update with actual image path
+                } else if (buttonValue === 'mobile_legend') {
+                    imageElement.src = `{{ asset('assets/img/rawleague/terms-ml.webp') }}`; // Update with actual image path
+                }
+
+                // Make the image visible by removing the 'hidden' class
+                imageElement.classList.remove('hidden');
+
+                // Optionally, you can also show the image container if it's hidden
+                imageContainer.classList.remove('hidden');
+            }
+        </script>
     @endif
 @endsection

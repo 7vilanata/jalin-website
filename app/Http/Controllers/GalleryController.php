@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Gallery;
+use App\Models\GalleryRawleague;
 use Illuminate\Http\Request;
 
 class GalleryController extends Controller
@@ -13,7 +14,7 @@ class GalleryController extends Controller
         $galleries = Gallery::query()
             ->where('is_published', true)
             ->orderBy('image_date', 'desc')
-            ->paginate(10); 
+            ->paginate(10);
 
         return view('warkop.gallery.index', compact('galleries'));
     }
@@ -22,8 +23,8 @@ class GalleryController extends Controller
     {
         $gallery = Gallery::where('slug', $slug)->firstOrFail();
 
-        $galleries = Gallery::where('slug', '!=', $slug)  
-            ->get();  
+        $galleries = Gallery::where('slug', '!=', $slug)
+            ->get();
 
 
         return view('warkop.gallery.show', compact('gallery', 'galleries'));
@@ -31,12 +32,13 @@ class GalleryController extends Controller
 
     public function showLeague($slug)
     {
-        $gallery = Gallery::where('slug', $slug)->firstOrFail();
+        $gallery = GalleryRawleague::where('slug', $slug)->firstOrFail();
 
-        $galleries = Gallery::where('slug', '!=', $slug)  
-            ->get();  
+        $galleries = GalleryRawleague::where('slug', '!=', $slug)
+            ->get();
 
 
-        return view('rawleague.gallery.show', compact('gallery', 'galleries'));
+
+        return view('rawleague.gallery', compact('gallery', 'galleries'));
     }
 }

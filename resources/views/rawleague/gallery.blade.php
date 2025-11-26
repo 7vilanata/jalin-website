@@ -5,10 +5,10 @@
         <!-- Background image container -->
         <div class="lazy-background z-0 md:h-[105vh] h-screen w-full overflow-x-hidden bg-cover relative">
             <div class="flex h-full w-full mx-auto justify-center items-center">
-                <img class="h-auto w-4/5 self-end z-0 hidden md:block" src="{{ asset('assets/img/boy-rawleague.webp.webp') }}"
+                <img class="h-auto w-4/5 self-end z-0 hidden md:block" src="{{ asset('assets/img/boy-rawleague.webp') }}"
                     alt="boy-warkop">
-                <img class="h-auto w-full self-end z-0 block md:hidden" src="{{ asset('assets/img/boy-rawleague.webp.webp') }}"
-                    alt="boy-warkop-mobile">
+                <img class="h-auto w-full self-end z-0 block md:hidden"
+                    src="{{ asset('assets/img/boy-rawleague-mobile.webp') }}" alt="boy-warkop-mobile">
                 <a href="https://student.generasiraw.org/login" class="inline-block ">
                     <button
                         class="hover:scale-110 ease-in-out text-[16px] md:text-4xl flex items-center bg-[#0353FF] py-1.5 px-8 text-white rounded-3xl absolute z-10 bottom-1/8 left-1/2 transform -translate-x-1/2 transition-all duration-300">
@@ -26,7 +26,7 @@
         <div
             class="bg-[#FFFFFF] rounded-t-[50px] md:rounded-t-[100px] py-8 md:py-20 mt-[-80px] px-6 md:px-15 z-10 relative">
             <!-- Back button -->
-            <a href="{{ url('/warkop-raw/gallery') }}" class="text-[#0353FF] text-sm md:text-lg">&lt; Back</a>
+            <a href="{{ url('/raw-league') }}" class="text-[#0353FF] text-sm md:text-lg">&lt; Back</a>
 
             <!-- Article content -->
             <div class="my-10 ">
@@ -53,10 +53,32 @@
                     </div>
                 </div>
                 {{-- article thumbnail  --}}
-                <div class="flex justify-center my-10">
+                <div
+                    class="relative swiper swiper-gallery-rawleague h-52 md:h-[600px] lg:h-[800px] w-full flex-shrink flex justify-center my-10">
+                    <!-- Swiper Slides -->
+                    <div class="swiper-wrapper">
+                        <!-- Display images dynamically -->
+                        @foreach ([$gallery->thumbnail, $gallery->image_2, $gallery->image_3, $gallery->image_4, $gallery->image_5] as $image)
+                            @if ($image)
+                                <div class="swiper-slide">
+                                    <img class="h-full w-full object-cover rounded-xl"
+                                        src="{{ asset('storage/' . $image) }}"
+                                        alt="{{ $gallery->title ?? 'carousel_rawfest' }}">
+                                </div>
+                            @endif
+                        @endforeach
+                    </div>
+
+                    <!-- Swiper Navigation (Prev/Next buttons) -->
+                    @if ($gallery->thumbnail || $gallery->image_2 || $gallery->image_3 || $gallery->image_4 || $gallery->image_5)
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    @endif
+                </div>
+                {{-- <div class="flex justify-center my-10">
                     <img src="{{ asset('storage/' . $gallery->thumbnail) }}" alt="{{ $gallery->title }}"
                         class="w-full h-full object-cover rounded-2xl ">
-                </div>
+                </div> --}}
                 <!-- Article content -->
                 <div
                     class="article-content text-sm md:text-lg text-[#0353FF] text-left md:text-center leading-relaxed prose">
