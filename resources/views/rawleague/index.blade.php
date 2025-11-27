@@ -23,9 +23,6 @@
                 </a>
             </div>
         </div>
-        <div>
-
-        </div>
         <section
             class="bg-[#FFFFFF] rounded-t-[50px] md:rounded-t-[100px] py-20 mt-[-80px] px-3 sm:px-10 lg:px-50 z-10 relative">
             <h1 style="font-weight: 400"
@@ -71,7 +68,7 @@
             </div>
         </section>
 
-        <section class=" bg-[#0353FF]  h-auto bg-center overflow-hidden text-white py-20 px-8 relative text-center">
+        <section class=" bg-[#0353FF]  h-auto bg-center overflow-hidden text-white py-20 px-0 md:px-8 relative text-center">
             <img class="h-auto w-[20%] top-0 absolute right-0 self-end z-0"
                 src="{{ asset('assets/img/rawleague/game-controller.webp') }}" alt="game-controller">
             <img class="h-auto w-[20%] bottom-0 absolute left-0 self-end z-0"
@@ -80,7 +77,7 @@
                 DETAIL TERM AND CONDITION</h1>
 
             <div class="flex justify-center items-center w-full">
-                <div class=" flex flex-wrap flex-col justify-center items-center w-[80%] mt-8">
+                <div class=" flex flex-wrap flex-col justify-center items-center w-[100%] md:w-[80%] mt-8">
                     <div id="terms-buttons" class="transition-opacity duration-300 ease-in-out mb-8">
                         <button type="button" value="futsal"
                             class="terms-btn font-bold text-[18px] text-white border-2 border-[#FF5632] rounded-full px-5 py-2.5 text-center me-2 mb-2 bg-[#FF5632]"
@@ -95,12 +92,13 @@
                     </div>
 
                     <!-- Image Container -->
-                    <div id="image-container" class=" z-10">
+                    <div id="image-container" class="flex flex-col items-center z-10">
                         <img id="display-image" src="" alt="Event Image" class="w-full h-auto hidden" />
-                        <p class=" my-3 text-[14px] text-left md:text-2xl">
+                        <p class=" my-3 text-[14px] text-left md:text-2xl  w-[80%] md:w-[100%]">
                             *Oh iya bro, ada dokumen wajib yang mesti lo siapin (kartu pelajar + form izin ortu). Download
                             dulu
-                            di sini <a class="underline" href="#">👉 Download Formulir</a>, terus bawa pas Technical Meeting nanti!
+                            di sini <a class="underline" href="#">👉 Download Formulir</a>, terus bawa pas Technical
+                            Meeting nanti!
                         </p>
                     </div>
 
@@ -226,10 +224,14 @@
             <h1 class=" ultraprint-font uppercase p-3 text-4xl md:text-5xl rounded-2xl text-[#0353FF] font-normal">
                 Presented By</h1>
             <div class="flex justify-center flex-wrap gap-10 my-4">
-                @foreach ($presenters as $item)
-                    <img src="{{ asset('storage/' . $item->logo) }}" alt="{{ $item->name }}"
-                        class=" object-contain w-[100px] ">
-                @endforeach
+                @if ($presenters->isEmpty())
+                    <p class="text-center text-lg text-gray-500">No Presenters right now</p>
+                @else
+                    @foreach ($presenters as $item)
+                        <img src="{{ asset('storage/' . $item->logo) }}" alt="{{ $item->name }}"
+                            class=" object-contain w-[100px] ">
+                    @endforeach
+                @endif
             </div>
 
         </div>
@@ -239,10 +241,14 @@
             <h1 class=" ultraprint-font uppercase p-3 text-4xl md:text-5xl rounded-2xl text-[#0353FF] font-normal">
                 Sponsored By</h1>
             <div class="flex justify-center flex-wrap gap-10  my-4">
-                @foreach ($sponsors as $item)
-                    <img src="{{ asset('storage/' . $item->logo) }}" alt="{{ $item->name }}"
-                        class=" object-contain w-[100px] ">
-                @endforeach
+                @if ($sponsors->isEmpty())
+                    <p class="text-center text-lg text-gray-500">No Sponsors right now</p>
+                @else
+                    @foreach ($sponsors as $item)
+                        <img src="{{ asset('storage/' . $item->logo) }}" alt="{{ $item->name }}"
+                            class=" object-contain w-[100px] ">
+                    @endforeach
+                @endif
             </div>
         </div>
     </section>
@@ -271,81 +277,11 @@
                 }
             }
 
-            dialog::backdrop {
-                background-color: rgba(0, 0, 0, 0.372);
-
-                /* Tailwind utility classes via @apply */
-            }
-
-            #map-overlay {
-                pointer-events: none;
-                /* Ensure overlay doesn't block clicks */
-                position: absolute;
-                /* Ensure it's above the image */
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                z-index: 40;
-                /* Make sure it's above the image but not interfering with clicks */
-            }
-
             .marquee-wrapper {
                 display: flex;
                 width: 200%;
                 /* Important: double width for seamless scroll */
                 animation: marquee 20s linear infinite;
-            }
-
-            .swiper-button-prev,
-            .swiper-button-next {
-                color: white;
-            }
-
-            .swiper-button-prev::after,
-            .swiper-button-next::after {
-                font-size: 20px
-            }
-
-
-
-            .swiper-pagination-bullet {
-                background-color: white;
-                opacity: 1;
-                width: 11px;
-                height: 11px;
-            }
-
-            .swiper-pagination-bullet-active {
-                opacity: 1;
-                width: 20px;
-                height: 20px;
-            }
-
-            swiper-slide {
-                text-align: center;
-                font-size: 18px;
-                background: #444;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-
-            swiper-slide img {
-                display: block;
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-
-            .dot {
-                position: absolute;
-                width: 10px;
-                height: 10px;
-                background: red;
-                border-radius: 50%;
-                transform: translate(-50%, -50%);
-                pointer-events: none;
             }
         </style>
         <script>

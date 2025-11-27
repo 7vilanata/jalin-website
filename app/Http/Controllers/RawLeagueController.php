@@ -4,17 +4,23 @@ namespace App\Http\Controllers;
 
 use App\Models\GalleryRawleague;
 use App\Models\SponsorAndPresenter;
+use App\models\Tournament;
 use Illuminate\Http\Request;
 
 class RawLeagueController extends Controller
 {
-   public function index(Request $request)
+    public function index(Request $request)
     {
-        $galleries = GalleryRawleague::where('is_published', true)->paginate(6); 
-        $sponsors = SponsorAndPresenter::where('is_published', true)->where('role','sponsor')->get();
-        $presenters = SponsorAndPresenter::where('is_published', true)->where('role','presenter')->get();
+        $galleries = GalleryRawleague::where('is_published', true)->paginate(6);
+        $sponsors = SponsorAndPresenter::where('is_published', true)->where('role', 'sponsor')->get();
+        $presenters = SponsorAndPresenter::where('is_published', true)->where('role', 'presenter')->get();
 
-        return view('rawleague.index', compact('galleries','sponsors','presenters'));
+        return view('rawleague.index', compact('galleries', 'sponsors', 'presenters'));
     }
-    
+    public function leaderboard(Request $request)
+    {
+
+        $tournaments = Tournament::with('teams')->get();
+        return view('rawleague.leaderboard',compact('tournaments'));
+    }
 }

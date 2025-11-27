@@ -15,6 +15,7 @@ use App\Http\Controllers\RawLeagueController;
 use App\Http\Controllers\RawVideosController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\WarkopController;
+use App\Http\Controllers\LeaderboardController;
 use App\Http\Livewire\FeatureList;
 use App\Livewire\ContactForm;
 use Illuminate\Support\Facades\Cookie;
@@ -53,6 +54,7 @@ Route::get('/schedules/filter', [ScheduleController::class, 'filter'])->name('sc
 // rawleague
 Route::prefix('raw-league')->group(function () {
     Route::get('/', [RawLeagueController::class, 'index'])->name('rawleague');
+    Route::get('/leaderboard', [RawLeagueController::class, 'leaderboard'])->name('rawleague.leaderboard');
     Route::get('/{slug}', [GalleryController::class, 'showLeague'])->name('rawleague.gallery');
 });
 
