@@ -77,32 +77,103 @@
                 DETAIL TERM AND CONDITION</h1>
 
             <div class="flex justify-center items-center w-full">
-                <div class=" flex flex-wrap flex-col justify-center items-center w-[100%] md:w-[80%] mt-8">
-                    <div id="terms-buttons" class="transition-opacity duration-300 ease-in-out mb-8">
-                        <button type="button" value="futsal"
-                            class="terms-btn font-bold text-[18px] text-white border-2 border-[#FF5632] rounded-full px-5 py-2.5 text-center me-2 mb-2 bg-[#FF5632]"
-                            onclick="showImage('futsal')">
-                            Futsal
-                        </button>
-                        <button type="button" value="mobile_legend"
-                            class="terms-btn text-white text-[18px] border-2 border-[#FF5632] rounded-full font-bold px-5 py-2.5 text-center me-2 mb-2 bg-transparent"
-                            onclick="showImage('mobile_legend')">
-                            Mobile Legend
-                        </button>
-                    </div>
+                <div class=" flex flex-wrap flex-col justify-center items-center w-[90%] md:w-[80%] mt-8">
 
-                    <!-- Image Container -->
+
+                    <!-- Buttons for selecting images -->
+
                     <div id="image-container" class="flex flex-col items-center z-10">
-                        <img id="display-image" src="" alt="Event Image" class="w-full h-auto hidden" />
-                        <p class=" my-3 text-[14px] text-left md:text-2xl  w-[80%] md:w-[100%]">
-                            *Oh iya bro, ada dokumen wajib yang mesti lo siapin (kartu pelajar + form izin ortu). Download
-                            dulu
-                            di sini <a class="underline" href="#">👉 Download Formulir</a>, terus bawa pas Technical
-                            Meeting nanti!
-                        </p>
+                        <div x-data="{
+                            open: false,
+                            zoom: 1,
+                            isDown: false,
+                            startX: 0,
+                            startY: 0,
+                            scrollLeft: 0,
+                            scrollTop: 0,
+                            threshold: 5,
+                            imageSrc: '{{ asset('assets/img/rawleague/terms-futsal.webp') }}',
+                            setImageSrc(buttonValue) {
+                                if (buttonValue === 'futsal') {
+                                    this.imageSrc = '{{ asset('assets/img/rawleague/terms-futsal.webp') }}';
+                                } else if (buttonValue === 'mobile_legend') {
+                                    this.imageSrc = '{{ asset('assets/img/rawleague/terms-ml.webp') }}';
+                                }
+                            }
+                        }" class="flex flex-col justify-center">
+                            <div id="terms-buttons" class="transition-opacity duration-300 ease-in-out mb-8">
+                                <button type="button" value="futsal"
+                                    class="terms-btn font-bold text-[18px] text-white border-2 border-[#FF5632] rounded-full px-5 py-2.5 text-center me-2 mb-2 bg-[#FF5632]"
+                                    @click="setImageSrc('futsal')">
+                                    Futsal
+                                </button>
+                                <button type="button" value="mobile_legend"
+                                    class="terms-btn text-white text-[18px] border-2 border-[#FF5632] rounded-full font-bold px-5 py-2.5 text-center me-2 mb-2 bg-transparent"
+                                    @click="setImageSrc('mobile_legend')">
+                                    Mobile Legend
+                                </button>
+                            </div>
+
+                            <div class="w-full flex justify-center mb-4">
+                                <img :src="imageSrc" alt="Event Image"
+                                    draggable="false"
+                                    class="display-image cursor-pointer select-none w-full h-auto" @click="open = true" />
+                            </div>
+
+                            <!-- Dialog / Modal -->
+                            <div x-show="open" x-transition
+                                class="fixed inset-0 bg-black/70 flex items-center justify-center p-5">
+                                <!-- Click outside to close -->
+                                <div class="absolute inset-0" @click="open = false"></div>
+
+                                <div class="relative bg-white text-black rounded-lg shadow-lg p-4 max-w-4xl w-full">
+
+                                    <!-- Close Button -->
+                                    <button class="absolute top-3 right-3 text-gray-600 hover:text-black text-2xl"
+                                        @click="open = false">&times;</button>
+
+                                    <!-- Zoom controls -->
+                                    <div class="flex justify-between items-center mb-3 mt-10 px-2">
+                                        <button class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300"
+                                            @click="zoom -= 0.4">-</button>
+
+                                        <span class="font-semibold">Zoom: <span x-text="zoom.toFixed(1)"></span>x</span>
+
+                                        <button class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300"
+                                            @click="zoom += 0.4">+</button>
+                                    </div>
+
+                                    <!-- Zoomable Image -->
+                                    <div class="overflow-auto max-h-[80vh] border rounded">
+                                        <img :src="imageSrc" alt="Event Image" draggable="false"
+                                            :style="'transform: scale(' + zoom + '); transform-origin: top left;'"
+                                            class="display-image transition-transform duration-200 cursor-move select-none"
+                                            @mousedown="startX = $event.pageX; startY = $event.pageY; scrollLeft = $el.parentElement.scrollLeft; scrollTop = $el.parentElement.scrollTop; isDown = true"
+                                            @mousemove="if (isDown) { 
+                                                let deltaX = $event.pageX - startX;
+                                                let deltaY = $event.pageY - startY;
+                                                if (Math.abs(deltaX) > threshold) { 
+                                                    $el.parentElement.scrollLeft = scrollLeft - deltaX;
+                                                }
+                                                if (Math.abs(deltaY) > threshold) {
+                                                    $el.parentElement.scrollTop = scrollTop - deltaY;
+                                                }
+                                            }"
+                                            @mouseup="isDown = false" @mouseleave="isDown = false" />
+                                    </div>
+
+                                </div>
+                            </div>
+                            <p class=" my-3 text-[14px] text-left md:text-2xl  w-[100%]">
+                                *Oh iya bro, ada dokumen wajib yang mesti lo siapin (kartu pelajar + form izin ortu).
+                                Download
+                                dulu
+                                di sini <a class="underline" href="#">👉 Download Formulir</a>, terus bawa pas
+                                Technical
+                                Meeting nanti!
+                            </p>
+                        </div>
                     </div>
-
-
                 </div>
             </div>
         </section>
@@ -119,7 +190,7 @@
             </div>
     </div>
 
-    <section class="bg-[#FFFFFF] py-20 px-3 sm:px-10 lg:px-50 z-10 relative">
+    <section class="bg-[#FFFFFF] py-20 px-3 sm:px-10 lg:px-50 z-10 ">
         <div class="text-center mt-10">
             <section>
                 @include('components.faq-rawleague')
@@ -128,7 +199,7 @@
     </section>
 
     {{-- apa aja di grand final --}}
-    <section class="bg-[#FFFFFF] py-20 px-3 sm:px-10 lg:px-50 z-10 relative">
+    <section class="bg-[#FFFFFF] py-20 px-3 sm:px-10 lg:px-50 z-10 ">
         <h1 style="font-weight: 400"
             class="ultraprint-font bg-[#FF5632] inline-block p-3 text-[22px] md:text-5xl rounded-2xl mb-2 text-[#FFFFFF] font-medium">
             ADA APA AJA DI GRAND FINAL</h1>
@@ -150,7 +221,7 @@
     </section>
 
     {{-- kalender event --}}
-    <section class=" bg-[#0353FF] py-20 px-3 sm:px-10 lg:px-50 z-10 relative">
+    <section class=" bg-[#0353FF] py-20 px-3 sm:px-10 lg:px-50 z-10 ">
         <h1 style="font-weight: 400"
             class="ultraprint-font bg-[#FF5632] inline-block p-3 text-[22px] md:text-5xl rounded-2xl mb-2 text-[#FFFFFF] font-medium">
             KALENDER EVENT</h1>
@@ -218,7 +289,7 @@
     </section>
 
     {{-- Sponsor --}}
-    <section class="bg-[#FFFFFF] py-20 px-3 sm:px-10 lg:px-50 z-10 relative">
+    <section class="bg-[#FFFFFF] py-20 px-3 sm:px-10 lg:px-50 z-10 ">
         {{-- presented --}}
         <div class="text-center">
             <h1 class=" ultraprint-font uppercase p-3 text-4xl md:text-5xl rounded-2xl text-[#0353FF] font-normal">
@@ -229,7 +300,7 @@
                 @else
                     @foreach ($presenters as $item)
                         <img src="{{ asset('storage/' . $item->logo) }}" alt="{{ $item->name }}"
-                            class=" object-contain w-[100px] ">
+                            class=" object-contain w-[200px]">
                     @endforeach
                 @endif
             </div>
@@ -237,7 +308,7 @@
         </div>
 
         {{-- sponsored by --}}
-        <div class="text-center">
+        <div class="text-center mt-20">
             <h1 class=" ultraprint-font uppercase p-3 text-4xl md:text-5xl rounded-2xl text-[#0353FF] font-normal">
                 Sponsored By</h1>
             <div class="flex justify-center flex-wrap gap-10  my-4">
@@ -246,7 +317,7 @@
                 @else
                     @foreach ($sponsors as $item)
                         <img src="{{ asset('storage/' . $item->logo) }}" alt="{{ $item->name }}"
-                            class=" object-contain w-[100px] ">
+                            class=" object-contain w-[200px] ">
                     @endforeach
                 @endif
             </div>
@@ -254,7 +325,7 @@
     </section>
 
     {{-- Socmed --}}
-    <section class="bg-[#FFFFFF] py-20 px-3 sm:px-10 lg:px-50 z-10 relative">
+    <section class="bg-[#FFFFFF] py-20 px-3 sm:px-10 lg:px-50 z-10 ">
         <div class="text-center py-20">
             <h1 class=" ultraprint-font  inline-block p-3 text-5xl rounded-2xl text-[#0353FF] font-normal">
                 SOCIAL MEDIA</h1>
@@ -287,7 +358,7 @@
         <script>
             const termsBtn = document.querySelectorAll('.terms-btn');
             let selectedBtnValue = 'futsal';
-            showImage('futsal')
+            // showImage('futsal')
 
             termsBtn.forEach(btn => {
                 btn.addEventListener('click', () => {
@@ -303,25 +374,25 @@
                 });
             });
 
-            function showImage(buttonValue) {
-                // Get the image container and image element
-                const imageContainer = document.getElementById('image-container');
-                const imageElement = document.getElementById('display-image');
+            // function showImage(buttonValue) {
+            //     // Get the Alpine.js data object reference
+            //     const alpineData = document.querySelector('[x-data]').__x.$data;
 
-                // Set the image source based on the button clicked
-                if (buttonValue === 'futsal') {
-                    imageElement.src =
-                        `{{ asset('assets/img/rawleague/terms-futsal.webp') }}`; // Update with actual image path
-                } else if (buttonValue === 'mobile_legend') {
-                    imageElement.src = `{{ asset('assets/img/rawleague/terms-ml.webp') }}`; // Update with actual image path
-                }
+            //     // Set the image source based on the button clicked
+            //     if (buttonValue === 'futsal') {
+            //         alpineData.imageSrc = `{{ asset('assets/img/rawleague/terms-futsal.webp') }}`;
+            //     } else if (buttonValue === 'mobile_legend') {
+            //         alpineData.imageSrc = `{{ asset('assets/img/rawleague/terms-ml.webp') }}`;
+            //     }
 
-                // Make the image visible by removing the 'hidden' class
-                imageElement.classList.remove('hidden');
+            //     // Make the image visible by removing the 'hidden' class (no longer needed if using Alpine.js to control visibility)
+            //     const imageElement = document.querySelector('.display-image');
+            //     imageElement.classList.remove('hidden'); // Optional: only if you want to use plain JS for this
 
-                // Optionally, you can also show the image container if it's hidden
-                imageContainer.classList.remove('hidden');
-            }
+            //     // Optionally, you can also show the image container if it's hidden (but Alpine should handle this)
+            //     // const imageContainer = document.getElementById('image-container');
+            //     // imageContainer.classList.remove('hidden');
+            // }
         </script>
     @endif
 @endsection

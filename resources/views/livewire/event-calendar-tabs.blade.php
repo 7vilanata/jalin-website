@@ -32,7 +32,7 @@
                     @if ($selectedEvent === $event['id'])
                         <div class="space-y-3">
                             <h1 class="text-3xl md:text-4xl font-extrabold">{{ $event['title'] }}</h1>
-                            <p class="text-lg md:text-2xl leading-relaxed max-w-xl">{{ $event['description'] }}</p>
+                            <div class="text-lg leading-relaxed ">{!! $event['description'] !!}</div>
                         </div>
                     @endif
                 @endforeach

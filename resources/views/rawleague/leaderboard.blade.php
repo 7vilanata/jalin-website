@@ -30,7 +30,7 @@
                 <div id="bagan-buttons" class="transition-opacity duration-300 ease-in-out mb-8">
                     @foreach ($tournaments as $tournament)
                         <button type="button" value="{{ $tournament->slug }}"
-                            class="bagan-btn font-bold text-[18px] text-white border-2 border-[#FF5632] rounded-full px-5 py-2.5 text-center me-2 mb-2 bg-transparent"
+                            class="bagan-btn font-bold text-[12px] md:text-[18px] text-white border-2 border-[#FF5632] rounded-full px-5 py-2.5 text-center me-2 mb-2 bg-transparent"
                             onclick="showTournament('{{ $tournament->slug }}')">
                             {{ $tournament->name }}
                         </button>
@@ -41,15 +41,67 @@
                 <div id="tournament-details" class="tournament-container">
                     @foreach ($tournaments as $tournament)
                         <div id="tournament-{{ $tournament->slug }}" class="tournament hidden">
-                            <h2>{{ $tournament->name }}</h2>
-                            <img src="{{ asset('storage/' . $tournament->chart_image) }}"
-                                alt="{{ $tournament->name }} bracket" class="tournament-chart">
+                            <div x-data="{ open: false, zoom: 1, isDown: false, startX: 0, scrollLeft: 0, threshold: 5 }" class="flex justify-center">
 
-                            <div class="team-list mt-20">
-                                <h3 class="text-2xl font-bold mb-4">Teams:</h3>
-                                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                                <!-- Thumbnail Image -->
+                                <img src="{{ asset('storage/' . $tournament->chart_image) }}"
+                                    alt="{{ $tournament->name }} bracket" draggable="false"
+                                    class="tournament-chart cursor-pointer select-none" @click="open = true; zoom = 1" />
+
+                                <!-- Dialog / Modal -->
+                                <div x-show="open" x-transition
+                                    class="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-5">
+                                    <!-- Click outside to close -->
+                                    <div class="absolute inset-0" @click="open = false"></div>
+
+                                    <div class="relative bg-white rounded-lg shadow-lg p-4 max-w-4xl w-full">
+
+                                        <!-- Close Button -->
+                                        <button class="absolute top-3 right-3 text-gray-600 hover:text-black text-2xl"
+                                            @click="open = false">&times;</button>
+
+                                        <!-- Zoom controls -->
+                                        <div class="flex justify-between items-center mb-3 mt-10 px-2">
+                                            <button class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300"
+                                                @click="zoom -= 0.4">-</button>
+
+                                            <span class="font-semibold">Zoom: <span x-text="zoom.toFixed(1)"></span>x</span>
+
+                                            <button class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300"
+                                                @click="zoom += 0.4">+</button>
+                                        </div>
+
+                                        <!-- Zoomable Image -->
+                                        <div class="overflow-auto max-h-[80vh] border rounded">
+                                            <img :src="'{{ asset('storage/' . $tournament->chart_image) }}'"
+                                                draggable="false"
+                                                :style="'transform: scale(' + zoom + '); transform-origin: top left;'"
+                                                class="transition-transform duration-200 cursor-move select-none"
+                                                @mousedown="startX = $event.pageX; startY = $event.pageY; scrollLeft = $el.parentElement.scrollLeft; scrollTop = $el.parentElement.scrollTop; isDown = true"
+                                                @mousemove="if (isDown) { 
+                                                    let deltaX = $event.pageX - startX;
+                                                    let deltaY = $event.pageY - startY;
+                                                    if (Math.abs(deltaX) > threshold) { 
+                                                        $el.parentElement.scrollLeft = scrollLeft - deltaX;
+                                                    }
+                                                    if (Math.abs(deltaY) > threshold) {
+                                                        $el.parentElement.scrollTop = scrollTop - deltaY;
+                                                    }
+                                                }"
+                                                @mouseup="isDown = false" @mouseleave="isDown = false" />
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="team-list mt-20 text-left">
+                                <h1 style="font-weight: 400"
+                                    class="ultraprint-font  bg-[#FF5632] inline-block p-3 text-[22px] md:text-5xl rounded-2xl mb-2 text-[#FFFFFF] font-medium">
+                                    LIST TEAM</h1>
+                                <div class="grid grid-cols-1 md:grid-cols-3 mt-10 gap-8">
                                     <!-- Left column: First 10 teams -->
-                                    <div class="team-column overflow-y-auto max-h-[calc(10*3rem)]">
+                                    <div class="team-column overflow-y-auto max-h-[calc(10*3rem)] ">
                                         @foreach ($tournament->teams->take(10) as $team)
                                             <!-- First 4 teams for the first column -->
                                             <div class="team-item flex items-center text-2xl text-[#0353FF] gap-5 my-3">
