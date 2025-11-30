@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\GalleryRawleague;
 use App\Models\SponsorAndPresenter;
-use App\models\Tournament;
+use App\Models\Tournament;
 use Illuminate\Http\Request;
 
 class RawLeagueController extends Controller
