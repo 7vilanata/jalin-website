@@ -38,6 +38,14 @@ class SocmedResource extends Resource
                         'Instagram' => 'Instagram',
                     ])
                     ->required(),
+                Forms\Components\Select::make('campaign_type')
+                    ->label('Type Campaign')
+                    ->options([
+                        'warkop' => 'Warkop',
+                        'rawleague' => 'RawLeague',
+                        'rawfest' => 'RawFest',
+                    ])
+                    ->required(),
                 Forms\Components\DatePicker::make('publish_date')
                     ->default(now())
                     ->timezone('Asia/Jakarta')
@@ -69,6 +77,7 @@ class SocmedResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('socmed_type')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('campaign_type')->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('title')->sortable()->searchable(),
                 Tables\Columns\IconColumn::make('socmed_link')
                     ->label('Link')

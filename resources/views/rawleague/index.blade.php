@@ -331,7 +331,7 @@
                 SOCIAL MEDIA</h1>
 
             <div class="flex justify-center">
-                @livewire('social-media')
+                @livewire('social-media',['campaign_type' => 'rawleague'])
             </div>
         </div>
     </section>

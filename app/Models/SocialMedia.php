@@ -12,6 +12,7 @@ class SocialMedia extends Model
      protected $fillable = [
         'title',
         'socmed_type',
+        'campaign_type',
         'socmed_link',
         'is_published',
         'thumbnail',

@@ -99,73 +99,79 @@
                                 <h1 style="font-weight: 400"
                                     class="ultraprint-font  bg-[#FF5632] inline-block p-3 text-[22px] md:text-5xl rounded-2xl mb-2 text-[#FFFFFF] font-medium">
                                     LIST TEAM</h1>
-                                <div class="grid grid-cols-1 md:grid-cols-3 mt-10 gap-8">
-                                    <!-- Left column: First 10 teams -->
-                                    <div class="team-column overflow-y-auto max-h-[calc(10*3rem)] ">
-                                        @foreach ($tournament->teams->take(10) as $team)
-                                            <!-- First 4 teams for the first column -->
-                                            <div class="team-item flex items-center text-2xl text-[#0353FF] gap-5 my-3">
-                                                <span
-                                                    class="font-[600]">{{ $team->position ? $team->position . '. ' : '' }}</span>
+                                @if ($tournament->teams->isEmpty())
+                                    <p class="text-center text-lg text-gray-500">No Teams right now</p>
+                                @else
+                                    <div class="grid grid-cols-1 md:grid-cols-3 mt-10 gap-8">
 
-                                                <!-- Display Team Logo -->
-                                                @if ($team->logo_image)
-                                                    <img src="{{ asset('storage/' . $team->logo_image) }}"
-                                                        alt="{{ $team->name }} logo" class="w-12">
-                                                @else
-                                                    <img src="{{ asset('assets/img/rawleague/example-logo1.png') }}"
-                                                        alt="{{ $team->name }} logo" class="w-12">
-                                                @endif
+                                        <!-- Left column: First 10 teams -->
+                                        <div class="team-column overflow-y-auto max-h-[calc(10*3rem)] ">
+                                            @foreach ($tournament->teams->take(10) as $team)
+                                                <!-- First 4 teams for the first column -->
+                                                <div class="team-item flex items-center text-2xl text-[#0353FF] gap-5 my-3">
+                                                    <span
+                                                        class="font-[600]">{{ $team->position ? $team->position . '. ' : '' }}</span>
 
-                                                <span class="font-[600]">{{ $team->name }}</span>
-                                            </div>
-                                        @endforeach
+                                                    <!-- Display Team Logo -->
+                                                    @if ($team->logo_image)
+                                                        <img src="{{ asset('storage/' . $team->logo_image) }}"
+                                                            alt="{{ $team->name }} logo" class="w-12">
+                                                    @else
+                                                        <img src="{{ asset('assets/img/rawleague/example-logo1.png') }}"
+                                                            alt="{{ $team->name }} logo" class="w-12">
+                                                    @endif
+
+                                                    <span class="font-[600]">{{ $team->name }}</span>
+                                                </div>
+                                            @endforeach
+                                        </div>
+
+                                        <!-- Middle column: Next 3 teams -->
+                                        <div class="team-column overflow-y-auto max-h-[calc(10*3rem)]">
+                                            @foreach ($tournament->teams->skip(10)->take(10) as $team)
+                                                <!-- Next 3 teams -->
+                                                <div class="team-item flex items-center text-2xl text-[#0353FF] gap-5 my-3">
+                                                    <span
+                                                        class="font-[600]">{{ $team->position ? $team->position . '. ' : '' }}</span>
+
+                                                    <!-- Display Team Logo -->
+                                                    @if ($team->logo_image)
+                                                        <img src="{{ asset('storage/' . $team->logo_image) }}"
+                                                            alt="{{ $team->name }} logo" class="w-12">
+                                                    @else
+                                                        <img src="{{ asset('assets/img/rawleague/example-logo1.png') }}"
+                                                            alt="{{ $team->name }} logo" class="w-12">
+                                                    @endif
+
+                                                    <span class="font-[600]">{{ $team->name }}</span>
+                                                </div>
+                                            @endforeach
+                                        </div>
+
+                                        <!-- Right column: Remaining teams -->
+                                        <div class="team-column overflow-y-auto max-h-[calc(100vh-10*3rem)]">
+                                            @foreach ($tournament->teams->skip(20) as $team)
+                                                <!-- Remaining teams -->
+                                                <div class="team-item flex items-center text-2xl text-[#0353FF] gap-5 my-3">
+                                                    <span
+                                                        class="font-[600]">{{ $team->position ? $team->position . '. ' : '' }}</span>
+
+                                                    <!-- Display Team Logo -->
+                                                    @if ($team->logo_image)
+                                                        <img src="{{ asset('storage/' . $team->logo_image) }}"
+                                                            alt="{{ $team->name }} logo" class="w-12">
+                                                    @else
+                                                        <img src="{{ asset('assets/img/rawleague/example-logo1.png') }}"
+                                                            alt="{{ $team->name }} logo" class="w-12">
+                                                    @endif
+
+                                                    <span class="font-[600]">{{ $team->name }}</span>
+                                                </div>
+                                            @endforeach
+                                        </div>
                                     </div>
+                                @endif
 
-                                    <!-- Middle column: Next 3 teams -->
-                                    <div class="team-column overflow-y-auto max-h-[calc(10*3rem)]">
-                                        @foreach ($tournament->teams->skip(10)->take(10) as $team)
-                                            <!-- Next 3 teams -->
-                                            <div class="team-item flex items-center text-2xl text-[#0353FF] gap-5 my-3">
-                                                <span
-                                                    class="font-[600]">{{ $team->position ? $team->position . '. ' : '' }}</span>
-
-                                                <!-- Display Team Logo -->
-                                                @if ($team->logo_image)
-                                                    <img src="{{ asset('storage/' . $team->logo_image) }}"
-                                                        alt="{{ $team->name }} logo" class="w-12">
-                                                @else
-                                                    <img src="{{ asset('assets/img/rawleague/example-logo1.png') }}"
-                                                        alt="{{ $team->name }} logo" class="w-12">
-                                                @endif
-
-                                                <span class="font-[600]">{{ $team->name }}</span>
-                                            </div>
-                                        @endforeach
-                                    </div>
-
-                                    <!-- Right column: Remaining teams -->
-                                    <div class="team-column overflow-y-auto max-h-[calc(100vh-10*3rem)]">
-                                        @foreach ($tournament->teams->skip(20) as $team)
-                                            <!-- Remaining teams -->
-                                            <div class="team-item flex items-center text-2xl text-[#0353FF] gap-5 my-3">
-                                                <span
-                                                    class="font-[600]">{{ $team->position ? $team->position . '. ' : '' }}</span>
-
-                                                <!-- Display Team Logo -->
-                                                @if ($team->logo_image)
-                                                    <img src="{{ asset('storage/' . $team->logo_image) }}"
-                                                        alt="{{ $team->name }} logo" class="w-12">
-                                                @else
-                                                    <img src="{{ asset('assets/img/rawleague/example-logo1.png') }}"
-                                                        alt="{{ $team->name }} logo" class="w-12">
-                                                @endif
-
-                                                <span class="font-[600]">{{ $team->name }}</span>
-                                            </div>
-                                        @endforeach
-                                    </div>
-                                </div>
                             </div>
 
 
