@@ -165,13 +165,7 @@
                                 </div>
                             </div>
                             <p class=" my-3 text-[14px] text-left md:text-2xl  w-[100%]">
-                                *Oh iya bro, ada dokumen wajib yang mesti lo siapin (kartu pelajar + form izin ortu).
-                                Download
-                                dulu
-                                di sini <a class="underline" href="#">👉 Download Formulir</a>, terus bawa pas
-                                Technical
-                                Meeting nanti!
-                            </p>
+                                Download Formulir Consent <a class="underline" href="#">Disini</a>
                         </div>
                     </div>
                 </div>
