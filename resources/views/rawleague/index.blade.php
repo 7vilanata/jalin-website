@@ -203,9 +203,9 @@
             <p class=" my-3 text-[14px] md:text-2xl">
                 Rayain Kemenangan Lo di RAW Festival 2026, karena akan ada:
                 <br><br>
-                🎮 Pertandingan Final Mobile Legends yang bisa lo saksikan langsung.
+                🏆 Pertandingan Final Mobile Legends yang bisa lo saksikan langsung.
                 <br><br>
-                🏆 Pengumuman pemenang Juara 1,2,3 Mobile Legends. 
+                🎮 Pengumuman pemenang Juara 1,2,3 Mobile Legends. 
                 <br><br>
                 ⚽ Pengumuman pemenang Juara 1,2,3, Top Scorer, Best Goalkeeper, dan MVP. 
                 <br><br>
