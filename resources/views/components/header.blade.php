@@ -17,7 +17,7 @@
          <!-- Desktop Nav -->
          <nav class="hidden lg:flex uppercase space-x-4 text-[20px]">
              <a href="/warkop-raw" class="px-2  ultraprint-font">Warkop RAWvolution</a>
-             <a href="/raw-league" class="px-2  ultraprint-font">RAW League</a>
+              <a href="/raw-league" class="px-2  ultraprint-font">RAW League</a>
              <a href="/raw-fest" class="px-2  ultraprint-font">RAW Festival</a>
 
 

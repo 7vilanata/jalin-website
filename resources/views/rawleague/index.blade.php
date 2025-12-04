@@ -165,7 +165,7 @@
                                 </div>
                             </div>
                             <p class=" my-3 text-[14px] text-center md:text-2xl  w-[100%]">
-                                Download Formulir Consent <a class="underline" href="#">Disini</a>
+                                Download Formulir Consent <a class="underline" href="{{ asset('assets/doc/parental_consent_form.pdf') }}" download="parental_consent_form.pdf">Disini</a>
                         </div>
                     </div>
                 </div>

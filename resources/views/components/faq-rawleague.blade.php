@@ -37,7 +37,7 @@
             <div id="content-2" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                 <div class="pb-5 text-[14px] md:text-[20px] text-left">
                     <ul class="list-disc pl-7">
-                        <li>Peserta adalah pelajar aktif SMP atau SMA (maksimal umur 17 tahun).</li>
+                        <li>Peserta adalah pelajar aktif SMP atau SMA (maksimal umur 19 tahun).</li>
                         <li>Setiap peserta cuma bisa daftar satu kali, di Mobile Legends atau Futsal (gak bisa dua-duanya).</li>
                         <li>Tim boleh campuran (antar sekolah boleh) tapi tetap harus dari pelajar SMP/SMA.</li>
                     </ul>
@@ -139,8 +139,8 @@
                     RAW League Futsal adalah ajang seru buat lo yang pengen nunjukin kemampuan di lapangan dan buktiin kerja sama tim bareng temen satu sekolah.
                     Tahun ini, slot-nya terbatas banget:
                     <br>
-                    10 tim SMP
-                    10 tim SMA
+                    10 Tim SMP
+                    10 Tim SMA
                     <br>
                     Jadi, cepet daftar sebelum keabisan slot, bro!
                 </div>
@@ -161,7 +161,7 @@
             <div id="content-7" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                 <div class="pb-5 text-[14px] md:text-[20px] text-left">
                     <ul class="list-disc pl-7">
-                        <li>Peserta adalah pelajar aktif SMP atau SMA (maksimal umur 17 tahun).</li>
+                        <li>Peserta adalah pelajar aktif SMP atau SMA (maksimal umur 19 tahun).</li>
                         <li>Kalau lo udah daftar di RAW League Mobile Legend, gak bisa daftar lagi di futsal (pilih salah satu, bro).</li>
                     </ul>
                 </div>
