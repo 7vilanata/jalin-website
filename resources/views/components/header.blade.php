@@ -17,8 +17,8 @@
          <!-- Desktop Nav -->
          <nav class="hidden lg:flex uppercase space-x-4 text-[20px]">
              <a href="/warkop-raw" class="px-2  ultraprint-font">Warkop RAWvolution</a>
-             <a href="/raw-league" class="px-2  ultraprint-font">Youth RAW League</a>
-             <a href="/raw-fest" class="px-2  ultraprint-font">Youth RAW Fest</a>
+             <a href="/raw-league" class="px-2  ultraprint-font">RAW League</a>
+             <a href="/raw-fest" class="px-2  ultraprint-font">RAW Festival</a>
 
 
 
@@ -74,8 +74,8 @@
              {{-- <a href="/" class="block  ultraprint-font">Home</a> --}}
 
              <a href="/warkop-raw" class="block  ultraprint-font">Warkop RAWvolution</a>
-             <a href="/raw-league" class="block  ultraprint-font">Youth RAW League</a>
-             <a href="/raw-fest" class="block  ultraprint-font">Youth RAW Fest</a>
+             <a href="/raw-league" class="block  ultraprint-font">RAW League</a>
+             <a href="/raw-fest" class="block  ultraprint-font">RAW Festival</a>
 
              <a href="/parents" class="block  ultraprint-font">Parents</a>
              <div x-data="{ open: false }" class="relative text-right">
