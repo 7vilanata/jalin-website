@@ -115,8 +115,7 @@
                             </div>
 
                             <div class="w-full flex justify-center mb-4">
-                                <img :src="imageSrc" alt="Event Image"
-                                    draggable="false"
+                                <img :src="imageSrc" alt="Event Image" draggable="false"
                                     class="display-image cursor-pointer select-none w-full h-auto" @click="open = true" />
                             </div>
 
@@ -165,7 +164,9 @@
                                 </div>
                             </div>
                             <p class=" my-3 text-[14px] text-center md:text-2xl  w-[100%]">
-                                Download Formulir Consent <a class="underline" href="{{ asset('assets/doc/parental_consent_form.pdf') }}" download="parental_consent_form.pdf">Disini</a>
+                                Download Formulir Consent <a class="underline"
+                                    href="{{ asset('assets/doc/parental_consent_form.pdf') }}"
+                                    download="parental_consent_form.pdf">Disini</a>
                         </div>
                     </div>
                 </div>
@@ -200,16 +201,15 @@
 
         <div class="text-[#0353FF]">
             <p class=" my-3 text-[14px] md:text-2xl">
-                RAW League bukan cuma soal tanding, tapi ajang buat buktiin hasil perjuangan lo bareng tim dari awal sampai
-                akhir. Di Grand Final nanti, lo bakal nemuin:
+                Rayain Kemenangan Lo di RAW Festival 2026, karena akan ada:
                 <br><br>
-                🏆 Perebutan Juara 1–4 buat tim terbaik dari Futsal & Mobile Legends
+                🎮 Pertandingan Final Mobile Legends yang bisa lo saksikan langsung.
                 <br><br>
-                🎮 Pertandingan Mobile Legends seru yang bisa lo saksikan langsung
+                🏆 Pengumuman pemenang Juara 1,2,3 Mobile Legends. 
                 <br><br>
-                ⚽ Adu Futsal SMP & SMA yang dijamin bikin tegang sampai peluit akhir
+                ⚽ Pengumuman pemenang Juara 1,2,3, Top Scorer, Best Goalkeeper, dan MVP. 
                 <br><br>
-                🎉 Digelar di RAW Festival 2026, event paling heboh tempat semua energi dan semangat lo nyatu
+                🎉 Rayakan momen lo di RAW Festival 2026, event remaja laki yang paling heboh tempat semua energi dan semangat lo nyatu.
             </p>
         </div>
     </section>
@@ -325,7 +325,7 @@
                 SOCIAL MEDIA</h1>
 
             <div class="flex justify-center">
-                @livewire('social-media',['campaign_type' => 'rawleague'])
+                @livewire('social-media', ['campaign_type' => 'rawleague'])
             </div>
         </div>
     </section>

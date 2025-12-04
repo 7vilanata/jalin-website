@@ -139,8 +139,7 @@
                     RAW League Futsal adalah ajang seru buat lo yang pengen nunjukin kemampuan di lapangan dan buktiin kerja sama tim bareng temen satu sekolah.
                     Tahun ini, slot-nya terbatas banget:
                     <br>
-                    10 Tim SMP
-                    10 Tim SMA
+                    10 Tim SMP dan 10 Tim SMA
                     <br>
                     Jadi, cepet daftar sebelum keabisan slot, bro!
                 </div>
