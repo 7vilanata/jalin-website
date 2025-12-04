@@ -9,7 +9,8 @@
             <button onclick="toggleAccordion(1)" class="w-full flex justify-between items-center py-5 text-slate-800">
                 <span class="text-[14px] md:text-2xl text-[#0353FF] font-semibold text-left">1. Tentang Kompetisi</span>
                 <span id="icon-1" class="text-slate-800 transition-transform duration-300 transform rotate-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 md:w-6 md:h-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                        class="w-4 h-4 md:w-6 md:h-6">
                         <path
                             d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
                     </svg>
@@ -17,7 +18,8 @@
             </button>
             <div id="content-1" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                 <div class="pb-5 text-[14px] md:text-[20px] text-left">
-                    RAW League Mobile Legends adalah ajang e-sport buat lo yang pengen ngebuktiin siapa tim paling solid dan paling jago nge-gank di sekolah lo.
+                    RAW League Mobile Legends adalah ajang e-sport buat lo yang pengen ngebuktiin siapa tim paling solid
+                    dan paling jago nge-gank di sekolah lo.
                     <br>Tahun ini tersedia 32 slot tim, dan semua bisa daftar, dari SMP atau SMA — susunan bebas!
                 </div>
             </div>
@@ -28,7 +30,8 @@
             <button onclick="toggleAccordion(2)" class="w-full flex justify-between items-center py-5 text-slate-800">
                 <span class="text-[14px] md:text-2xl text-[#0353FF] font-semibold text-left">2. Syarat Peserta</span>
                 <span id="icon-2" class="text-slate-800 transition-transform duration-300 transform rotate-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 md:w-6 md:h-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                        class="w-4 h-4 md:w-6 md:h-6">
                         <path
                             d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
                     </svg>
@@ -38,7 +41,8 @@
                 <div class="pb-5 text-[14px] md:text-[20px] text-left">
                     <ul class="list-disc pl-7">
                         <li>Peserta adalah pelajar aktif SMP atau SMA (maksimal umur 19 tahun).</li>
-                        <li>Setiap peserta cuma bisa daftar satu kali, di Mobile Legends atau Futsal (gak bisa dua-duanya).</li>
+                        <li>Setiap peserta cuma bisa daftar satu kali, di Mobile Legends atau Futsal (gak bisa
+                            dua-duanya).</li>
                         <li>Tim boleh campuran (antar sekolah boleh) tapi tetap harus dari pelajar SMP/SMA.</li>
                     </ul>
                 </div>
@@ -50,7 +54,8 @@
             <button onclick="toggleAccordion(3)" class="w-full flex justify-between items-center py-5 text-slate-800">
                 <span class="text-[14px] md:text-2xl text-[#0353FF] font-semibold text-left">3. Susunan Tim</span>
                 <span id="icon-3" class="text-slate-800 transition-transform duration-300 transform rotate-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 md:w-6 md:h-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                        class="w-4 h-4 md:w-6 md:h-6">
                         <path
                             d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
                     </svg>
@@ -74,9 +79,11 @@
         <!-- Accordion Item 4 -->
         <div class="bg-[#FEFC8B] px-5 rounded-2xl mt-3">
             <button onclick="toggleAccordion(4)" class="w-full flex justify-between items-center py-5 text-slate-800">
-                <span class="text-[14px] md:text-2xl text-[#0353FF] font-semibold text-left">4. Format Pertandingan</span>
+                <span class="text-[14px] md:text-2xl text-[#0353FF] font-semibold text-left">4. Format
+                    Pertandingan</span>
                 <span id="icon-4" class="text-slate-800 transition-transform duration-300 transform rotate-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 md:w-6 md:h-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                        class="w-4 h-4 md:w-6 md:h-6">
                         <path
                             d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
                     </svg>
@@ -84,12 +91,11 @@
             </button>
             <div id="content-4" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                 <div class="pb-5 text-[14px] md:text-[20px] text-left ">
-                    Pertandingan dilaksanakan online.
-                    Sistem pertandingan terdiri dari:
-                    Top Rank Match (penyisihan 3 ronde)
-                    Elimination System (gugur langsung)
+                    Kompetisi dilaksanakan secara : 
                     <br>
-                    Durasi game: sekitar 20–30 menit per match.
+                    - Kualifikasi : Online
+                    <br>
+                    - Grand Final (4 besar) : Offline di venue RAW FESTIVAL
                 </div>
             </div>
         </div>
@@ -99,7 +105,8 @@
             <button onclick="toggleAccordion(5)" class="w-full flex justify-between items-center py-5 text-slate-800">
                 <span class="text-[14px] md:text-2xl text-[#0353FF] font-semibold text-left">5. Lain-lain</span>
                 <span id="icon-5" class="text-slate-800 transition-transform duration-300 transform rotate-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 md:w-6 md:h-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                        class="w-4 h-4 md:w-6 md:h-6">
                         <path
                             d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
                     </svg>
@@ -128,7 +135,8 @@
             <button onclick="toggleAccordion(6)" class="w-full flex justify-between items-center py-5 text-slate-800">
                 <span class="text-[14px] md:text-2xl text-[#0353FF] font-semibold text-left">1. Tentang Kompetisi</span>
                 <span id="icon-6" class="text-slate-800 transition-transform duration-300 transform rotate-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 md:w-6 md:h-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                        class="w-4 h-4 md:w-6 md:h-6">
                         <path
                             d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
                     </svg>
@@ -136,7 +144,8 @@
             </button>
             <div id="content-6" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                 <div class="pb-5 text-[14px] md:text-[20px] text-left">
-                    RAW League Futsal adalah ajang seru buat lo yang pengen nunjukin kemampuan di lapangan dan buktiin kerja sama tim bareng temen satu sekolah.
+                    RAW League Futsal adalah ajang seru buat lo yang pengen nunjukin kemampuan di lapangan dan buktiin
+                    kerja sama tim bareng temen satu sekolah.
                     Tahun ini, slot-nya terbatas banget:
                     <br>
                     10 Tim SMP dan 10 Tim SMA
@@ -151,7 +160,8 @@
             <button onclick="toggleAccordion(7)" class="w-full flex justify-between items-center py-5 text-slate-800">
                 <span class="text-[14px] md:text-2xl text-[#0353FF] font-semibold text-left">2. Syarat Peserta</span>
                 <span id="icon-7" class="text-slate-800 transition-transform duration-300 transform rotate-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 md:w-6 md:h-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                        class="w-4 h-4 md:w-6 md:h-6">
                         <path
                             d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
                     </svg>
@@ -161,7 +171,8 @@
                 <div class="pb-5 text-[14px] md:text-[20px] text-left">
                     <ul class="list-disc pl-7">
                         <li>Peserta adalah pelajar aktif SMP atau SMA (maksimal umur 19 tahun).</li>
-                        <li>Kalau lo udah daftar di RAW League Mobile Legend, gak bisa daftar lagi di futsal (pilih salah satu, bro).</li>
+                        <li>Kalau lo udah daftar di RAW League Mobile Legend, gak bisa daftar lagi di futsal (pilih
+                            salah satu, bro).</li>
                     </ul>
                 </div>
             </div>
@@ -172,7 +183,8 @@
             <button onclick="toggleAccordion(8)" class="w-full flex justify-between items-center py-5 text-slate-800">
                 <span class="text-[14px] md:text-2xl text-[#0353FF] font-semibold text-left">3. Susunan Tim</span>
                 <span id="icon-8" class="text-slate-800 transition-transform duration-300 transform rotate-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 md:w-6 md:h-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                        class="w-4 h-4 md:w-6 md:h-6">
                         <path
                             d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
                     </svg>
@@ -196,9 +208,11 @@
         <!-- Accordion Item 4 -->
         <div class="bg-[#FEFC8B] px-5 rounded-2xl mt-3">
             <button onclick="toggleAccordion(9)" class="w-full flex justify-between items-center py-5 text-slate-800">
-                <span class="text-[14px] md:text-2xl text-[#0353FF] font-semibold text-left">4. Format Pertandingan</span>
+                <span class="text-[14px] md:text-2xl text-[#0353FF] font-semibold text-left">4. Format
+                    Pertandingan</span>
                 <span id="icon-9" class="text-slate-800 transition-transform duration-300 transform rotate-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 md:w-6 md:h-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                        class="w-4 h-4 md:w-6 md:h-6">
                         <path
                             d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
                     </svg>
@@ -207,18 +221,22 @@
             <div id="content-9" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                 <div class="pb-5 text-[14px] md:text-[20px] text-left ">
                     Pertandingan dilakukan offline, dibagi jadi kategori SMP dan SMA.
-                    Durasi pertandingan: 2 babak × 10 menit, dengan istirahat 5 menit di tengah.
-                    Aturan foul: Tiap tim boleh maksimal 5 pelanggaran per babak — pelanggaran ke-6 langsung dihukum penalti.
+                    Durasi pertandingan terdiri dari 2 babak × 10 menit untuk tingkat SMP dan 2 babak x 15 menit untuk
+                    tingkat SMA, dengan waktu istirahat 5 menit di antara babak.
+                    Aturan foul: Setelah terjadi 5 pelanggaran dalam satu babak, maka pelanggaran ke-6 akan dikenakan
+                    tendangan 'second penalty'.
                     Penentuan pemenang (Tie-Breaker): Kalau skor imbang, lanjut ke adu penalti 3 kali tendangan per tim.
                 </div>
             </div>
         </div>
         <!-- Accordion Item 5 -->
         <div class="bg-[#FEFC8B] px-5 rounded-2xl mt-3">
-            <button onclick="toggleAccordion(10)" class="w-full flex justify-between items-center py-5 text-slate-800">
+            <button onclick="toggleAccordion(10)"
+                class="w-full flex justify-between items-center py-5 text-slate-800">
                 <span class="text-[14px] md:text-2xl text-[#0353FF] font-semibold text-left">5. Lain-lain</span>
                 <span id="icon-10" class="text-slate-800 transition-transform duration-300 transform rotate-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 md:w-6 md:h-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                        class="w-4 h-4 md:w-6 md:h-6">
                         <path
                             d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
                     </svg>
