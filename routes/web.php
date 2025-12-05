@@ -16,16 +16,12 @@ use App\Http\Controllers\RawVideosController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\WarkopController;
 use App\Http\Controllers\LeaderboardController;
+use App\Http\Controllers\RawFestController;
 use App\Http\Livewire\FeatureList;
 use App\Livewire\ContactForm;
 use Illuminate\Support\Facades\Cookie;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-
-
-Route::get('/raw-fest', function () {
-    return view('comingsoon');
-});
 
 Route::get('/contact-us', function () {
     return view('contact-us');
@@ -56,6 +52,10 @@ Route::prefix('raw-league')->group(function () {
     Route::get('/', [RawLeagueController::class, 'index'])->name('rawleague');
     Route::get('/leaderboard', [RawLeagueController::class, 'leaderboard'])->name('rawleague.leaderboard');
     Route::get('/{slug}', [GalleryController::class, 'showLeague'])->name('rawleague.gallery');
+});
+
+Route::prefix('raw-fest')->group(function () {
+    Route::get('/', [RawFestController::class, 'index'])->name('rawfest');
 });
 
 
