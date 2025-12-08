@@ -9,7 +9,7 @@
             <div class="flex h-full w-full  mx-auto justify-center items-center">
                 <img class="h-auto w-4/5 self-end z-0 hidden md:block" src="{{ asset('assets/img/boy-rawfest.webp') }}"
                     alt="boy-rawfest">
-                <img class="h-auto w-full self-end z-0 block md:hidden" src="{{ asset('assets/img/boy-rawfest.webp') }}"
+                <img class="h-auto w-full self-end z-0 block md:hidden" src="{{ asset('assets/img/boy-rawfest-mobile.webp') }}"
                     alt="boy-rawfest-mobile">
                 <a href="https://student.generasiraw.org/login" class="inline-block ">
                     <button
