@@ -9,8 +9,8 @@
             <div class="flex h-full w-full  mx-auto justify-center items-center">
                 <img class="h-auto w-4/5 self-end z-0 hidden md:block" src="{{ asset('assets/img/boy-rawfest.webp') }}"
                     alt="boy-rawfest">
-                <img class="h-auto w-full self-end z-0 block md:hidden" src="{{ asset('assets/img/boy-rawfest-mobile.webp') }}"
-                    alt="boy-rawfest-mobile">
+                <img class="h-auto w-full self-end z-0 block md:hidden"
+                    src="{{ asset('assets/img/boy-rawfest-mobile.webp') }}" alt="boy-rawfest-mobile">
                 <a href="https://student.generasiraw.org/login" class="inline-block ">
                     <button
                         class="hover:scale-110 ease-in-out text-[16px] md:text-4xl flex items-center bg-[#0353FF] py-1.5 px-8 text-white rounded-3xl absolute z-10 bottom-1/8 left-1/2 transform -translate-x-1/2 transition-all duration-300">
@@ -30,17 +30,17 @@
                 ABOUT RAW FESTIVAL</h1>
 
             <p class="text-[#0353FF] text-[14px] mt-6 md:mt-0 md:text-2xl">
-                <b>Raw League</b> bukan sekadar turnamen, bro! Ini ajang buat lo nunjukin skill, strategi, dan mental
-                Resilient,
-                Awesome, Wise! Buat lo yang jago futsal, siap-siap wakilin sekolah lo (SMP atau SMA) dan buktiin kalau
-                lo
-                bisa jadi tim paling solid di lapangan. Buat lo yang lebih jago di Mobile Legends, bebas gabung tim
-                campuran
-                yang penting umur lo di antara 12 sampai 19 tahun.
+                Bukan soal ngikutin orang lain, ini tentang merayakan keunikan diri dan bikin definisi “keren” versi kita
+                sendiri lewat passion positif mulai dari olahraga, gaming, fashion, musik, sampai segala bentuk kreativitas!
                 <br>
                 <br>
-                Di sini, menang bukan cuma soal skor, tapi gimana lo berani tampil dengan cara lo sendiri, tanpa perlu
-                pembuktian dari siapa pun. Yuk, daftar sekarang dan jadi bagian dari Generasi Ga Butuh Validasi!
+                <b>RAW Festival</b> jadi arena pembuktian bahwa kita, anak muda, nggak butuh validasi dari tekanan
+                pergaulan,
+                merokok, tawuran, sampai bullying. Lewat RAW, kita bisa bikin panggung sendiri, nunjukin siapa kita
+                sebenarnya, dan ngejalanin passion dengan cara yang kita banget.
+                <br>
+                <br>
+                Join now and get ready to be <b>RAW Generation!</b>
 
             </p>
 
@@ -70,44 +70,43 @@
 
             <div class="flex justify-center items-center w-full">
                 <div class=" flex flex-wrap flex-col justify-center items-center w-[90%] md:w-[80%] mt-8">
-                  <div x-data="{ open: false, zoom: 1, isDown: false, startX: 0, scrollLeft: 0, threshold: 5 }" class="flex justify-center">
+                    <div x-data="{ open: false, zoom: 1, isDown: false, startX: 0, scrollLeft: 0, threshold: 5 }" class="flex justify-center">
 
-                                <!-- Thumbnail Image -->
-                                <img src="{{ asset('assets/img/rawfest/band_comp.webp') }}"
-                                    alt="band_comp" draggable="false"
-                                    class="cursor-pointer select-none" @click="open = true; zoom = 1" />
+                        <!-- Thumbnail Image -->
+                        <img src="{{ asset('assets/img/rawfest/band_comp.webp') }}" alt="band_comp" draggable="false"
+                            class="cursor-pointer select-none" @click="open = true; zoom = 1" />
 
-                                <!-- Dialog / Modal -->
-                                <div x-show="open" x-transition
-                                    class="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-5">
-                                    <!-- Click outside to close -->
-                                    <div class="absolute inset-0" @click="open = false"></div>
+                        <!-- Dialog / Modal -->
+                        <div x-show="open" x-transition
+                            class="fixed inset-0 bg-black/70 flex items-center justify-center z-10 p-5">
+                            <!-- Click outside to close -->
+                            <div class="absolute inset-0" @click="open = false"></div>
 
-                                    <div class="relative bg-white rounded-lg shadow-lg p-4 max-w-4xl w-full">
+                            <div class="relative bg-white rounded-lg shadow-lg p-4 max-w-4xl w-full">
 
-                                        <!-- Close Button -->
-                                        <button class="absolute top-3 right-3 text-gray-600 hover:text-black text-2xl"
-                                            @click="open = false">&times;</button>
+                                <!-- Close Button -->
+                                <button class="absolute top-3 right-3 text-gray-600 hover:text-black text-2xl"
+                                    @click="open = false">&times;</button>
 
-                                        <!-- Zoom controls -->
-                                        <div class="flex justify-between items-center text-gray-600 mb-3 mt-10 px-2">
-                                            <button class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300"
-                                                @click="zoom -= 0.4">-</button>
+                                <!-- Zoom controls -->
+                                <div class="flex justify-between items-center text-gray-600 mb-3 mt-10 px-2">
+                                    <button class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300"
+                                        @click="zoom -= 0.4">-</button>
 
-                                            <span class="font-semibold text-gray-600">Zoom: <span x-text="zoom.toFixed(1)"></span>x</span>
+                                    <span class="font-semibold text-gray-600">Zoom: <span
+                                            x-text="zoom.toFixed(1)"></span>x</span>
 
-                                            <button class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300"
-                                                @click="zoom += 0.4">+</button>
-                                        </div>
+                                    <button class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300"
+                                        @click="zoom += 0.4">+</button>
+                                </div>
 
-                                        <!-- Zoomable Image -->
-                                        <div class="overflow-auto max-h-[80vh] border rounded">
-                                            <img src="{{ asset('assets/img/rawfest/band_comp.webp') }}"
-                                                draggable="false"
-                                                :style="'transform: scale(' + zoom + '); transform-origin: top left;'"
-                                                class="transition-transform duration-200 cursor-move select-none"
-                                                @mousedown="startX = $event.pageX; startY = $event.pageY; scrollLeft = $el.parentElement.scrollLeft; scrollTop = $el.parentElement.scrollTop; isDown = true"
-                                                @mousemove="if (isDown) { 
+                                <!-- Zoomable Image -->
+                                <div class="overflow-auto max-h-[80vh] border rounded">
+                                    <img src="{{ asset('assets/img/rawfest/band_comp.webp') }}" draggable="false"
+                                        :style="'transform: scale(' + zoom + '); transform-origin: top left;'"
+                                        class="transition-transform duration-200 cursor-move select-none"
+                                        @mousedown="startX = $event.pageX; startY = $event.pageY; scrollLeft = $el.parentElement.scrollLeft; scrollTop = $el.parentElement.scrollTop; isDown = true"
+                                        @mousemove="if (isDown) { 
                                                     let deltaX = $event.pageX - startX;
                                                     let deltaY = $event.pageY - startY;
                                                     if (Math.abs(deltaX) > threshold) { 
@@ -117,15 +116,18 @@
                                                         $el.parentElement.scrollTop = scrollTop - deltaY;
                                                     }
                                                 }"
-                                                @mouseup="isDown = false" @mouseleave="isDown = false" />
-                                        </div>
-
-                                    </div>
+                                        @mouseup="isDown = false" @mouseleave="isDown = false" />
                                 </div>
+
                             </div>
-                
+                        </div>
+                    </div>
+
                 </div>
             </div>
+            <p class=" my-3 text-[14px] md:text-2xl">Mau join? klik link 
+                <a class="underline" href="https://bit.ly/RAWBandCompetition">disini</a></p>
+
         </section>
 
         <section class="overflow-hidden bg-[#FEFC8B] whitespace-nowrap">
@@ -225,7 +227,7 @@
     {{-- Sponsor --}}
     <section class="bg-[#FFFFFF] py-20 px-3 sm:px-10 lg:px-50 z-10 ">
         {{-- presented --}}
-        <div class="text-center">
+        {{-- <div class="text-center">
             <h1 class=" ultraprint-font uppercase p-3 text-4xl md:text-5xl rounded-2xl text-[#0353FF] font-normal">
                 Presented By</h1>
             <div class="flex justify-center flex-wrap gap-10 my-4">
@@ -239,7 +241,7 @@
                 @endif
             </div>
 
-        </div>
+        </div> --}}
 
         {{-- sponsored by --}}
         <div class="text-center mt-20">

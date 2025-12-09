@@ -285,7 +285,7 @@
     {{-- Sponsor --}}
     <section class="bg-[#FFFFFF] py-20 px-3 sm:px-10 lg:px-50 z-10 ">
         {{-- presented --}}
-        <div class="text-center">
+        {{-- <div class="text-center">
             <h1 class=" ultraprint-font uppercase p-3 text-4xl md:text-5xl rounded-2xl text-[#0353FF] font-normal">
                 Presented By</h1>
             <div class="flex justify-center flex-wrap gap-10 my-4">
@@ -299,7 +299,7 @@
                 @endif
             </div>
 
-        </div>
+        </div> --}}
 
         {{-- sponsored by --}}
         <div class="text-center mt-20">
