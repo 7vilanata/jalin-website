@@ -27,7 +27,7 @@
                     <div class="my-10 text-center">
                         <h1
                             class="uppercase ultraprint-font block p-3 text-4xl md:text-5xl  rounded-2xl mb-2 text-[#0353FF] font-medium">
-                            Raw Videos</h1>
+                            RAW Videos</h1>
                         @if ($videos->isEmpty())
                             <p class="text-center text-lg text-gray-500">No videos right now</p>
                         @else

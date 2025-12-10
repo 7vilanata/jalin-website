@@ -31,7 +31,7 @@
 
             <div class="flex flex-wrap items-start my-3 flex-col-reverse md:flex-row">
                 <p class="text-[#0353FF] text-[14px] mt-6 md:mt-0 md:text-2xl w-full md:w-1/2">
-                    <b>Raw League</b> bukan sekadar turnamen, bro! Ini ajang buat lo nunjukin skill, strategi, dan mental
+                    <b>RAW League</b> bukan sekadar turnamen, bro! Ini ajang buat lo nunjukin skill, strategi, dan mental
                     Resilient,
                     Awesome, Wise! Buat lo yang jago futsal, siap-siap wakilin sekolah lo (SMP atau SMA) dan buktiin kalau
                     lo

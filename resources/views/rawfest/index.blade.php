@@ -73,7 +73,7 @@
                     <div x-data="{ open: false, zoom: 1, isDown: false, startX: 0, scrollLeft: 0, threshold: 5 }" class="flex justify-center">
 
                         <!-- Thumbnail Image -->
-                        <img src="{{ asset('assets/img/rawfest/band_comp.webp') }}" alt="band_comp" draggable="false"
+                        <img src="{{ asset('assets/img/rawfest/band-comp.webp') }}" alt="band-comp" draggable="false"
                             class="cursor-pointer select-none" @click="open = true; zoom = 1" />
 
                         <!-- Dialog / Modal -->
@@ -102,7 +102,7 @@
 
                                 <!-- Zoomable Image -->
                                 <div class="overflow-auto max-h-[80vh] border rounded">
-                                    <img src="{{ asset('assets/img/rawfest/band_comp.webp') }}" draggable="false"
+                                    <img src="{{ asset('assets/img/rawfest/band-comp.webp') }}" draggable="false"
                                         :style="'transform: scale(' + zoom + '); transform-origin: top left;'"
                                         class="transition-transform duration-200 cursor-move select-none"
                                         @mousedown="startX = $event.pageX; startY = $event.pageY; scrollLeft = $el.parentElement.scrollLeft; scrollTop = $el.parentElement.scrollTop; isDown = true"
