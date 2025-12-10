@@ -8,9 +8,9 @@
         <div class="lazy-background z-0 md:h-[105vh] h-screen w-full overflow-x-hidden bg-cover relative">
             <div class="flex h-full w-full  mx-auto justify-center items-center">
                 <img class="h-auto w-4/5 self-end z-0 hidden md:block" src="{{ asset('assets/img/boy-rawleague.webp') }}"
-                    alt="boy-warkop">
+                    alt="boy-rawleague">
                 <img class="h-auto w-full self-end z-0 block md:hidden"
-                    src="{{ asset('assets/img/boy-rawleague-mobile.webp') }}" alt="boy-warkop-mobile">
+                    src="{{ asset('assets/img/boy-rawleague-mobile-2.webp') }}" alt="boy-rawleague-mobile">
                 <a href="https://student.generasiraw.org/login" class="inline-block ">
                     <button
                         class="hover:scale-110 ease-in-out text-[16px] md:text-4xl flex items-center bg-[#0353FF] py-1.5 px-8 text-white rounded-3xl absolute z-10 bottom-1/8 left-1/2 transform -translate-x-1/2 transition-all duration-300">
@@ -92,12 +92,12 @@
                             scrollLeft: 0,
                             scrollTop: 0,
                             threshold: 5,
-                            imageSrc: '{{ asset('assets/img/rawleague/terms-futsal.webp') }}',
+                            imageSrc: '{{ asset('assets/img/rawleague/terms-futsal-new.webp') }}',
                             setImageSrc(buttonValue) {
                                 if (buttonValue === 'futsal') {
-                                    this.imageSrc = '{{ asset('assets/img/rawleague/terms-futsal.webp') }}';
+                                    this.imageSrc = '{{ asset('assets/img/rawleague/terms-futsal-new.webp') }}';
                                 } else if (buttonValue === 'mobile_legend') {
-                                    this.imageSrc = '{{ asset('assets/img/rawleague/terms-ml.webp') }}';
+                                    this.imageSrc = '{{ asset('assets/img/rawleague/terms-ml-new.webp') }}';
                                 }
                             }
                         }" class="flex flex-col justify-center">
@@ -376,25 +376,6 @@
                 });
             });
 
-            // function showImage(buttonValue) {
-            //     // Get the Alpine.js data object reference
-            //     const alpineData = document.querySelector('[x-data]').__x.$data;
-
-            //     // Set the image source based on the button clicked
-            //     if (buttonValue === 'futsal') {
-            //         alpineData.imageSrc = `{{ asset('assets/img/rawleague/terms-futsal.webp') }}`;
-            //     } else if (buttonValue === 'mobile_legend') {
-            //         alpineData.imageSrc = `{{ asset('assets/img/rawleague/terms-ml.webp') }}`;
-            //     }
-
-            //     // Make the image visible by removing the 'hidden' class (no longer needed if using Alpine.js to control visibility)
-            //     const imageElement = document.querySelector('.display-image');
-            //     imageElement.classList.remove('hidden'); // Optional: only if you want to use plain JS for this
-
-            //     // Optionally, you can also show the image container if it's hidden (but Alpine should handle this)
-            //     // const imageContainer = document.getElementById('image-container');
-            //     // imageContainer.classList.remove('hidden');
-            // }
         </script>
     @endif
 @endsection
