@@ -14,7 +14,7 @@
                 <a href="https://student.generasiraw.org/login" class="inline-block ">
                     <button
                         class="hover:scale-110 ease-in-out text-[16px] md:text-4xl flex items-center bg-[#0353FF] py-1.5 px-8 text-white rounded-3xl absolute z-10 bottom-1/8 left-1/2 transform -translate-x-1/2 transition-all duration-300">
-                        <span class="ultraprint-font">Gas Tanpa Basa-Basi!</span>
+                        <span class="ultraprint-font">DAFTAR DISINI!</span>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
                             stroke="currentColor" class="size-4 md:size-8 ml-2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
@@ -163,6 +163,13 @@
 
                                 </div>
                             </div>
+                            <a href="https://student.generasiraw.org/login" class=" cursor-pointer inline-flex justify-center">
+                                <button
+                                    class=" cursor-pointer hover:scale-110 ease-in-out text-[16px] md:text-4xl flex items-center bg-[#0353FF] py-1.5 px-8 text-white rounded-3xl transition-all duration-300">
+                                    <span class="ultraprint-font cursor-pointer">DAFTAR!</span>
+                                   
+                                </button>
+                            </a>
                             <p class=" my-3 text-[14px] text-center md:text-2xl  w-[100%]">
                                 Download Formulir Consent <a class="underline"
                                     href="{{ asset('assets/doc/parental_consent_form.pdf') }}"
@@ -205,11 +212,12 @@
                 <br><br>
                 🏆 Pertandingan Final Mobile Legends yang bisa lo saksikan langsung.
                 <br><br>
-                🎮 Pengumuman pemenang Juara 1,2,3 Mobile Legends. 
+                🎮 Pengumuman pemenang Juara 1,2,3 Mobile Legends.
                 <br><br>
-                ⚽ Pengumuman pemenang Juara 1,2,3, Top Scorer, Best Goalkeeper, dan MVP. 
+                ⚽ Pengumuman pemenang Juara 1,2,3, Top Scorer, Best Goalkeeper, dan MVP.
                 <br><br>
-                🎉 Rayakan momen lo di RAW Festival 2026, event remaja laki yang paling heboh tempat semua energi dan semangat lo nyatu.
+                🎉 Rayakan momen lo di RAW Festival 2026, event remaja laki yang paling heboh tempat semua energi dan
+                semangat lo nyatu.
             </p>
         </div>
     </section>
