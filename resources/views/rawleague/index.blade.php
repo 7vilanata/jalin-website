@@ -46,7 +46,7 @@
                 </p>
 
 
-                <div id="image-container-2" class="flex flex-col items-center z-10 w-full md:w-1/2">
+                <div id="image-container-2" class="flex flex-col items-center w-full md:w-1/2">
                     <div x-data="{
                         open: false,
                         zoom: 1,
@@ -71,7 +71,7 @@
 
                         <!-- Dialog / Modal -->
                         <div x-show="open" x-transition
-                            class="fixed inset-0 bg-black/70 flex items-center justify-center p-5">
+                            class="fixed inset-0 bg-black/70 flex items-center justify-center p-5  z-10">
                             <!-- Click outside to close -->
                             <div class="absolute inset-0" @click="open = false"></div>
 
@@ -169,7 +169,7 @@
 
                     <!-- Buttons for selecting images -->
 
-                    <div id="image-container" class="flex flex-col items-center z-9">
+                    <div id="image-container" class="flex flex-col items-center ">
                         <div x-data="{
                             open: false,
                             zoom: 1,
@@ -208,7 +208,7 @@
 
                             <!-- Dialog / Modal -->
                             <div x-show="open" x-transition
-                                class="fixed inset-0 bg-black/70 flex items-center justify-center p-5">
+                                class="fixed inset-0 bg-black/70 flex items-center justify-center p-5 z-10">
                                 <!-- Click outside to close -->
                                 <div class="absolute inset-0" @click="open = false"></div>
 
