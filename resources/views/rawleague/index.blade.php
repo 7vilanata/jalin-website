@@ -24,7 +24,7 @@
             </div>
         </div>
         <section
-            class="bg-[#FFFFFF] rounded-t-[50px] md:rounded-t-[100px] py-20 mt-[-80px] px-3 sm:px-10 lg:px-50 z-10 relative">
+            class="bg-[#FFFFFF] rounded-t-[50px] md:rounded-t-[100px] py-20 mt-[-80px] px-3 sm:px-10 lg:px-50  relative">
             <h1 style="font-weight: 400"
                 class="ultraprint-font bg-[#FF5632] inline-block p-3 text-[22px] md:text-5xl rounded-2xl mb-2 text-[#FFFFFF] font-medium">
                 ABOUT RAW LEAGUE</h1>
@@ -44,10 +44,95 @@
                     pembuktian dari siapa pun. Yuk, daftar sekarang dan jadi bagian dari Generasi Ga Butuh Validasi!
 
                 </p>
-                <img class=" object-contain rounded-xl w-full md:w-1/2 hidden md:block"
-                    src="{{ asset('assets/img/rawleague/daftar-rawleague.webp') }}" alt="daftar_rawleague">
-                <img class=" object-contain rounded-xl w-full block md:hidden"
-                    src="{{ asset('assets/img/rawleague/daftar-rawleague-mobile.webp') }}" alt="daftar_rawleague">
+
+
+                <div id="image-container-2" class="flex flex-col items-center z-10 w-full md:w-1/2">
+                    <div x-data="{
+                        open: false,
+                        zoom: 1,
+                        isDown: false,
+                        startX: 0,
+                        startY: 0,
+                        scrollLeft: 0,
+                        scrollTop: 0,
+                        threshold: 5,
+                    }" class="flex flex-col justify-center">
+
+                        <div class="w-full flex justify-center mb-4">
+                            <img src="{{ asset('assets/img/rawleague/daftar-rawleague.webp') }}" alt="daftar_rawleague"
+                                draggable="false"
+                                class="display-image cursor-pointer select-none w-full h-auto hidden md:block  rounded-xl"
+                                @click="open = true" />
+                            <img src="{{ asset('assets/img/rawleague/daftar-rawleague-mobile.webp') }}"
+                                alt="daftar_rawleague" draggable="false"
+                                class="display-image cursor-pointer select-none w-full h-auto block md:hidden  rounded-xl"
+                                @click="open = true" />
+                        </div>
+
+                        <!-- Dialog / Modal -->
+                        <div x-show="open" x-transition
+                            class="fixed inset-0 bg-black/70 flex items-center justify-center p-5">
+                            <!-- Click outside to close -->
+                            <div class="absolute inset-0" @click="open = false"></div>
+
+                            <div class="relative bg-white text-black rounded-lg shadow-lg p-4 max-w-4xl w-full">
+
+                                <!-- Close Button -->
+                                <button class="absolute top-3 right-3 text-gray-600 hover:text-black text-2xl"
+                                    @click="open = false">&times;</button>
+
+                                <!-- Zoom controls -->
+                                <div class="flex justify-between items-center mb-3 mt-10 px-2">
+                                    <button class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300"
+                                        @click="zoom -= 0.4">-</button>
+
+                                    <span class="font-semibold">Zoom: <span x-text="zoom.toFixed(1)"></span>x</span>
+
+                                    <button class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300"
+                                        @click="zoom += 0.4">+</button>
+                                </div>
+
+                                <!-- Zoomable Image -->
+                                <div class="overflow-auto max-h-[80vh] border rounded">
+                                    <img src="{{ asset('assets/img/rawleague/daftar-rawleague.webp') }}"
+                                        alt="daftar_rawleague" draggable="false"
+                                        :style="'transform: scale(' + zoom + '); transform-origin: top left;'"
+                                        class="display-image rounded-xl transition-transform duration-200 cursor-move select-none hidden md:block"
+                                        @mousedown="startX = $event.pageX; startY = $event.pageY; scrollLeft = $el.parentElement.scrollLeft; scrollTop = $el.parentElement.scrollTop; isDown = true"
+                                        @mousemove="if (isDown) { 
+                                                let deltaX = $event.pageX - startX;
+                                                let deltaY = $event.pageY - startY;
+                                                if (Math.abs(deltaX) > threshold) { 
+                                                    $el.parentElement.scrollLeft = scrollLeft - deltaX;
+                                                }
+                                                if (Math.abs(deltaY) > threshold) {
+                                                    $el.parentElement.scrollTop = scrollTop - deltaY;
+                                                }
+                                            }"
+                                        @mouseup="isDown = false" @mouseleave="isDown = false" />
+                                    <img src="{{ asset('assets/img/rawleague/daftar-rawleague-mobile.webp') }}"
+                                        alt="daftar_rawleague" draggable="false"
+                                        :style="'transform: scale(' + zoom + '); transform-origin: top left;'"
+                                        class="display-image rounded-xl transition-transform duration-200 cursor-move select-none block md:hidden"
+                                        @mousedown="startX = $event.pageX; startY = $event.pageY; scrollLeft = $el.parentElement.scrollLeft; scrollTop = $el.parentElement.scrollTop; isDown = true"
+                                        @mousemove="if (isDown) { 
+                                                let deltaX = $event.pageX - startX;
+                                                let deltaY = $event.pageY - startY;
+                                                if (Math.abs(deltaX) > threshold) { 
+                                                    $el.parentElement.scrollLeft = scrollLeft - deltaX;
+                                                }
+                                                if (Math.abs(deltaY) > threshold) {
+                                                    $el.parentElement.scrollTop = scrollTop - deltaY;
+                                                }
+                                            }"
+                                        @mouseup="isDown = false" @mouseleave="isDown = false" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
 
             <div class="mt-10">
@@ -84,7 +169,7 @@
 
                     <!-- Buttons for selecting images -->
 
-                    <div id="image-container" class="flex flex-col items-center z-10">
+                    <div id="image-container" class="flex flex-col items-center z-9">
                         <div x-data="{
                             open: false,
                             zoom: 1,
