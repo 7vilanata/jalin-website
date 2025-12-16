@@ -163,7 +163,7 @@
                                     <div class="swiper-slide" data-big-title="{{ $slide->big_title }}"
                                         data-mobile-side-title="{{ $slide->side_title }}"
                                         data-side-title="{{ $slide->side_title }}">
-                                        <img class="h-full w-full object-cover rounded-xl"
+                                        <img class="h-full w-full object-contain rounded-xl"
                                             src="{{ asset('storage/' . $slide->image_path) }}"
                                             alt="{{ $slide->big_title ?? 'carousel_rawleague' }}">
                                     </div>
@@ -223,7 +223,7 @@
                                     <div class="swiper-slide" data-big-title="{{ $slide->big_title }}"
                                         data-mobile-side-title="{{ $slide->side_title }}"
                                         data-side-title="{{ $slide->side_title }}">
-                                        <img class="h-full w-full object-cover rounded-xl"
+                                        <img class="h-full w-full object-contain rounded-xl"
                                             src="{{ asset('storage/' . $slide->image_path) }}"
                                             alt="{{ $slide->big_title ?? 'carousel_rawfest' }}">
                                     </div>
