@@ -59,11 +59,11 @@
                     }" class="flex flex-col justify-center">
 
                         <div class="w-full flex justify-center mb-4">
-                            <img src="{{ asset('assets/img/rawleague/daftar-rawleague.webp') }}" alt="daftar_rawleague"
+                            <img src="{{ asset('assets/img/rawleague/daftar-rawleague-1.webp') }}" alt="daftar_rawleague"
                                 draggable="false"
                                 class="display-image cursor-pointer select-none w-full h-auto hidden md:block  rounded-xl"
                                 @click="open = true" />
-                            <img src="{{ asset('assets/img/rawleague/daftar-rawleague-mobile.webp') }}"
+                            <img src="{{ asset('assets/img/rawleague/daftar-rawleague-1-mobile.webp') }}"
                                 alt="daftar_rawleague" draggable="false"
                                 class="display-image cursor-pointer select-none w-full h-auto block md:hidden  rounded-xl"
                                 @click="open = true" />
@@ -94,7 +94,7 @@
 
                                 <!-- Zoomable Image -->
                                 <div class="overflow-auto max-h-[80vh] border rounded">
-                                    <img src="{{ asset('assets/img/rawleague/daftar-rawleague.webp') }}"
+                                    <img src="{{ asset('assets/img/rawleague/daftar-rawleague-1.webp') }}"
                                         alt="daftar_rawleague" draggable="false"
                                         :style="'transform: scale(' + zoom + '); transform-origin: top left;'"
                                         class="display-image rounded-xl transition-transform duration-200 cursor-move select-none hidden md:block"
@@ -110,7 +110,7 @@
                                                 }
                                             }"
                                         @mouseup="isDown = false" @mouseleave="isDown = false" />
-                                    <img src="{{ asset('assets/img/rawleague/daftar-rawleague-mobile.webp') }}"
+                                    <img src="{{ asset('assets/img/rawleague/daftar-rawleague-1-mobile.webp') }}"
                                         alt="daftar_rawleague" draggable="false"
                                         :style="'transform: scale(' + zoom + '); transform-origin: top left;'"
                                         class="display-image rounded-xl transition-transform duration-200 cursor-move select-none block md:hidden"
@@ -137,7 +137,7 @@
 
             <div class="mt-10">
                 <img class="h-full w-full object-cover rounded-xl"
-                    src="{{ asset('assets/img/rawleague/prize-rawleague.webp') }}" alt="prize_rawleague">
+                    src="{{ asset('assets/img/rawleague/prize-rawleague-2.webp') }}" alt="prize_rawleague">
             </div>
 
         </section>
