@@ -44,8 +44,10 @@
                     pembuktian dari siapa pun. Yuk, daftar sekarang dan jadi bagian dari Generasi Ga Butuh Validasi!
 
                 </p>
-                <img class=" object-contain rounded-xl w-full md:w-1/2"
-                    src="{{ asset('assets/img/rawleague/kv-raw-league.webp') }}" alt="kv_rawleague">
+                <img class=" object-contain rounded-xl w-full md:w-1/2 hidden md:block"
+                    src="{{ asset('assets/img/rawleague/daftar-rawleague.webp') }}" alt="daftar_rawleague">
+                <img class=" object-contain rounded-xl w-full block md:hidden"
+                    src="{{ asset('assets/img/rawleague/daftar-rawleague-mobile.webp') }}" alt="daftar_rawleague">
             </div>
 
             <div class="mt-10">
@@ -163,11 +165,12 @@
 
                                 </div>
                             </div>
-                            <a href="https://student.generasiraw.org/login" class=" cursor-pointer inline-flex justify-center">
+                            <a href="https://student.generasiraw.org/login"
+                                class=" cursor-pointer inline-flex justify-center">
                                 <button
                                     class=" cursor-pointer hover:scale-110 ease-in-out text-[16px] md:text-4xl flex items-center bg-[#0353FF] py-1.5 px-8 text-white rounded-3xl transition-all duration-300">
                                     <span class="ultraprint-font cursor-pointer">DAFTAR!</span>
-                                   
+
                                 </button>
                             </a>
                             <p class=" my-3 text-[14px] text-center md:text-2xl  w-[100%]">
@@ -375,7 +378,6 @@
 
                 });
             });
-
         </script>
     @endif
 @endsection
