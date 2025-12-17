@@ -17,8 +17,6 @@
                         <div x-data="{
                             open: false,
                             zoom: 1,
-                            isDown: false,
-                            threshold: 5,
                             activeTab: 'info' // For multiple content tabs
                         }" class="flex flex-col justify-center" @open-modal.window="open = true">
 
