@@ -5,22 +5,194 @@
 @endphp
 @section('content')
     <div class="relative">
-        <div class="lazy-background z-0 md:h-[105vh] h-screen w-full overflow-x-hidden bg-cover relative">
+        <div class="lazy-background md:h-[105vh] h-screen w-full overflow-x-hidden bg-cover relative">
             <div class="flex h-full w-full  mx-auto justify-center items-center">
                 <img class="h-auto w-4/5 self-end z-0 hidden md:block" src="{{ asset('assets/img/boy-rawleague.webp') }}"
                     alt="boy-rawleague">
                 <img class="h-auto w-full self-end z-0 block md:hidden"
                     src="{{ asset('assets/img/boy-rawleague-mobile-2.webp') }}" alt="boy-rawleague-mobile">
-                <a href="https://student.generasiraw.org/login" class="inline-block ">
-                    <button
-                        class="hover:scale-110 ease-in-out text-[16px] md:text-4xl flex items-center bg-[#0353FF] py-1.5 px-8 text-white rounded-3xl absolute z-10 bottom-1/8 left-1/2 transform -translate-x-1/2 transition-all duration-300">
-                        <span class="ultraprint-font">DAFTAR DISINI!</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                            stroke="currentColor" class="size-4 md:size-8 ml-2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-                        </svg>
-                    </button>
-                </a>
+                <div x-data="{ showPopup: false }">
+                    <!-- Popup Modal -->
+                    <div id="image-container-3" class="flex flex-col items-center">
+                        <div x-data="{
+                            open: false,
+                            zoom: 1,
+                            isDown: false,
+                            threshold: 5,
+                            activeTab: 'info' // For multiple content tabs
+                        }" class="flex flex-col justify-center" @open-modal.window="open = true">
+
+                            <!-- Clickable Thumbnail Images -->
+
+                            <a href="#" class="inline-block">
+
+                            </a>
+                            <div class="w-full flex justify-center mb-4">
+                                <button @click="open = true"
+                                    class="hover:scale-110 ease-in-out text-[16px] md:text-4xl flex items-center bg-[#0353FF] py-1.5 px-8 text-white rounded-3xl absolute z-10 bottom-1/8 left-1/2 transform -translate-x-1/2 transition-all duration-300">
+                                    <span class="ultraprint-font">DAFTAR DISINI!</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="2" stroke="currentColor" class="size-4 md:size-8 ml-2">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <!-- Dialog / Modal -->
+                            <div x-show="open" x-transition
+                                class="fixed inset-0 bg-black/70 flex items-center justify-center  p-5 z-30">
+
+                                <!-- Click outside to close -->
+                                <div class="absolute inset-0" @click="open = false"></div>
+
+                                <div
+                                    class="relative bg-white text-black rounded-lg shadow-lg p-4 max-w-4xl w-full max-h-[90vh] overflow-auto">
+
+                                    <!-- Close Button -->
+                                    <button class="absolute top-3 right-3 text-gray-600 hover:text-black text-2xl z-20"
+                                        @click="open = false">&times;</button>
+
+                                    <!-- Tabs for switching between image zoom and links -->
+                                    <div class="flex border-b mb-4 mt-8">
+                                        <button @click="activeTab = 'info'; zoom = 1"
+                                            :class="activeTab === 'info' ? 'border-b-2 border-blue-500 text-blue-600' :
+                                                'text-gray-500'"
+                                            class="px-4 py-2 font-medium">
+                                            <i class="fas fa-image mr-2"></i>Informasi Cara Daftar
+                                        </button>
+                                        <button @click="activeTab = 'links'"
+                                            :class="activeTab === 'links' ? 'border-b-2 border-blue-500 text-blue-600' :
+                                                'text-gray-500'"
+                                            class="px-4 py-2 font-medium">
+                                            <i class="fas fa-link mr-2"></i>Link Pendaftaran
+                                        </button>
+                                    </div>
+
+                                    <div x-show="activeTab === 'info'" x-transition class="space-y-4  max-h-[60vh]  overflow-y-auto">
+                                        <div class="border rounded bg-gray-100">
+                                            <img src="{{ asset('assets/img/rawleague/daftar-rawleague-1.webp') }}"
+                                                alt="daftar_rawleague" draggable="false"
+                                                :style="'transform: scale(' + zoom + '); transform-origin: top left;'"
+                                                class="display-image rounded-xl transition-transform duration-200 cursor-move select-none hidden md:block" />
+                                            <img src="{{ asset('assets/img/rawleague/daftar-rawleague-1-mobile.webp') }}"
+                                                alt="daftar_rawleague" draggable="false"
+                                                :style="'transform: scale(' + zoom + '); transform-origin: top left;'"
+                                                class="display-image rounded-xl transition-transform duration-200 cursor-move select-none block md:hidden" />
+                                        </div>
+                                        <div class="items-center mt-6 pt-4 border-t w-full">
+                                            <button @click="activeTab = 'links'"
+                                                class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors w-full">
+                                                Lanjut Daftar
+
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Links Section -->
+                                    <div x-show="activeTab === 'links'" x-transition
+                                        class="space-y-6 max-h-[60vh] overflow-y-auto p-2">
+                                        <!-- Introduction Text -->
+                                        <div class="text-center mb-4">
+                                            <h3 class="text-xl font-bold text-gray-800 mb-2">DAFTAR RAW LEAGUE SEKARANG!
+                                            </h3>
+                                            <p class="text-gray-600">Dibawah ini ada beberapa link yang harus lo perhatiin
+                                                sebelum daftar.</p>
+                                        </div>
+
+                                        <!-- Registration Links -->
+                                        <div class="space-y-4">
+                                            <!-- Main Registration Button -->
+                                            <a href="https://student.generasiraw.org/login" target="_blank"
+                                                class="block w-full group">
+                                                <div
+                                                    class="bg-gradient-to-r from-[#FF5632] to-blue-700 hover:from-blue-800 hover:to-[#FF5632] text-white py-4 px-6 rounded-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg">
+                                                    <div class="flex items-center justify-between">
+                                                        <div class="flex items-center justify-between w-full">
+                                                            <div class="text-left">
+                                                                <div class="font-bold text-lg">DAFTAR GENERASI RAW</div>
+                                                                <div class="text-blue-100 text-sm">Registrasi melalui
+                                                                    website resmi</div>
+                                                            </div>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                                                                class="size-6 md:size-8 ml-2 flex-shrink-0">
+                                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                                    d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="{{ asset('assets/doc/parental_consent_form.pdf') }}"
+                                                download="parental_consent_form.pdf" class="block w-full group">
+                                                <div
+                                                    class="bg-gradient-to-r from-[#FF5632] to-blue-700 hover:from-blue-800 hover:to-[#FF5632] text-white py-4 px-6 rounded-xl transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                                                    <div class="flex items-center justify-between">
+                                                        <div class="flex items-center justify-between w-full">
+                                                            <div class="text-left">
+                                                                <div class="font-bold text-lg">DOWNLOAD FORMULIR SURAT IZIN ORANG TUA
+                                                                </div>
+                                                                <div class="text-blue-100 text-sm">Formulir yang WAJIB
+                                                                    orang tua lo isi untuk ikut RAW League </div>
+                                                            </div>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                                                                class="size-6 md:size-8 ml-2 flex-shrink-0">
+                                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                                    d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="https://forms.gle/bin84PFnNu9hAZ828 " target="_blank"
+                                                class="block w-full group">
+                                                <div
+                                                    class="bg-gradient-to-r from-[#FF5632] to-blue-700 hover:from-blue-800 hover:to-[#FF5632] text-white py-4 px-6 rounded-xl transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                                                    <div class="flex items-center justify-between">
+                                                        <div class="flex items-center justify-between w-full">
+                                                            <div class="text-left">
+                                                                <div class="font-bold text-lg">UPLOAD SURAT IZIN ORANG TUA
+                                                                    -
+                                                                    MOBILE LEGENDS</div>
+                                                                <div class="text-blue-100 text-sm">Setelah lo selesai
+                                                                    daftar
+                                                                    RAW League Mobile Legends, lo harus upload surat izin
+                                                                    orang tua disini</div>
+                                                            </div>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                                                                class="size-6 md:size-8 ml-2 flex-shrink-0">
+                                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                                    d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+
+
+                                        </div>
+
+                                        <!-- Additional Information -->
+                                        <div class="bg-blue-50 border border-blue-200 rounded-xl p-4 mt-4">
+                                            <div class="flex items-start">
+                                                <i class="fas fa-info-circle text-blue-500 mt-1 mr-3"></i>
+                                                <div class="text-sm text-gray-700">
+                                                    <span class="font-bold">Informasi Penting:</span> Pastikan data yang
+                                                    lo kasih valid semua yaa.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <section
@@ -155,7 +327,8 @@
             </div>
         </section>
 
-        <section class=" bg-[#0353FF]  h-auto bg-center overflow-hidden text-white py-20 px-0 md:px-8 relative text-center">
+        <section
+            class=" bg-[#0353FF]  h-auto bg-center overflow-hidden text-white py-20 px-0 md:px-8 relative text-center">
             <img class="h-auto w-[20%] top-0 absolute right-0 self-end z-0"
                 src="{{ asset('assets/img/rawleague/game-controller.webp') }}" alt="game-controller">
             <img class="h-auto w-[20%] bottom-0 absolute left-0 self-end z-0"
@@ -250,14 +423,12 @@
 
                                 </div>
                             </div>
-                            <a href="https://student.generasiraw.org/login"
-                                class=" cursor-pointer inline-flex justify-center">
                                 <button
-                                    class=" cursor-pointer hover:scale-110 ease-in-out text-[16px] md:text-4xl flex items-center bg-[#0353FF] py-1.5 px-8 text-white rounded-3xl transition-all duration-300">
+                                @click="$dispatch('open-modal')"
+                                    class="justify-center cursor-pointer hover:scale-110 ease-in-out text-[16px] md:text-4xl flex items-center  py-1.5 px-8 text-white rounded-3xl transition-all duration-300">
                                     <span class="ultraprint-font cursor-pointer">DAFTAR!</span>
 
                                 </button>
-                            </a>
                             <p class=" my-3 text-[14px] text-center md:text-2xl  w-[100%]">
                                 Download Formulir Consent <a class="underline"
                                     href="{{ asset('assets/doc/parental_consent_form.pdf') }}"
