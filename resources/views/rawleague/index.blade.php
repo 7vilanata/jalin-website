@@ -122,6 +122,27 @@
                                                     </div>
                                                 </div>
                                             </a>
+
+                                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdVR_1v--LgxcTSOc9ncjnLdtwCwEDo9YL_fSXEoboz5WeJuw/viewform" target="_blank"
+                                                class="block w-full group">
+                                                <div
+                                                    class="bg-gradient-to-r from-[#FF5632] to-blue-700 hover:from-blue-800 hover:to-[#FF5632] text-white py-4 px-6 rounded-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg">
+                                                    <div class="flex items-center justify-between">
+                                                        <div class="flex items-center justify-between w-full">
+                                                            <div class="text-left">
+                                                                <div class="font-bold text-lg">DAFTAR RAW LEAGUE- MOBILE LEGENDS</div>
+                                                                <div class="text-blue-100 text-sm">Kumpulin tim lo untuk join kompetisi MOBILE LEGENDS!</div>
+                                                            </div>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                                                                class="size-6 md:size-8 ml-2 flex-shrink-0">
+                                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                                    d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
                                             <a href="{{ asset('assets/doc/parental_consent_form.pdf') }}"
                                                 download="parental_consent_form.pdf" class="block w-full group">
                                                 <div
