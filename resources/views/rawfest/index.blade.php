@@ -165,9 +165,9 @@
                 <li>Login pake akun yang udah lo punya.</li>
                 <li>Masuk ke halaman Poin.</li>
                 <li>Cari Ticket RAW Festival.</li>
-                <li>Klik Tukar — tiket bisa lo dapetin gratis</li>
-                <li>Setelah berhasil, buka halaman Hadiah Saya</li>
-                <li>Tunjukin QR Code di gate saat hari acara</li>
+                <li>Klik Tukar — tiket bisa lo dapetin gratis.</li>
+                <li>Setelah berhasil, buka halaman Hadiah Saya.</li>
+                <li>Tunjukin QR Code di gate saat hari acara.</li>
             </ol>
             <br>
             <p class="text-[14px] md:text-2xl">
@@ -175,9 +175,9 @@
                 <br>
                 <br>
             <ol class="list-disc pl-10 text-[14px] md:text-2xl leading-snug">
-                <li>Tiket gratis tapi kuota terbatas, jadi jangan kelamaan ambilnya</li>
-                <li>QR Code adalah tiket resmi jangan dibagikan ke siapa pun</li>
-                <li>Satu akun hanya bisa menggunakan 1 tiket</li>
+                <li>Tiket gratis tapi kuota terbatas, jadi jangan kelamaan ambilnya.</li>
+                <li>QR Code adalah tiket resmi jangan dibagikan ke siapa pun.</li>
+                <li>Satu akun hanya bisa menggunakan 1 tiket.</li>
             </ol>
             </p>
 
