@@ -21,36 +21,36 @@ class EventCalendarTabs extends Component
                 Registration Open — Desember 2025
                 </li>
                 <li>
-                27 Desember 2025: Penutupan pendaftaran Mobile Legends
-                </li>
-                <li>
                 30 Desember 2025: Penutupan pendaftaran Futsal
                 </li>
                 <li>
-                31 Desember 2025: Penutupan pendaftaran Band Competition
+                2 Januari 2026: Penutupan pendaftaran band competition
+                </li>
+                <li>
+                7 Janari 2026: Penutupan pendaftaran Mobile Legends
                 </li>
             </ul>',
         ],
         [
             'id' => 'technical_meeting',
             'title' => 'Technical Meeting',
-            'date' => '30 Des & 3 Jan 2026',
+            'date' => '7 Jan & 8 Jan 2026',
             'description' => 'Briefing buat semua peserta. Rules, sistem pertandingan, sampai teknis perlombaan bakal dibahas di sini. Pastikan perwakilan tim wajib hadir.
             <br><br>
             Detail:
             <ul class="list-disc ml-8">
                 <li>
-                30 Desember 2025: Technical Meeting MLBB (via Zoom)
+                7 Januari 2026: Technical Meeting Futsal (offline)
                 </li>
                 <li>
-                3 Januari 2026: Technical Meeting Futsal
+                8 Januari 2026: Technical Meeting MLBB (online)
                 </li>
             </ul>',
         ],
         [
             'id' => 'mobile_legends',
             'title' => 'Mobile Legends Competition',
-            'date' => '3–4 Januari 2026',
+            'date' => '10-11 Januari 2026',
             'description' => 'Saatnya battle. Tunjukkan strategi, mekanik, teamwork, dan mental lo di arena.
             <br><br>
             <a href="/raw-league/leaderboard"
