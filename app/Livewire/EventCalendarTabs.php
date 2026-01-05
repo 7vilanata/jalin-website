@@ -18,7 +18,7 @@ class EventCalendarTabs extends Component
             Timeline detail:
             <ul class="list-disc ml-8">
                 <li>
-                Registration Open — Desember 2025
+                Registration Open — Januari 2026
                 </li>
                 <li>
                 30 Desember 2025: Penutupan pendaftaran Futsal
