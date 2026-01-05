@@ -50,7 +50,7 @@ class EventCalendarTabs extends Component
         [
             'id' => 'mobile_legends',
             'title' => 'Mobile Legends Competition',
-            'date' => '10-11 Januari 2026',
+            'date' => '10 - 11 Januari 2026',
             'description' => 'Saatnya battle. Tunjukkan strategi, mekanik, teamwork, dan mental lo di arena.
             <br><br>
             <a href="/raw-league/leaderboard"
