@@ -105,12 +105,12 @@
                                     <div class="grid grid-cols-1 md:grid-cols-3 mt-10 gap-8">
 
                                         <!-- Left column: First 10 teams -->
-                                        <div class="team-column overflow-y-auto max-h-[calc(10*3rem)] ">
-                                            @foreach ($tournament->teams->take(10) as $team)
+                                        <div class="team-column overflow-y-auto ">
+                                            @foreach ($tournament->teams->take(10) as $key =>  $team)
                                                 <!-- First 4 teams for the first column -->
                                                 <div class="team-item flex items-center text-2xl text-[#0353FF] gap-5 my-3">
                                                     <span
-                                                        class="font-[600]">{{ $team->position ? $team->position . '. ' : '' }}</span>
+                                                        class="font-[600]">{{ $key ? $key . '. ' : '' }}</span>
 
                                                     <!-- Display Team Logo -->
                                                     @if ($team->logo_image)
@@ -149,12 +149,12 @@
                                         </div>
 
                                         <!-- Right column: Remaining teams -->
-                                        <div class="team-column overflow-y-auto max-h-[calc(100vh-10*3rem)]">
-                                            @foreach ($tournament->teams->skip(20) as $team)
+                                        <div class="team-column overflow-y-auto">
+                                            @foreach ($tournament->teams->skip(20) as $key => $team)
                                                 <!-- Remaining teams -->
                                                 <div class="team-item flex items-center text-2xl text-[#0353FF] gap-5 my-3">
                                                     <span
-                                                        class="font-[600]">{{ $team->position ? $team->position . '. ' : '' }}</span>
+                                                        class="font-[600]">{{  $key ? $key . '. ' : '' }}</span>
 
                                                     <!-- Display Team Logo -->
                                                     @if ($team->logo_image)
