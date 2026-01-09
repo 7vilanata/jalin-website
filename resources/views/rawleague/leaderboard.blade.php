@@ -127,12 +127,12 @@
                                         </div>
 
                                         <!-- Middle column: Next 3 teams -->
-                                        <div class="team-column overflow-y-auto max-h-[calc(10*3rem)]">
-                                            @foreach ($tournament->teams->skip(10)->take(10) as $team)
+                                        <div class="team-column overflow-y-auto ">
+                                            @foreach ($tournament->teams->skip(10)->take(10) as $key => $team)
                                                 <!-- Next 3 teams -->
                                                 <div class="team-item flex items-center text-2xl text-[#0353FF] gap-5 my-3">
                                                     <span
-                                                        class="font-[600]">{{ $team->position ? $team->position . '. ' : '' }}</span>
+                                                        class="font-[600]">{{ $key ? $key . '. ' : '' }}</span>
 
                                                     <!-- Display Team Logo -->
                                                     @if ($team->logo_image)
