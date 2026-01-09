@@ -110,7 +110,7 @@
                                                 <!-- First 4 teams for the first column -->
                                                 <div class="team-item flex items-center text-2xl text-[#0353FF] gap-5 my-3">
                                                     <span
-                                                        class="font-[600]">{{ $key ? $key+1 . '. ' : '' }}</span>
+                                                        class="font-[600]">{{ $key > -1 ? $key+1 . '. ' : '' }}</span>
 
                                                     <!-- Display Team Logo -->
                                                     @if ($team->logo_image)
