@@ -106,11 +106,11 @@
 
                                         <!-- Left column: First 10 teams -->
                                         <div class="team-column overflow-y-auto ">
-                                            @foreach ($tournament->teams->take(10) as $key =>  $team)
+                                            @foreach ($tournament->teams->take(11) as $key =>  $team)
                                                 <!-- First 4 teams for the first column -->
                                                 <div class="team-item flex items-center text-2xl text-[#0353FF] gap-5 my-3">
                                                     <span
-                                                        class="font-[600]">{{ $key ? $key . '. ' : '' }}</span>
+                                                        class="font-[600]">{{ $key ? $key+1 . '. ' : '' }}</span>
 
                                                     <!-- Display Team Logo -->
                                                     @if ($team->logo_image)
@@ -128,11 +128,11 @@
 
                                         <!-- Middle column: Next 3 teams -->
                                         <div class="team-column overflow-y-auto ">
-                                            @foreach ($tournament->teams->skip(10)->take(10) as $key => $team)
+                                            @foreach ($tournament->teams->skip(11)->take(11) as $key => $team)
                                                 <!-- Next 3 teams -->
                                                 <div class="team-item flex items-center text-2xl text-[#0353FF] gap-5 my-3">
                                                     <span
-                                                        class="font-[600]">{{ $key ? $key . '. ' : '' }}</span>
+                                                        class="font-[600]">{{ $key ? $key+1 . '. ' : '' }}</span>
 
                                                     <!-- Display Team Logo -->
                                                     @if ($team->logo_image)
@@ -150,11 +150,11 @@
 
                                         <!-- Right column: Remaining teams -->
                                         <div class="team-column overflow-y-auto">
-                                            @foreach ($tournament->teams->skip(20) as $key => $team)
+                                            @foreach ($tournament->teams->skip(22) as $key => $team)
                                                 <!-- Remaining teams -->
                                                 <div class="team-item flex items-center text-2xl text-[#0353FF] gap-5 my-3">
                                                     <span
-                                                        class="font-[600]">{{  $key ? $key . '. ' : '' }}</span>
+                                                        class="font-[600]">{{  $key ? $key+1 . '. ' : '' }}</span>
 
                                                     <!-- Display Team Logo -->
                                                     @if ($team->logo_image)
