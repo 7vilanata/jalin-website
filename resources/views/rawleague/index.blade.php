@@ -11,7 +11,16 @@
                     alt="boy-rawleague">
                 <img class="h-auto w-full self-end z-0 block md:hidden"
                     src="{{ asset('assets/img/boy-rawleague-mobile-2.webp') }}" alt="boy-rawleague-mobile">
-                <div x-data="{ showPopup: false }">
+                <a href="https://generasiraw.org/raw-league/leaderboard">
+                    <button class="hover:scale-110 ease-in-out text-[16px] md:text-4xl flex items-center bg-[#0353FF] py-1.5 px-8 text-white rounded-3xl absolute z-10 bottom-1/8 left-1/2 transform -translate-x-1/2 transition-all duration-300">
+                        <span class="ultraprint-font">LIVE MATCH REPORT!</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                            stroke="currentColor" class="size-4 md:size-8 ml-2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                        </svg>
+                    </button>
+                </a>
+                {{-- <div x-data="{ showPopup: false }">
                     <!-- Popup Modal -->
                     <div id="image-container-3" class="flex flex-col items-center">
                         <div x-data="{
@@ -67,7 +76,8 @@
                                         </button>
                                     </div>
 
-                                    <div x-show="activeTab === 'info'" x-transition class="space-y-4  max-h-[60vh]  overflow-y-auto">
+                                    <div x-show="activeTab === 'info'" x-transition
+                                        class="space-y-4  max-h-[60vh]  overflow-y-auto">
                                         <div class="border rounded bg-gray-100">
                                             <img src="{{ asset('assets/img/rawleague/daftar-rawleague-1.webp') }}"
                                                 alt="daftar_rawleague" draggable="false"
@@ -123,18 +133,21 @@
                                                 </div>
                                             </a>
 
-                                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdVR_1v--LgxcTSOc9ncjnLdtwCwEDo9YL_fSXEoboz5WeJuw/viewform" target="_blank"
-                                                class="block w-full group">
+                                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdVR_1v--LgxcTSOc9ncjnLdtwCwEDo9YL_fSXEoboz5WeJuw/viewform"
+                                                target="_blank" class="block w-full group">
                                                 <div
                                                     class="bg-gradient-to-r from-[#FF5632] to-blue-700 hover:from-blue-800 hover:to-[#FF5632] text-white py-4 px-6 rounded-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg">
                                                     <div class="flex items-center justify-between">
                                                         <div class="flex items-center justify-between w-full">
                                                             <div class="text-left">
-                                                                <div class="font-bold text-lg">DAFTAR RAW LEAGUE- MOBILE LEGENDS</div>
-                                                                <div class="text-blue-100 text-sm">Kumpulin tim lo untuk join kompetisi MOBILE LEGENDS!</div>
+                                                                <div class="font-bold text-lg">DAFTAR RAW LEAGUE- MOBILE
+                                                                    LEGENDS</div>
+                                                                <div class="text-blue-100 text-sm">Kumpulin tim lo untuk
+                                                                    join kompetisi MOBILE LEGENDS!</div>
                                                             </div>
                                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                                                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                                                                viewBox="0 0 24 24" stroke-width="2"
+                                                                stroke="currentColor"
                                                                 class="size-6 md:size-8 ml-2 flex-shrink-0">
                                                                 <path stroke-linecap="round" stroke-linejoin="round"
                                                                     d="m8.25 4.5 7.5 7.5-7.5 7.5" />
@@ -150,13 +163,15 @@
                                                     <div class="flex items-center justify-between">
                                                         <div class="flex items-center justify-between w-full">
                                                             <div class="text-left">
-                                                                <div class="font-bold text-lg">DOWNLOAD FORMULIR SURAT IZIN ORANG TUA
+                                                                <div class="font-bold text-lg">DOWNLOAD FORMULIR SURAT IZIN
+                                                                    ORANG TUA
                                                                 </div>
                                                                 <div class="text-blue-100 text-sm">Formulir yang WAJIB
                                                                     orang tua lo isi untuk ikut RAW League </div>
                                                             </div>
                                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                                                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                                                                viewBox="0 0 24 24" stroke-width="2"
+                                                                stroke="currentColor"
                                                                 class="size-6 md:size-8 ml-2 flex-shrink-0">
                                                                 <path stroke-linecap="round" stroke-linejoin="round"
                                                                     d="m8.25 4.5 7.5 7.5-7.5 7.5" />
@@ -181,7 +196,8 @@
                                                                     orang tua disini</div>
                                                             </div>
                                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                                                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                                                                viewBox="0 0 24 24" stroke-width="2"
+                                                                stroke="currentColor"
                                                                 class="size-6 md:size-8 ml-2 flex-shrink-0">
                                                                 <path stroke-linecap="round" stroke-linejoin="round"
                                                                     d="m8.25 4.5 7.5 7.5-7.5 7.5" />
@@ -211,7 +227,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
         <section
@@ -346,8 +362,7 @@
             </div>
         </section>
 
-        <section
-            class=" bg-[#0353FF]  h-auto bg-center overflow-hidden text-white py-20 px-0 md:px-8 relative text-center">
+        <section class=" bg-[#0353FF]  h-auto bg-center overflow-hidden text-white py-20 px-0 md:px-8 relative text-center">
             <img class="h-auto w-[20%] top-0 absolute right-0 self-end z-0"
                 src="{{ asset('assets/img/rawleague/game-controller.webp') }}" alt="game-controller">
             <img class="h-auto w-[20%] bottom-0 absolute left-0 self-end z-0"
@@ -442,12 +457,11 @@
 
                                 </div>
                             </div>
-                                <button
-                                @click="$dispatch('open-modal')"
-                                    class="justify-center cursor-pointer hover:scale-110 ease-in-out text-[16px] md:text-4xl flex items-center  py-1.5 px-8 text-white rounded-3xl transition-all duration-300">
-                                    <span class="ultraprint-font cursor-pointer">DAFTAR!</span>
+                            <button @click="$dispatch('open-modal')"
+                                class="justify-center cursor-pointer hover:scale-110 ease-in-out text-[16px] md:text-4xl flex items-center  py-1.5 px-8 text-white rounded-3xl transition-all duration-300">
+                                <span class="ultraprint-font cursor-pointer">DAFTAR!</span>
 
-                                </button>
+                            </button>
                             <p class=" my-3 text-[14px] text-center md:text-2xl  w-[100%]">
                                 Download Formulir Consent <a class="underline"
                                     href="{{ asset('assets/doc/parental_consent_form.pdf') }}"
