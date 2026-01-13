@@ -343,7 +343,8 @@
                                             @endif
                                         </a>
                                         <h4 class=" mt-4 text-[#0353FF] text-[18px] text-left font-bold ">
-                                            {{ $gallery->title }}
+                                            
+                                            {{ Str::limit($gallery->title, 35, '...') }}
                                         </h4>
                                         <div class="text-left flex gap-4 md:gap-10 text-[10px] md:text-[14px]">
                                             <span class="flex items-center gap-1"><svg xmlns="http://www.w3.org/2000/svg"
