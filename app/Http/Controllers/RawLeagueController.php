@@ -11,7 +11,9 @@ class RawLeagueController extends Controller
 {
     public function index(Request $request)
     {
-        $galleries = GalleryRawleague::where('is_published', true)->paginate(6);
+        $galleries = GalleryRawleague::where('is_published', true)
+            ->orderBy('image_date', 'desc')
+            ->paginate(6);
         $sponsors = SponsorAndPresenter::where('is_published', true)->where('role', 'sponsor')->get();
         $presenters = SponsorAndPresenter::where('is_published', true)->where('role', 'presenter')->get();
 
@@ -21,6 +23,6 @@ class RawLeagueController extends Controller
     {
 
         $tournaments = Tournament::with('teams')->get();
-        return view('rawleague.leaderboard',compact('tournaments'));
+        return view('rawleague.leaderboard', compact('tournaments'));
     }
 }
