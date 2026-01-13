@@ -150,20 +150,24 @@
 
         <div class="text-[#0353FF]">
             <p class=" my-3 text-[14px] md:text-2xl">
-                Udah ngumpulin poin dan pengen ngerasain serunya RAW Festival? Gini cara lo dapetin tiketnya, bro 👇
+                Udah siap ngerasain serunya RAW Festival?
+                <br> 
+                Sekarang tiketnya GRATIS, bro!
                 <br><br>
+                Gini cara lo dapetin e-pass RAW Festival 👇
+                 <br><br>
                 <b>Langkah-langkahnya gampang banget:</b>
             </p>
             <br>
             <ol class="list-decimal pl-10 text-[14px] md:text-2xl leading-snug">
-                <li>Masuk ke WebApp resmi di <a href="https://student.generasiraw.org"
+                <li>Masuk ke WebApp Generasi RAW di <a href="https://student.generasiraw.org"
                         class="text-blue-500 underline">student.generasiraw.org</a>.</li>
-                <li>Login pake akun yang udah lo punya (jangan bikin baru ya, bro).</li>
-                <li>Masuk ke menu “Poin” di dashboard lo.</li>
-                <li>Cari bagian “Ticket RAW Festival”.</li>
-                <li>Tukerin poin lo buat dapetin tiket RAW Festival 2026!</li>
-                <li>Setelah ditukar, lo bakal dapet kode unik tiket yang bisa lo redeem di menu “Redeem Ticket”.</li>
-                <li>Redeem kode lo dan dapetin e-pass QR Code, tunjukin pas di gate waktu acara nanti.</li>
+                <li>Login pake akun yang udah lo punya.</li>
+                <li>Masuk ke halaman Poin.</li>
+                <li>Cari Ticket RAW Festival.</li>
+                <li>Klik Tukar — tiket bisa lo dapetin gratis.</li>
+                <li>Setelah berhasil, buka halaman Hadiah Saya.</li>
+                <li>Tunjukin QR Code di gate saat hari acara.</li>
             </ol>
             <br>
             <p class="text-[14px] md:text-2xl">
@@ -171,8 +175,9 @@
                 <br>
                 <br>
             <ol class="list-disc pl-10 text-[14px] md:text-2xl leading-snug">
-                <li>Tiket cuma bisa dituker selama stok masih ada, jadi jangan kelamaan mikir!</li>
-                <li> QR Code lo adalah tiket resmi — jangan dishare ke siapa pun!</li>
+                <li>Tiket gratis tapi kuota terbatas, jadi jangan kelamaan ambilnya.</li>
+                <li>QR Code adalah tiket resmi jangan dibagikan ke siapa pun.</li>
+                <li>Satu akun hanya bisa menggunakan 1 tiket.</li>
             </ol>
             </p>
 
