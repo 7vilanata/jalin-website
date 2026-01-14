@@ -102,24 +102,24 @@
                                     <div class="swiper-slide" data-big-title="{{ $slide->big_title }}"
                                         data-mobile-side-title="{{ $slide->side_title }}"
                                         data-side-title="{{ $slide->side_title }}">
-                                        <img class="h-full w-full object-cover rounded-xl"
+                                        <img class="h-full w-full object-contain rounded-xl"
                                             src="{{ asset('storage/' . $slide->image_path) }}"
                                             alt="{{ $slide->big_title ?? 'carousel_rawfest' }}">
                                     </div>
                                 @endforeach
                             @else
                                 <div class="swiper-slide">
-                                    <img class="h-full w-full object-contain rounded-xl"
+                                    <img class="h-full w-full object-cover rounded-xl"
                                         src="{{ asset('assets/img/carousel_rawfest/carousel_1.webp') }}"
                                         alt="carousel_rawfest_1">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img class="h-full w-full object-contain rounded-xl"
+                                    <img class="h-full w-full object-cover rounded-xl"
                                         src="{{ asset('assets/img/carousel_rawfest/carousel_1.webp') }}"
                                         alt="carousel_rawfest_1">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img class="h-full w-full object-contain rounded-xl"
+                                    <img class="h-full w-full object-cover rounded-xl"
                                         src="{{ asset('assets/img/carousel_rawfest/carousel_1.webp') }}"
                                         alt="carousel_rawfest_1">
                                 </div>
