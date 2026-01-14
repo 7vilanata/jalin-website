@@ -125,8 +125,9 @@
 
                 </div>
             </div>
-            <p class=" my-3 text-[14px] md:text-2xl">Mau join? klik link 
-                <a class="underline" href="https://bit.ly/RAWBandCompetition">disini</a></p>
+            <p class=" my-3 text-[14px] md:text-2xl">Mau join? klik link
+                <a class="underline" href="https://bit.ly/RAWBandCompetition">disini</a>
+            </p>
 
         </section>
 
@@ -150,35 +151,40 @@
 
         <div class="text-[#0353FF]">
             <p class=" my-3 text-[14px] md:text-2xl">
-                Udah siap ngerasain serunya RAW Festival?
-                <br> 
-                Sekarang tiketnya GRATIS, bro!
+                Udah punya akun Generasi RAW?
+                <br>
+                Langsung ambil tiket RAW Festival lo sekarang.
                 <br><br>
-                Gini cara lo dapetin e-pass RAW Festival 👇
-                 <br><br>
-                <b>Langkah-langkahnya gampang banget:</b>
+                GRATIS.
+                <br><br>
+                <b>Caranya gampang:</b>
             </p>
             <br>
             <ol class="list-decimal pl-10 text-[14px] md:text-2xl leading-snug">
-                <li>Masuk ke WebApp Generasi RAW di <a href="https://student.generasiraw.org"
+                <li>Buka <a href="https://student.generasiraw.org"
                         class="text-blue-500 underline">student.generasiraw.org</a>.</li>
-                <li>Login pake akun yang udah lo punya.</li>
-                <li>Masuk ke halaman Poin.</li>
-                <li>Cari Ticket RAW Festival.</li>
-                <li>Klik Tukar — tiket bisa lo dapetin gratis.</li>
-                <li>Setelah berhasil, buka halaman Hadiah Saya.</li>
-                <li>Tunjukin QR Code di gate saat hari acara.</li>
+                <li>Login ke akun lo</li>
+                <li>KLIK "AMBIL TIKET LO" </li>
+                <li>Pilih Ticket RAW Festival</li>
+                <li>Klik Tukar</li>
+                <li>Buka Hadiah Saya</li>
+                <li>Tunjukin QR Code di gate pas hari H</li>
             </ol>
             <br>
             <p class="text-[14px] md:text-2xl">
-                🔥 Catatan penting:
+                🔥 Info penting:
                 <br>
                 <br>
             <ol class="list-disc pl-10 text-[14px] md:text-2xl leading-snug">
-                <li>Tiket gratis tapi kuota terbatas, jadi jangan kelamaan ambilnya.</li>
-                <li>QR Code adalah tiket resmi jangan dibagikan ke siapa pun.</li>
-                <li>Satu akun hanya bisa menggunakan 1 tiket.</li>
+                <li>Tiket gratis, kuota terbatas</li>
+                <li>QR Code = tiket resmi, jangan dibagi</li>
+                <li>1 akun cuma buat 1 tiket</li>
             </ol>
+            <br>
+            <br>
+            <p class="text-[14px] md:text-2xl">
+                Yang udah punya akun, jangan nunggu—ambil tiket lo sekarang 🚀
+            </p>
             </p>
 
         </div>
@@ -213,9 +219,8 @@
             <h1 class=" ultraprint-font uppercase p-3 text-4xl md:text-5xl rounded-2xl text-[#0353FF] font-normal">
                 RUNDOWN</h1>
         </div>
-        <div class=" text-center bg-[#D9D9D9] py-20 md:py-50 px-3 sm:px-10 lg:px-50 z-10 ">
-            <h1 class="ultraprint-font text-4xl md:text-8xl text-white">COMING SOON</h1>
-        </div>
+        <img class="h-full w-full object-cover" src="{{ asset('assets/img/rawfest/rundown.webp') }}"
+            alt="rundown">
     </section>
 
     {{-- LOCATION --}}
