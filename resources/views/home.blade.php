@@ -109,17 +109,17 @@
                                 @endforeach
                             @else
                                 <div class="swiper-slide">
-                                    <img class="h-full w-full object-cover rounded-xl"
+                                    <img class="h-full w-full object-contain rounded-xl"
                                         src="{{ asset('assets/img/carousel_rawfest/carousel_1.webp') }}"
                                         alt="carousel_rawfest_1">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img class="h-full w-full object-cover rounded-xl"
+                                    <img class="h-full w-full object-contain rounded-xl"
                                         src="{{ asset('assets/img/carousel_rawfest/carousel_1.webp') }}"
                                         alt="carousel_rawfest_1">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img class="h-full w-full object-cover rounded-xl"
+                                    <img class="h-full w-full object-contain rounded-xl"
                                         src="{{ asset('assets/img/carousel_rawfest/carousel_1.webp') }}"
                                         alt="carousel_rawfest_1">
                                 </div>
