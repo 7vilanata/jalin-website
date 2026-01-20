@@ -66,14 +66,14 @@
 
         <section class=" bg-[#0353FF]  h-auto bg-center overflow-hidden text-white py-20 px-0 md:px-8 relative text-center">
             <h1 class="ultraprint-font  inline-block p-3 text-4xl md:text-5xl  rounded-2xl mb-2  font-medium">
-                HOW TO SUBMIT DEMO FOR SCHOOL PERFORMANCE </h1>
+                OFFICIAL MERCH</h1>
 
             <div class="flex justify-center items-center w-full">
                 <div class=" flex flex-wrap flex-col justify-center items-center w-[90%] md:w-[80%] mt-8">
                     <div x-data="{ open: false, zoom: 1, isDown: false, startX: 0, scrollLeft: 0, threshold: 5 }" class="flex justify-center">
 
                         <!-- Thumbnail Image -->
-                        <img src="{{ asset('assets/img/rawfest/band-comp.webp') }}" alt="band-comp" draggable="false"
+                        <img src="{{ asset('assets/img/rawfest/flyer_merch.webp') }}" alt="Flyer Merch" draggable="false"
                             class="cursor-pointer select-none" @click="open = true; zoom = 1" />
 
                         <!-- Dialog / Modal -->
@@ -102,7 +102,7 @@
 
                                 <!-- Zoomable Image -->
                                 <div class="overflow-auto max-h-[80vh] border rounded">
-                                    <img src="{{ asset('assets/img/rawfest/band-comp.webp') }}" draggable="false"
+                                    <img src="{{ asset('assets/img/rawfest/flyer_merch.webp') }}" draggable="false"
                                         :style="'transform: scale(' + zoom + '); transform-origin: top left;'"
                                         class="transition-transform duration-200 cursor-move select-none"
                                         @mousedown="startX = $event.pageX; startY = $event.pageY; scrollLeft = $el.parentElement.scrollLeft; scrollTop = $el.parentElement.scrollTop; isDown = true"
@@ -125,8 +125,8 @@
 
                 </div>
             </div>
-            <p class=" my-3 text-[14px] md:text-2xl">Mau join? klik link
-                <a class="underline" href="https://bit.ly/RAWBandCompetition">disini</a>
+            <p class=" my-3 text-[14px] md:text-2xl">Ambil Merch lo 
+                <a class="underline" href="https://student.esensigroup.com/login">disini!</a>
             </p>
 
         </section>
@@ -219,8 +219,7 @@
             <h1 class=" ultraprint-font uppercase p-3 text-4xl md:text-5xl rounded-2xl text-[#0353FF] font-normal">
                 RUNDOWN</h1>
         </div>
-        <img class="h-full w-full object-cover" src="{{ asset('assets/img/rawfest/rundown.webp') }}"
-            alt="rundown">
+        <img class="h-full w-full object-cover" src="{{ asset('assets/img/rawfest/rundown.webp') }}" alt="rundown">
     </section>
 
     {{-- LOCATION --}}
@@ -229,8 +228,67 @@
             <h1 class=" ultraprint-font uppercase p-3 text-4xl md:text-5xl rounded-2xl text-[#0353FF] font-normal">
                 HOW TO GET TO LOCATION</h1>
         </div>
-        <div class=" text-center bg-[#D9D9D9] py-20 md:py-50 px-3 sm:px-10 lg:px-50 z-10 ">
-            <h1 class="ultraprint-font text-4xl md:text-8xl text-white">COMING SOON</h1>
+        <div class="flex flex-wrap justify-center gap-3 md:gap-10 text-center bg-[#D9D9D9]  pt-10 px-3 sm:px-10 lg:px-50 z-10 ">
+            <x-how-to-get-card :topTitle="'Venue Location'" :title="'Lokasi RAWFESTIVAL'" :subtitle="'Jl. Pintu Satu Senayan No.1, RT.1/RW.3, Gelora, Kecamatan Tanah Abang, Kota Jakarta Pusat'" :itemNumber="null" :itemTitle="null"
+                :image="asset('assets/img/rawfest/loc-event-2.webp')" :buttonLink="'https://maps.app.goo.gl/X5k1hUa7wHE2FG9k6'" :buttonTitle="'Buka Google Maps'" />
+            <x-how-to-get-card :topTitle="'Check-In Point'" :title="'Check-In & Gate Info'" :subtitle="'Scan QR Code di gerbang utama'" :itemNumber="null" :itemTitle="null"
+                :image="asset('assets/img/rawfest/gate-checkin.webp')" :buttonLink="'https://maps.app.goo.gl/X5k1hUa7wHE2FG9k6'" :buttonTitle="'Datang 15 menit sebelum acara mulai'" />
+        </div>
+        <div
+            class="flex flex-wrap justify-center gap-3 md:gap-10 text-center bg-[#D9D9D9] pt-3 pb-10 md:py-10 px-3 sm:px-10 lg:px-50 z-10 ">
+            <x-how-to-get-card :topTitle="'Parking & Drop-off'" :title="'Area Parkir'" :subtitle="null" :itemNumber="['1', '2']"
+                :itemTitle="['Parkir  Motor', 'Parkir  Mobil']" :itemContent="[
+                    [
+                        ['text' => 'Parkir Stadion Madya', 'link' => null],
+                        ['text' => 'Parkiran Seberang Indonesia Arena', 'link' => null],
+                        ['text' => 'Parkiran Aquatic', 'link' => null],
+                        ['text' => 'Parkiran Gedung Parking Utara', 'link' => null],
+                        ['text' => 'Parkiran Gedung Parking Timur', 'link' => null],
+                    ],
+                    [
+                        ['text' => 'Parkir Stadion Madya', 'link' => null],
+                        ['text' => 'Parkiran Tenis Indoor', 'link' => null],
+                        ['text' => 'Parkiran Seberang Indonesia Arena', 'link' => null],
+                        ['text' => 'Parkiran Lapangan ABC', 'link' => null],
+                        ['text' => 'Parkiran Aquatic', 'link' => null],
+                        ['text' => 'Parkiran Gedung Parking Utara', 'link' => null],
+                        ['text' => 'Parking Utara', 'link' => null],
+                        ['text' => 'Parking Timur', 'link' => null],
+                        ['text' => 'Parkiran Gedung Parking Timur', 'link' => null],
+                        ['text' => 'Parkiran Istora Senayan', 'link' => null],
+                    ],
+                ]" :image="null" :buttonLink="asset('assets/doc/titik_parkir_rawfest.pdf')" :buttonTitle="'Lihat Map Parkir'" />
+
+            <x-how-to-get-card :topTitle="'Transport Guide'" :title="'Cara ke Lokasi'" :subtitle="null" :itemNumber="['1', '2', '3']"
+                :itemTitle="['KAI Commuter', 'MRT Jakarta', 'Transjakarta (BRT)']" :itemContent="[
+                    [
+                        [
+                            'text' => 'Stasiun Palmerah',
+                            'link' => 'https://maps.app.goo.gl/5JSaekm9q7N6HQ729',
+                        ],
+                    ],
+                    [
+                        [
+                            'text' => 'Stasiun Istora Mandiri',
+                            'link' => 'https://maps.app.goo.gl/A7KAcwdmsgqQBSxRA',
+                        ],
+                        [
+                            'text' => 'Stasiun Senayan',
+                            'link' => 'https://maps.app.goo.gl/YuXpuR8Wfom6J64p7',
+                        ],
+                    ],
+                    [
+                        [
+                            'text' => 'Halte Gelora Bung Karno',
+                            'link' => 'https://maps.app.goo.gl/KX5Uso4jra1z4mmB6',
+                        ],
+                        [
+                            'text' => 'Halte Senayan JCC',
+                            'link' => 'https://maps.app.goo.gl/q2Un4r3ydhYeZs2i7',
+                        ],
+                    ],
+                ]" :image="null" :buttonLink="'https://maps.app.goo.gl/X5k1hUa7wHE2FG9k6'" :buttonTitle="'Cek Lokasi Event'" />
+
         </div>
     </section>
 
