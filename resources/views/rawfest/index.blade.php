@@ -231,8 +231,8 @@
         <div class="flex flex-wrap justify-center gap-3 md:gap-10 text-center bg-[#D9D9D9]  pt-10 px-3 sm:px-10 lg:px-50 z-10 ">
             <x-how-to-get-card :topTitle="'Venue Location'" :title="'Lokasi RAWFESTIVAL'" :subtitle="'Jl. Pintu Satu Senayan No.1, RT.1/RW.3, Gelora, Kecamatan Tanah Abang, Kota Jakarta Pusat'" :itemNumber="null" :itemTitle="null"
                 :image="asset('assets/img/rawfest/loc-event-2.webp')" :buttonLink="'https://maps.app.goo.gl/X5k1hUa7wHE2FG9k6'" :buttonTitle="'Buka Google Maps'" />
-            <x-how-to-get-card :topTitle="'Check-In Point'" :title="'Check-In & Gate Info'" :subtitle="'Scan QR Code di gerbang utama'" :itemNumber="null" :itemTitle="null"
-                :image="asset('assets/img/rawfest/gate-checkin.webp')" :buttonLink="'https://maps.app.goo.gl/X5k1hUa7wHE2FG9k6'" :buttonTitle="'Datang 15 menit sebelum acara mulai'" />
+            <x-how-to-get-card :topTitle="'Check-In Point'" :title="'OPEN GATE: 09.00 WIB'" :subtitle="''" :itemNumber="null" :itemTitle="null"
+                :image="asset('assets/img/rawfest/basket_hall_entry.webp')" :buttonLink="'https://maps.app.goo.gl/X5k1hUa7wHE2FG9k6'" :buttonTitle="'Datang 15 menit sebelum acara mulai'" />
         </div>
         <div
             class="flex flex-wrap justify-center gap-3 md:gap-10 text-center bg-[#D9D9D9] pt-3 pb-10 md:py-10 px-3 sm:px-10 lg:px-50 z-10 ">

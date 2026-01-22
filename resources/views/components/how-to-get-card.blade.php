@@ -1,6 +1,6 @@
 <div
     class="bg-[#0353FF] border rounded-2xl flex flex-col justify-between overflow-hidden shadow-lg w-3/4 md:w-[420px] h-auto">
-    <div class="bg-[#0353FF] text-white content-top text-left p-4 md:p-7 min-h-[60px] md:min-h-[200px] ">
+    <div class="bg-[#0353FF] text-white content-top text-left p-4 md:p-7 min-h-[60px] md:min-h-[50px] ">
         <h5 class="uppercase text-[9px] md:text-[10px] mb-2 text-[#FEFC8B]">{{ $topTitle }}</h5>
         <div>
             <h2 class="text-[14px] md:text-2xl font-semibold ">{{ $title }}</h2>
