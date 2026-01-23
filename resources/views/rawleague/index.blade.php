@@ -605,7 +605,7 @@
         {{-- sponsored by --}}
         <div class="text-center mt-20">
             <h1 class=" ultraprint-font uppercase p-3 text-4xl md:text-5xl rounded-2xl text-[#0353FF] font-normal">
-                Sponsored By</h1>
+                Sponsored</h1>
             <div class="flex justify-center flex-wrap gap-10  my-4">
                 @if ($sponsors->isEmpty())
                     <p class="text-center text-lg text-gray-500">No Sponsors right now</p>
