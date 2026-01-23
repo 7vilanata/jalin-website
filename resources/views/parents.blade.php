@@ -260,15 +260,15 @@
                 </p>
             </div>
             <div class="relative w-full pt-[56.25%] rounded-2xl overflow-hidden mt-5 md:mt-25">
-                <div class="absolute flex justify-center items-center top-0 left-0 w-full h-full bg-gray-400">
+                {{-- <div class="absolute flex justify-center items-center top-0 left-0 w-full h-full bg-gray-400">
                     <h1
                         class=" ultraprint-font text-center text-white font-medium md:text-7xl text-4xl leading-tight  uppercase">
                         COMING SOON
                     </h1>
-                </div>
-                {{-- <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/OZGjJXvqN_U"
+                </div> --}}
+                <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/ZCR7WeE61Yo"
                     frameborder="0" allowfullscreen>
-                </iframe> --}}
+                </iframe>
             </div>
             <img class="mt-[20%] h-full w-full object-cover rounded-xl"
                 src="{{ asset('assets/img/before-footer-parent.webp') }}" alt="before-footer-parent">

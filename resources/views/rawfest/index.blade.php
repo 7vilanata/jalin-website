@@ -125,7 +125,7 @@
 
                 </div>
             </div>
-            <p class=" my-3 text-[14px] md:text-2xl">Ambil Merch lo 
+            <p class=" my-3 text-[14px] md:text-2xl">Ambil Merch lo
                 <a class="underline" href="https://student.esensigroup.com/login">disini!</a>
             </p>
 
@@ -208,9 +208,51 @@
                 class="ultraprint-font bg-[#FF5632] inline-block p-3 text-[22px] md:text-5xl rounded-2xl mb-2 text-[#FFFFFF] font-medium">
                 TENANT ADA APA SAJA ?</h1>
         </div>
-        <div class=" text-center bg-[#D9D9D9] py-20 md:py-50 px-3 sm:px-10 lg:px-50 z-10 ">
-            <h1 class="ultraprint-font text-2xl md:text-8xl text-white">COMING SOON</h1>
+        <div class="text-center bg-white py-10 px-10 z-10">
+            <div class="swiper mySwiper h-[120px] sm:h-[140px] md:h-[160px]">
+                <div class="swiper-wrapper items-center">
+
+                    <div class="swiper-slide flex items-center content-center justify-center overflow-hidden">
+                        <img class="max-h-full w-full object-contain "
+                            src="{{ asset('assets/img/rawfest/tenant/shihlin.webp') }}" alt="shihlin">
+                    </div>
+
+                    <div class="swiper-slide flex items-center content-center justify-center overflow-hidden">
+                        <img class="max-h-full w-full object-contain"
+                            src="{{ asset('assets/img/rawfest/tenant/seindonesia.webp') }}" alt="seindonesia">
+                    </div>
+
+                    <div class="swiper-slide flex items-center content-center justify-center overflow-hidden">
+                        <img class="max-h-full w-full object-contain"
+                            src="{{ asset('assets/img/rawfest/tenant/sariwarasa.webp') }}" alt="sariwarasa">
+                    </div>
+
+                    <div class="swiper-slide flex items-center content-center justify-center overflow-hidden">
+                        <img class="max-h-full w-full object-contain rounded-xl"
+                            src="{{ asset('assets/img/rawfest/tenant/renafoodies-2.webp') }}" alt="renafoodies">
+                    </div>
+
+                    <div class="swiper-slide flex items-center content-center justify-center overflow-hidden">
+                        <img class="max-h-full w-full object-contain"
+                            src="{{ asset('assets/img/rawfest/tenant/kopi_kenangan.webp') }}" alt="kopken">
+                    </div>
+
+                    <div class="swiper-slide flex items-center content-center justify-center overflow-hidden">
+                        <img class="max-h-full w-full object-contain"
+                            src="{{ asset('assets/img/rawfest/tenant/es_jeruk.webp') }}" alt="esjeruk">
+                    </div>
+
+                    <div class="swiper-slide flex items-center content-center justify-center rounded-xl overflow-hidden">
+                        <img class="max-h-full w-full object-contain"
+                            src="{{ asset('assets/img/rawfest/tenant/best_culinary.webp') }}" alt="best_culinary">
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="swiper-pagination-rawfest mt-10"></div>
         </div>
+
     </section>
 
     {{-- rundown --}}
@@ -228,7 +270,8 @@
             <h1 class=" ultraprint-font uppercase p-3 text-4xl md:text-5xl rounded-2xl text-[#0353FF] font-normal">
                 HOW TO GET TO LOCATION</h1>
         </div>
-        <div class="flex flex-wrap justify-center gap-3 md:gap-10 text-center bg-[#D9D9D9]  pt-10 px-3 sm:px-10 lg:px-50 z-10 ">
+        <div
+            class="flex flex-wrap justify-center gap-3 md:gap-10 text-center bg-[#D9D9D9]  pt-10 px-3 sm:px-10 lg:px-50 z-10 ">
             <x-how-to-get-card :topTitle="'Venue Location'" :title="'Lokasi RAWFESTIVAL'" :subtitle="'Jl. Pintu Satu Senayan No.1, RT.1/RW.3, Gelora, Kecamatan Tanah Abang, Kota Jakarta Pusat'" :itemNumber="null" :itemTitle="null"
                 :image="asset('assets/img/rawfest/loc-event-2.webp')" :buttonLink="'https://maps.app.goo.gl/X5k1hUa7wHE2FG9k6'" :buttonTitle="'Buka Google Maps'" />
             <x-how-to-get-card :topTitle="'Check-In Point'" :title="'OPEN GATE: 09.00 WIB'" :subtitle="''" :itemNumber="null" :itemTitle="null"
