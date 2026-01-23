@@ -4,24 +4,56 @@ import Swiper from "swiper/bundle";
 import "swiper/css/bundle";
 
 window.addEventListener("load", () => {
-
-     function updateTexts(swiper, index) {
+    function updateTexts(swiper, index) {
         const activeSlide = swiper.slides[swiper.activeIndex];
         if (!activeSlide) return;
 
         const data = activeSlide.dataset;
 
         // Update the text content
-        const bigTitleEl    = document.getElementById(`bigTitle-${index}`);
-        const mobileSideTitleEl = document.getElementById(`mobileSideTitle-${index}`);
-        const sideTitleEl   = document.getElementById(`sideTitle-${index}`);
+        const bigTitleEl = document.getElementById(`bigTitle-${index}`);
+        const mobileSideTitleEl = document.getElementById(
+            `mobileSideTitle-${index}`,
+        );
+        const sideTitleEl = document.getElementById(`sideTitle-${index}`);
 
-        if (bigTitleEl)    bigTitleEl.textContent    = data.bigTitle   || 'Coming Soon';
-        if (mobileSideTitleEl) mobileSideTitleEl.textContent = data.mobileSideTitle || 'Upcoming Event';
-        if (sideTitleEl)   sideTitleEl.textContent   = data.sideTitle   || 'Upcoming Event';
+        if (bigTitleEl) bigTitleEl.textContent = data.bigTitle || "Coming Soon";
+        if (mobileSideTitleEl)
+            mobileSideTitleEl.textContent =
+                data.mobileSideTitle || "Upcoming Event";
+        if (sideTitleEl)
+            sideTitleEl.textContent = data.sideTitle || "Upcoming Event";
     }
 
-    new Swiper('.swiper-gallery-rawleague', {
+    new Swiper(".mySwiper", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+            delay: 3000,
+        },
+        pagination: {
+            el: ".swiper-pagination-rawfest",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+            },
+            640: {
+                slidesPerView: 2,
+            },
+            1024: {
+                slidesPerView: 3,
+            },
+        },
+    });
+
+    new Swiper(".swiper-gallery-rawleague", {
         loop: true,
         slidesPerView: 1,
         spaceBetween: 10,
@@ -29,12 +61,12 @@ window.addEventListener("load", () => {
             delay: 3000,
         },
         pagination: {
-            el: '.swiper-pagination',
+            el: ".swiper-pagination",
             clickable: true,
         },
         navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
         },
     });
 
@@ -49,12 +81,12 @@ window.addEventListener("load", () => {
             el: ".swiper-page-1",
             clickable: true,
         },
-         on: {
+        on: {
             init: function () {
-                updateTexts(this, 1);  // Update text on init
+                updateTexts(this, 1); // Update text on init
             },
             slideChange: function () {
-                updateTexts(this, 1);  // Update text on slide change
+                updateTexts(this, 1); // Update text on slide change
             },
         },
     });
@@ -70,12 +102,12 @@ window.addEventListener("load", () => {
             el: ".swiper-page-2",
             clickable: true,
         },
-         on: {
+        on: {
             init: function () {
-                updateTexts(this, 2);  // Update text on init
+                updateTexts(this, 2); // Update text on init
             },
             slideChange: function () {
-                updateTexts(this, 2);  // Update text on slide change
+                updateTexts(this, 2); // Update text on slide change
             },
         },
     });
@@ -91,12 +123,12 @@ window.addEventListener("load", () => {
             el: ".swiper-page-3",
             clickable: true,
         },
-         on: {
+        on: {
             init: function () {
-                updateTexts(this, 3);  // Update text on init
+                updateTexts(this, 3); // Update text on init
             },
             slideChange: function () {
-                updateTexts(this, 3);  // Update text on slide change
+                updateTexts(this, 3); // Update text on slide change
             },
         },
     });

@@ -11,10 +11,10 @@
                     alt="boy-rawfest">
                 <img class="h-auto w-full self-end z-0 block md:hidden"
                     src="{{ asset('assets/img/boy-rawfest-mobile.webp') }}" alt="boy-rawfest-mobile">
-                <a href="https://bit.ly/RAWBandCompetition" class="inline-block ">
+                <a href="https://student.generasiraw.org/" class="inline-block ">
                     <button
                         class="hover:scale-110 ease-in-out text-[16px] md:text-4xl flex items-center bg-[#0353FF] py-1.5 px-8 text-white rounded-3xl absolute z-10 bottom-1/8 left-1/2 transform -translate-x-1/2 transition-all duration-300">
-                        <span class="ultraprint-font">DAFTAR DISINI!</span>
+                        <span class="ultraprint-font">AMBIL TIKET LO DISINI!</span>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
                             stroke="currentColor" class="size-4 md:size-8 ml-2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
@@ -66,14 +66,14 @@
 
         <section class=" bg-[#0353FF]  h-auto bg-center overflow-hidden text-white py-20 px-0 md:px-8 relative text-center">
             <h1 class="ultraprint-font  inline-block p-3 text-4xl md:text-5xl  rounded-2xl mb-2  font-medium">
-                HOW TO SUBMIT DEMO FOR SCHOOL PERFORMANCE </h1>
+                OFFICIAL MERCH</h1>
 
             <div class="flex justify-center items-center w-full">
                 <div class=" flex flex-wrap flex-col justify-center items-center w-[90%] md:w-[80%] mt-8">
                     <div x-data="{ open: false, zoom: 1, isDown: false, startX: 0, scrollLeft: 0, threshold: 5 }" class="flex justify-center">
 
                         <!-- Thumbnail Image -->
-                        <img src="{{ asset('assets/img/rawfest/band-comp.webp') }}" alt="band-comp" draggable="false"
+                        <img src="{{ asset('assets/img/rawfest/flyer_merch.webp') }}" alt="Flyer Merch" draggable="false"
                             class="cursor-pointer select-none" @click="open = true; zoom = 1" />
 
                         <!-- Dialog / Modal -->
@@ -102,7 +102,7 @@
 
                                 <!-- Zoomable Image -->
                                 <div class="overflow-auto max-h-[80vh] border rounded">
-                                    <img src="{{ asset('assets/img/rawfest/band-comp.webp') }}" draggable="false"
+                                    <img src="{{ asset('assets/img/rawfest/flyer_merch.webp') }}" draggable="false"
                                         :style="'transform: scale(' + zoom + '); transform-origin: top left;'"
                                         class="transition-transform duration-200 cursor-move select-none"
                                         @mousedown="startX = $event.pageX; startY = $event.pageY; scrollLeft = $el.parentElement.scrollLeft; scrollTop = $el.parentElement.scrollTop; isDown = true"
@@ -125,8 +125,9 @@
 
                 </div>
             </div>
-            <p class=" my-3 text-[14px] md:text-2xl">Mau join? klik link 
-                <a class="underline" href="https://bit.ly/RAWBandCompetition">disini</a></p>
+            <p class=" my-3 text-[14px] md:text-2xl">Ambil Merch lo
+                <a class="underline" href="https://student.esensigroup.com/login">disini!</a>
+            </p>
 
         </section>
 
@@ -150,35 +151,40 @@
 
         <div class="text-[#0353FF]">
             <p class=" my-3 text-[14px] md:text-2xl">
-                Udah siap ngerasain serunya RAW Festival?
-                <br> 
-                Sekarang tiketnya GRATIS, bro!
+                Udah punya akun Generasi RAW?
+                <br>
+                Langsung ambil tiket RAW Festival lo sekarang.
                 <br><br>
-                Gini cara lo dapetin e-pass RAW Festival 👇
-                 <br><br>
-                <b>Langkah-langkahnya gampang banget:</b>
+                GRATIS.
+                <br><br>
+                <b>Caranya gampang:</b>
             </p>
             <br>
             <ol class="list-decimal pl-10 text-[14px] md:text-2xl leading-snug">
-                <li>Masuk ke WebApp Generasi RAW di <a href="https://student.generasiraw.org"
+                <li>Buka <a href="https://student.generasiraw.org"
                         class="text-blue-500 underline">student.generasiraw.org</a>.</li>
-                <li>Login pake akun yang udah lo punya.</li>
-                <li>Masuk ke halaman Poin.</li>
-                <li>Cari Ticket RAW Festival.</li>
-                <li>Klik Tukar — tiket bisa lo dapetin gratis.</li>
-                <li>Setelah berhasil, buka halaman Hadiah Saya.</li>
-                <li>Tunjukin QR Code di gate saat hari acara.</li>
+                <li>Login ke akun lo</li>
+                <li>KLIK "AMBIL TIKET LO" </li>
+                <li>Pilih Ticket RAW Festival</li>
+                <li>Klik Tukar</li>
+                <li>Buka Hadiah Saya</li>
+                <li>Tunjukin QR Code di gate pas hari H</li>
             </ol>
             <br>
             <p class="text-[14px] md:text-2xl">
-                🔥 Catatan penting:
+                🔥 Info penting:
                 <br>
                 <br>
             <ol class="list-disc pl-10 text-[14px] md:text-2xl leading-snug">
-                <li>Tiket gratis tapi kuota terbatas, jadi jangan kelamaan ambilnya.</li>
-                <li>QR Code adalah tiket resmi jangan dibagikan ke siapa pun.</li>
-                <li>Satu akun hanya bisa menggunakan 1 tiket.</li>
+                <li>Tiket gratis, kuota terbatas</li>
+                <li>QR Code = tiket resmi, jangan dibagi</li>
+                <li>1 akun cuma buat 1 tiket</li>
             </ol>
+            <br>
+            <br>
+            <p class="text-[14px] md:text-2xl">
+                Yang udah punya akun, jangan nunggu—ambil tiket lo sekarang 🚀
+            </p>
             </p>
 
         </div>
@@ -202,9 +208,51 @@
                 class="ultraprint-font bg-[#FF5632] inline-block p-3 text-[22px] md:text-5xl rounded-2xl mb-2 text-[#FFFFFF] font-medium">
                 TENANT ADA APA SAJA ?</h1>
         </div>
-        <div class=" text-center bg-[#D9D9D9] py-20 md:py-50 px-3 sm:px-10 lg:px-50 z-10 ">
-            <h1 class="ultraprint-font text-2xl md:text-8xl text-white">COMING SOON</h1>
+        <div class="text-center bg-white py-10 px-10 z-10">
+            <div class="swiper mySwiper h-[120px] sm:h-[140px] md:h-[160px]">
+                <div class="swiper-wrapper items-center">
+
+                    <div class="swiper-slide flex items-center content-center justify-center overflow-hidden">
+                        <img class="max-h-full w-full object-contain "
+                            src="{{ asset('assets/img/rawfest/tenant/shihlin.webp') }}" alt="shihlin">
+                    </div>
+
+                    <div class="swiper-slide flex items-center content-center justify-center overflow-hidden">
+                        <img class="max-h-full w-full object-contain"
+                            src="{{ asset('assets/img/rawfest/tenant/seindonesia.webp') }}" alt="seindonesia">
+                    </div>
+
+                    <div class="swiper-slide flex items-center content-center justify-center overflow-hidden">
+                        <img class="max-h-full w-full object-contain"
+                            src="{{ asset('assets/img/rawfest/tenant/sariwarasa.webp') }}" alt="sariwarasa">
+                    </div>
+
+                    <div class="swiper-slide flex items-center content-center justify-center overflow-hidden">
+                        <img class="max-h-full w-full object-contain rounded-xl"
+                            src="{{ asset('assets/img/rawfest/tenant/renafoodies-2.webp') }}" alt="renafoodies">
+                    </div>
+
+                    <div class="swiper-slide flex items-center content-center justify-center overflow-hidden">
+                        <img class="max-h-full w-full object-contain"
+                            src="{{ asset('assets/img/rawfest/tenant/kopi_kenangan.webp') }}" alt="kopken">
+                    </div>
+
+                    <div class="swiper-slide flex items-center content-center justify-center overflow-hidden">
+                        <img class="max-h-full w-full object-contain"
+                            src="{{ asset('assets/img/rawfest/tenant/es_jeruk.webp') }}" alt="esjeruk">
+                    </div>
+
+                    <div class="swiper-slide flex items-center content-center justify-center rounded-xl overflow-hidden">
+                        <img class="max-h-full w-full object-contain"
+                            src="{{ asset('assets/img/rawfest/tenant/best_culinary.webp') }}" alt="best_culinary">
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="swiper-pagination-rawfest mt-10"></div>
         </div>
+
     </section>
 
     {{-- rundown --}}
@@ -213,9 +261,7 @@
             <h1 class=" ultraprint-font uppercase p-3 text-4xl md:text-5xl rounded-2xl text-[#0353FF] font-normal">
                 RUNDOWN</h1>
         </div>
-        <div class=" text-center bg-[#D9D9D9] py-20 md:py-50 px-3 sm:px-10 lg:px-50 z-10 ">
-            <h1 class="ultraprint-font text-4xl md:text-8xl text-white">COMING SOON</h1>
-        </div>
+        <img class="h-full w-full object-cover" src="{{ asset('assets/img/rawfest/rundown.webp') }}" alt="rundown">
     </section>
 
     {{-- LOCATION --}}
@@ -224,8 +270,68 @@
             <h1 class=" ultraprint-font uppercase p-3 text-4xl md:text-5xl rounded-2xl text-[#0353FF] font-normal">
                 HOW TO GET TO LOCATION</h1>
         </div>
-        <div class=" text-center bg-[#D9D9D9] py-20 md:py-50 px-3 sm:px-10 lg:px-50 z-10 ">
-            <h1 class="ultraprint-font text-4xl md:text-8xl text-white">COMING SOON</h1>
+        <div
+            class="flex flex-wrap justify-center gap-3 md:gap-10 text-center bg-[#D9D9D9]  pt-10 px-3 sm:px-10 lg:px-50 z-10 ">
+            <x-how-to-get-card :topTitle="'Venue Location'" :title="'Lokasi RAWFESTIVAL'" :subtitle="'Jl. Pintu Satu Senayan No.1, RT.1/RW.3, Gelora, Kecamatan Tanah Abang, Kota Jakarta Pusat'" :itemNumber="null" :itemTitle="null"
+                :image="asset('assets/img/rawfest/loc-event-2.webp')" :buttonLink="'https://maps.app.goo.gl/X5k1hUa7wHE2FG9k6'" :buttonTitle="'Buka Google Maps'" />
+            <x-how-to-get-card :topTitle="'Check-In Point'" :title="'OPEN GATE: 09.00 WIB'" :subtitle="''" :itemNumber="null" :itemTitle="null"
+                :image="asset('assets/img/rawfest/basket_hall_entry.webp')" :buttonLink="'https://maps.app.goo.gl/X5k1hUa7wHE2FG9k6'" :buttonTitle="'Datang 15 menit sebelum acara mulai'" />
+        </div>
+        <div
+            class="flex flex-wrap justify-center gap-3 md:gap-10 text-center bg-[#D9D9D9] pt-3 pb-10 md:py-10 px-3 sm:px-10 lg:px-50 z-10 ">
+            <x-how-to-get-card :topTitle="'Parking & Drop-off'" :title="'Area Parkir'" :subtitle="null" :itemNumber="['1', '2']"
+                :itemTitle="['Parkir  Motor', 'Parkir  Mobil']" :itemContent="[
+                    [
+                        ['text' => 'Parkir Stadion Madya', 'link' => null],
+                        ['text' => 'Parkiran Seberang Indonesia Arena', 'link' => null],
+                        ['text' => 'Parkiran Aquatic', 'link' => null],
+                        ['text' => 'Parkiran Gedung Parking Utara', 'link' => null],
+                        ['text' => 'Parkiran Gedung Parking Timur', 'link' => null],
+                    ],
+                    [
+                        ['text' => 'Parkir Stadion Madya', 'link' => null],
+                        ['text' => 'Parkiran Tenis Indoor', 'link' => null],
+                        ['text' => 'Parkiran Seberang Indonesia Arena', 'link' => null],
+                        ['text' => 'Parkiran Lapangan ABC', 'link' => null],
+                        ['text' => 'Parkiran Aquatic', 'link' => null],
+                        ['text' => 'Parkiran Gedung Parking Utara', 'link' => null],
+                        ['text' => 'Parking Utara', 'link' => null],
+                        ['text' => 'Parking Timur', 'link' => null],
+                        ['text' => 'Parkiran Gedung Parking Timur', 'link' => null],
+                        ['text' => 'Parkiran Istora Senayan', 'link' => null],
+                    ],
+                ]" :image="null" :buttonLink="asset('assets/doc/titik_parkir_rawfest.pdf')" :buttonTitle="'Lihat Map Parkir'" />
+
+            <x-how-to-get-card :topTitle="'Transport Guide'" :title="'Cara ke Lokasi'" :subtitle="null" :itemNumber="['1', '2', '3']"
+                :itemTitle="['KAI Commuter', 'MRT Jakarta', 'Transjakarta (BRT)']" :itemContent="[
+                    [
+                        [
+                            'text' => 'Stasiun Palmerah',
+                            'link' => 'https://maps.app.goo.gl/5JSaekm9q7N6HQ729',
+                        ],
+                    ],
+                    [
+                        [
+                            'text' => 'Stasiun Istora Mandiri',
+                            'link' => 'https://maps.app.goo.gl/A7KAcwdmsgqQBSxRA',
+                        ],
+                        [
+                            'text' => 'Stasiun Senayan',
+                            'link' => 'https://maps.app.goo.gl/YuXpuR8Wfom6J64p7',
+                        ],
+                    ],
+                    [
+                        [
+                            'text' => 'Halte Gelora Bung Karno',
+                            'link' => 'https://maps.app.goo.gl/KX5Uso4jra1z4mmB6',
+                        ],
+                        [
+                            'text' => 'Halte Senayan JCC',
+                            'link' => 'https://maps.app.goo.gl/q2Un4r3ydhYeZs2i7',
+                        ],
+                    ],
+                ]" :image="null" :buttonLink="'https://maps.app.goo.gl/X5k1hUa7wHE2FG9k6'" :buttonTitle="'Cek Lokasi Event'" />
+
         </div>
     </section>
 

@@ -17,7 +17,7 @@
          <!-- Desktop Nav -->
          <nav class="hidden lg:flex uppercase space-x-4 text-[20px]">
              <a href="/warkop-raw" class="px-2  ultraprint-font">Warkop RAWvolution</a>
-              <a href="/raw-league" class="px-2  ultraprint-font">RAW League</a>
+             <a href="/raw-league" class="px-2  ultraprint-font">RAW League</a>
              <a href="/raw-fest" class="px-2  ultraprint-font">RAW Festival</a>
 
 
@@ -46,16 +46,18 @@
          </nav>
 
          <!-- Auth Button (Desktop) -->
-         <div class="hidden lg:flex gap-2 text-lg ">
+         <div class="hidden lg:flex gap-2 text-lg align-center">
+
+             <a href="https://student.generasiraw.org/login" target="_blank" class="font-medium ultraprint-font">AMBIL
+                 TIKET RAWFEST!</a>
              <i>
                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                      stroke="currentColor" class="size-6">
                      <path stroke-linecap="round" stroke-linejoin="round"
-                         d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15M12 9l-3 3m0 0 3 3m-3-3h12.75" />
+                         d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15M12 9l3 3m0 0-3 3m3-3H2.25" />
                  </svg>
+
              </i>
-             <a href="https://student.generasiraw.org/login" target="_blank"
-                 class="font-medium ultraprint-font">LOGIN</a>
          </div>
      </div>
 
@@ -108,15 +110,16 @@
              </div>
              <a href="/contact-us" class="block  ultraprint-font">Contact Us</a>
              <div class="flex gap-2 justify-center">
+                 <a href="https://student.generasiraw.org/login" target="_blank" class="block ultraprint-font">AMBIL
+                     TIKET RAWFEST!</a>
                  <i>
                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                          stroke="currentColor" class="size-6">
                          <path stroke-linecap="round" stroke-linejoin="round"
-                             d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15M12 9l-3 3m0 0 3 3m-3-3h12.75" />
+                             d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15M12 9l3 3m0 0-3 3m3-3H2.25" />
                      </svg>
+
                  </i>
-                 <a href="https://student.generasiraw.org/login" target="_blank"
-                     class="block ultraprint-font">LOGIN</a>
 
              </div>
          </nav>
