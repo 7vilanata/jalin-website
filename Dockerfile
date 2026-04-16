@@ -6,6 +6,7 @@ ENV COMPOSER_ALLOW_SUPERUSER=1
 
 RUN apt-get update && apt-get install -y \
         git \
+        nginx \
         unzip \
         libcurl4-openssl-dev \
         libfreetype6-dev \
@@ -37,6 +38,36 @@ RUN apt-get update && apt-get install -y \
         echo "opcache.interned_strings_buffer=16"; \
         echo "opcache.max_accelerated_files=20000"; \
     } > "$PHP_INI_DIR/conf.d/opcache-recommended.ini" \
+    && rm -f \
+        /etc/nginx/sites-enabled/default \
+        /etc/nginx/sites-available/default \
+        /etc/nginx/conf.d/default.conf \
+    && { \
+        echo 'server {'; \
+        echo '    listen 80 default_server;'; \
+        echo '    listen [::]:80 default_server;'; \
+        echo '    server_name _;'; \
+        echo '    root /app/public;'; \
+        echo '    index index.php index.html;'; \
+        echo; \
+        echo '    location / {'; \
+        echo '        try_files $uri $uri/ /index.php?$query_string;'; \
+        echo '    }'; \
+        echo; \
+        echo '    location ~ \.php$ {'; \
+        echo '        include fastcgi_params;'; \
+        echo '        fastcgi_pass 127.0.0.1:9000;'; \
+        echo '        fastcgi_index index.php;'; \
+        echo '        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;'; \
+        echo '        fastcgi_param DOCUMENT_ROOT $realpath_root;'; \
+        echo '        fastcgi_read_timeout 300;'; \
+        echo '    }'; \
+        echo; \
+        echo '    location ~ /\.(?!well-known).* {'; \
+        echo '        deny all;'; \
+        echo '    }'; \
+        echo '}'; \
+    } > /etc/nginx/conf.d/app.conf \
     && rm -rf /var/lib/apt/lists/*
 
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
@@ -109,7 +140,14 @@ RUN { \
         echo; \
         echo 'exec "$@"'; \
     } > /usr/local/bin/docker-entrypoint \
+    && { \
+        echo '#!/bin/sh'; \
+        echo 'set -e'; \
+        echo 'php-fpm -D'; \
+        echo 'exec nginx -g "daemon off;"'; \
+    } > /usr/local/bin/start-services \
     && chmod +x /usr/local/bin/docker-entrypoint \
+    && chmod +x /usr/local/bin/start-services \
     && mkdir -p \
         bootstrap/cache \
         storage/framework/cache \
@@ -123,7 +161,7 @@ RUN { \
     && chmod -R ug+rwx bootstrap/cache database storage \
     && composer dump-autoload --optimize --no-dev --no-interaction --no-scripts
 
-EXPOSE 9000
+EXPOSE 80 9000
 
 ENTRYPOINT ["docker-entrypoint"]
-CMD ["php-fpm"]
+CMD ["start-services"]
