@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y \
         libicu-dev \
         libjpeg62-turbo-dev \
         libonig-dev \
+        libpq-dev \
         libpng-dev \
         libsqlite3-dev \
         libxml2-dev \
@@ -28,6 +29,7 @@ RUN apt-get update && apt-get install -y \
         intl \
         mbstring \
         opcache \
+        pdo_pgsql \
         pdo_mysql \
         pdo_sqlite \
         simplexml \
@@ -84,9 +86,45 @@ FROM base AS final
 COPY . .
 COPY --from=vendor /var/www/html/vendor ./vendor
 COPY --from=assets /app/public/build ./public/build
-COPY docker/entrypoint.sh /usr/local/bin/docker-entrypoint
 
-RUN chmod +x /usr/local/bin/docker-entrypoint \
+RUN { \
+        echo '#!/bin/sh'; \
+        echo 'set -e'; \
+        echo; \
+        echo 'cd /var/www/html'; \
+        echo; \
+        echo 'if [ ! -f .env ] && [ -f .env.example ]; then'; \
+        echo '    cp .env.example .env'; \
+        echo 'fi'; \
+        echo; \
+        echo "if [ -f .env ] && ! grep -q '^APP_KEY=base64:' .env; then"; \
+        echo '    php artisan key:generate --force --ansi >/dev/null 2>&1 || true'; \
+        echo 'fi'; \
+        echo; \
+        echo 'if [ "${DB_CONNECTION:-sqlite}" = "sqlite" ]; then'; \
+        echo '    DB_FILE="${DB_DATABASE:-/var/www/html/database/database.sqlite}"'; \
+        echo; \
+        echo '    case "$DB_FILE" in'; \
+        echo '        /*) ;;'; \
+        echo '        *) DB_FILE="/var/www/html/$DB_FILE" ;;'; \
+        echo '    esac'; \
+        echo; \
+        echo '    mkdir -p "$(dirname "$DB_FILE")"'; \
+        echo '    touch "$DB_FILE"'; \
+        echo '    chown www-data:www-data "$DB_FILE" 2>/dev/null || true'; \
+        echo 'fi'; \
+        echo; \
+        echo 'if [ ! -L public/storage ]; then'; \
+        echo '    php artisan storage:link --ansi >/dev/null 2>&1 || true'; \
+        echo 'fi'; \
+        echo; \
+        echo 'if [ "${RUN_MIGRATIONS:-false}" = "true" ]; then'; \
+        echo '    php artisan migrate --force --ansi'; \
+        echo 'fi'; \
+        echo; \
+        echo 'exec "$@"'; \
+    } > /usr/local/bin/docker-entrypoint \
+    && chmod +x /usr/local/bin/docker-entrypoint \
     && mkdir -p \
         bootstrap/cache \
         storage/framework/cache \
