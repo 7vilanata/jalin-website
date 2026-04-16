@@ -1,9 +1,8 @@
-FROM php:8.2-apache AS base
+FROM php:8.2-fpm AS base
 
-WORKDIR /var/www/html
+WORKDIR /app
 
-ENV APACHE_DOCUMENT_ROOT=/var/www/html/public \
-    COMPOSER_ALLOW_SUPERUSER=1
+ENV COMPOSER_ALLOW_SUPERUSER=1
 
 RUN apt-get update && apt-get install -y \
         git \
@@ -29,7 +28,6 @@ RUN apt-get update && apt-get install -y \
         pdo_pgsql \
         pdo_mysql \
         zip \
-    && a2enmod rewrite headers \
     && cp "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini" \
     && { \
         echo "opcache.enable=1"; \
@@ -39,10 +37,6 @@ RUN apt-get update && apt-get install -y \
         echo "opcache.interned_strings_buffer=16"; \
         echo "opcache.max_accelerated_files=20000"; \
     } > "$PHP_INI_DIR/conf.d/opcache-recommended.ini" \
-    && sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' \
-        /etc/apache2/sites-available/*.conf \
-        /etc/apache2/apache2.conf \
-        /etc/apache2/conf-available/*.conf \
     && rm -rf /var/lib/apt/lists/*
 
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
@@ -68,21 +62,21 @@ RUN npm ci
 
 COPY resources ./resources
 COPY public ./public
-COPY --from=vendor /var/www/html/vendor ./vendor
+COPY --from=vendor /app/vendor ./vendor
 
 RUN npm run build
 
 FROM base AS final
 
 COPY . .
-COPY --from=vendor /var/www/html/vendor ./vendor
+COPY --from=vendor /app/vendor ./vendor
 COPY --from=assets /app/public/build ./public/build
 
 RUN { \
         echo '#!/bin/sh'; \
         echo 'set -e'; \
         echo; \
-        echo 'cd /var/www/html'; \
+        echo 'cd /app'; \
         echo; \
         echo 'if [ ! -f .env ] && [ -f .env.example ]; then'; \
         echo '    cp .env.example .env'; \
@@ -93,11 +87,11 @@ RUN { \
         echo 'fi'; \
         echo; \
         echo 'if [ "${DB_CONNECTION:-sqlite}" = "sqlite" ]; then'; \
-        echo '    DB_FILE="${DB_DATABASE:-/var/www/html/database/database.sqlite}"'; \
+        echo '    DB_FILE="${DB_DATABASE:-/app/database/database.sqlite}"'; \
         echo; \
         echo '    case "$DB_FILE" in'; \
         echo '        /*) ;;'; \
-        echo '        *) DB_FILE="/var/www/html/$DB_FILE" ;;'; \
+        echo '        *) DB_FILE="/app/$DB_FILE" ;;'; \
         echo '    esac'; \
         echo; \
         echo '    mkdir -p "$(dirname "$DB_FILE")"'; \
@@ -129,7 +123,7 @@ RUN { \
     && chmod -R ug+rwx bootstrap/cache database storage \
     && composer dump-autoload --optimize --no-dev --no-interaction --no-scripts
 
-EXPOSE 80
+EXPOSE 9000
 
 ENTRYPOINT ["docker-entrypoint"]
-CMD ["apache2-foreground"]
+CMD ["php-fpm"]
