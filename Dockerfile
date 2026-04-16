@@ -22,20 +22,12 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install -j"$(nproc)" \
         bcmath \
-        curl \
-        dom \
         exif \
         gd \
         intl \
-        mbstring \
         opcache \
         pdo_pgsql \
         pdo_mysql \
-        pdo_sqlite \
-        simplexml \
-        xml \
-        xmlreader \
-        xmlwriter \
         zip \
     && a2enmod rewrite headers \
     && cp "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini" \
