@@ -33,7 +33,6 @@ RUN apt-get update && apt-get install -y \
         pdo_mysql \
         pdo_sqlite \
         simplexml \
-        sqlite3 \
         xml \
         xmlreader \
         xmlwriter \
